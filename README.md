@@ -1,16 +1,7 @@
 # Style-With-My-Weather-App
 
 ## Description 
-This website is
-
-## Table of Contents (Optional)
-
-If your README is very long, add a table of contents to make it easy for users to find what they need.
-
-* [Installation](#installation)
-* [Usage](#usage)
-* [Credits](#credits)
-* [License](#license)
+This website is primarily for tourist however, anyone can use it. It will help them to get the temperature, know how to dress, know nearby clothing stores, nearby restaurants, night life, and attractions to achieve a fun day roaming around their location. This website is beneficial because it includes everything they need to know to get through the city all in one website.
 
 
 ## Installation
