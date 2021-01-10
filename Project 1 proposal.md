@@ -14,10 +14,9 @@ Foundations
 
 
 
-
 Wireframe (sketch)
 
-[alt text](./Assets/sketch.jpg)
+Clink link: [alt text](./Assets/sketch.jpg)
 
 
 
@@ -31,6 +30,10 @@ Google Map
 
 Proposed Developer Roles:
 TBD, Front-End UI work, JavaScript Front-End, Project Management?
+
+Main working skeleton website: Erum
+Weather: Erum, Gregory
+other Nearby stuff: Quincy, Dennis
 
 Erum
 Dennis
