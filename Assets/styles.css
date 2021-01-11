@@ -1,0 +1,15 @@
+ /* Always set the map height explicitly to define the size of the div
+
+      #map {
+        /* height: 100%; */
+    
+
+      #map {
+        height: 100%;
+      }
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
