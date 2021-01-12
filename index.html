@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- W3 Shool Style sheet  -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- Foundations  -->
     <!-- Compressed CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
@@ -28,22 +30,34 @@
 
       <div class="w3-cell-row">
         <div class="w3-container w3-red w3-cell w3-cell-top">
+          <div class= "city-container"> </div>
           <form>
             <p class="citySearch">Search for a City:</p>
+          
           <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
-          <button name="add-city-button" id="search" class="citySearchBtn"  type= "submit"></button>
+          <button name="add-city-button" id="search" class="btn" type= "submit"></button>
+          <div class="col-md-6" id="currentweather-view"></div>
           <div id="buttons-view2"></div>
         </form>
-
-          <p>Current Temperature </p>
-          <p>Precipitation </p>
-          <p>humidity</p>
-          <p>wind speed </p>
-
-
-          <p>icon</p>
-          <p></p>
+        
+      <div class="row weatherview">
+        <div class="col-md-3" id="searches-view"></div>
+        <div class="current">
+            
         </div>
+        <div id="fivedayWeather-view"></div>
+    </div>
+
+
+        <h3 class="city">City:</h3> 
+        <p id="currentDay" class="lead"></p>
+        <img id= "icon0" src= "http://openweathermap.org/img/wn/01d@2x.png" alt= "icon"> 
+          <p class= "temp">Current Temperature </p>
+          <p class="precipitation">Precipitation </p>
+          <p class="humidity">humidity</p>
+          <p class="wind">wind speed </p>
+        </div>
+
         <div class="w3-container w3-yellow w3-cell w3-cell-middle">
           <p>How to dress icon</p>
         </div>
@@ -57,18 +71,25 @@
       
       <div class="w3-container w3-green">
         <p>Forecast by Days</p>
+        <div id="forecast"> </div>
       </div>
     
-
-      <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-float.min.css" integrity="sha256-4ldVyEvC86/kae2IBWw+eJrTiwNEbUUTmN0zkP4luL4=" crossorigin="anonymous">
+     
+      <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->  
+    <script link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-float.min.css" integrity="sha256-4ldVyEvC86/kae2IBWw+eJrTiwNEbUUTmN0zkP4luL4=" crossorigin="anonymous"> </script>
 
 <!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-prototype.min.css" integrity="sha256-BiKflOunI0SIxlTOOUCQ0HgwXrRrRwBkIYppEllPIok=" crossorigin="anonymous">
+<script link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-prototype.min.css" integrity="sha256-BiKflOunI0SIxlTOOUCQ0HgwXrRrRwBkIYppEllPIok=" crossorigin="anonymous"> </script>
 
 <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-rtl.min.css" integrity="sha256-F+9Ns8Z/1ZISonBbojH743hsmF3x3AlQdJEeD8DhQsE=" crossorigin="anonymous">
+    <script link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-rtl.min.css" integrity="sha256-F+9Ns8Z/1ZISonBbojH743hsmF3x3AlQdJEeD8DhQsE=" crossorigin="anonymous"> </script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+    <!-- moments library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     
-    <script src= "script.js"></script>
+    <!-- <script src= "script.js"></script> -->
+    <script src= "Assets/script.js"></script> 
 </body>
 </html>
