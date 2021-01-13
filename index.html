@@ -33,36 +33,27 @@
           <div class= "city-container"> </div>
           <form>
             <p class="citySearch">Search for a City:</p>
-          
           <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
           <button name="add-city-button" id="search" class="btn" type= "submit"></button>
-          <div class="col-md-6" id="currentweather-view"></div>
-          <div id="buttons-view2"></div>
+          <div id="buttons-view"></div>
         </form>
         
-      <div class="row weatherview">
+    <div class="row weatherview">
         <div class="col-md-3" id="searches-view"></div>
-        <div class="current">
-            
-        </div>
-        <div id="fivedayWeather-view"></div>
-    </div>
+        <div class="current"></div>
 
+        <div class="city"> </div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+        <div class="temp"></div>
+        <div class="tempF"></div>
 
-        <h3 class="city">City:</h3> 
-        <p id="currentDay" class="lead"></p>
-        <img id= "icon0" src= "http://openweathermap.org/img/wn/01d@2x.png" alt= "icon"> 
-          <p class= "temp">Current Temperature </p>
-          <p class="precipitation">Precipitation </p>
-          <p class="humidity">humidity</p>
-          <p class="wind">wind speed </p>
-        </div>
 
         <div class="w3-container w3-yellow w3-cell w3-cell-middle">
           <p>How to dress icon</p>
         </div>
         
-      </div>
+    </div>
 
 
       <div class="w3-container w3-blue">
@@ -83,8 +74,9 @@
 
 <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
     <script link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-rtl.min.css" integrity="sha256-F+9Ns8Z/1ZISonBbojH743hsmF3x3AlQdJEeD8DhQsE=" crossorigin="anonymous"> </script>
-  
+  <!-- // jquery  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
   
     <!-- moments library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
