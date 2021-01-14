@@ -17,7 +17,7 @@
 
 <body>
 
-    <div class="w3-bar w3-light-grey">
+    <div class="w3-bar w3-blue-grey">
         <a href="index.html" class="w3-bar-item w3-button">Home</a>
         <a href="clothing.html" class="w3-bar-item w3-button">Nearby Clothing Store </a>
         <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
@@ -28,50 +28,144 @@
       </div>
 
 
-      <div class="w3-cell-row">
-        <div class="w3-container w3-red w3-cell w3-cell-top">
-          <div class= "city-container"> </div>
+  <div class="w3-cell-row">
+
+        <!-- <div class="w3-container w3-red w3-cell w3-cell-top"> -->
+  <div class= "w3-container w3-dark-grey w3-cell w3-cell-middle">
+          <!-- <div class= "city-container"> </div> -->
           <form>
             <p class="citySearch">Search for a City:</p>
-          
           <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
           <button name="add-city-button" id="search" class="btn" type= "submit"></button>
-          <div class="col-md-6" id="currentweather-view"></div>
-          <div id="buttons-view2"></div>
+          <div id="buttons-view"></div>
         </form>
         
-      <div class="row weatherview">
+    <div class="row weatherview">
         <div class="col-md-3" id="searches-view"></div>
-        <div class="current">
-            
-        </div>
-        <div id="fivedayWeather-view"></div>
-    </div>
+        <div class="current"></div>
 
-
-        <h3 class="city">City:</h3> 
-        <p id="currentDay" class="lead"></p>
+        <div class="city"> </div>
         <img id= "icon0" src= "http://openweathermap.org/img/wn/01d@2x.png" alt= "icon"> 
-          <p class= "temp">Current Temperature </p>
-          <p class="precipitation">Precipitation </p>
-          <p class="humidity">humidity</p>
-          <p class="wind">wind speed </p>
-        </div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+        <div class="temp"></div>
+        <div class="tempF"></div>
+    </div>
+  </div>
 
-        <div class="w3-container w3-yellow w3-cell w3-cell-middle">
-          <p>How to dress icon</p>
-        </div>
+
+        <!-- <div class="w3-container w3-yellow w3-cell w3-cell-middle"> -->
+        <div class="w3-container w3-dark-grey w3-cell w3-cell-middle">
+            <p>How to dress icon</p>
+            <iframe id="inlineFrameExample"
+              title="Inline Frame Example"
+              width="500"
+              height="300"
+              src="https://www.dressbyweather.com/">
+              <!-- src=""> -->
+              <!-- src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"> -->
+          </iframe>
+         </div>
+  </div>
         
-      </div>
+    
+  </div>
 
-
-      <div class="w3-container w3-blue">
+      <br>
+      <div class="w3-container w3-dark-grey">
         <p>Hourly Forecast</p>
+
+
       </div>
+      <br>
       
-      <div class="w3-container w3-green">
+      <div class="w3-container w3-dark-grey">
         <p>Forecast by Days</p>
         <div id="forecast"> </div>
+
+
+    <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+      <div class="card" style="width: 150px;">
+          <div class="card-divider" id= 'dayHeaderText1' id="date" id="temp" id="humidity">
+          <h4 class="daysForecast1" id="day1">Day 1</h4>
+          </div>
+          <div class= fiveDayForecast></div>
+          <img id= "icon1" src= "http://openweathermap.org/img/wn/01d@2x.png" alt= "icon">
+          <div class="card-section">
+          <p class="card-text" id= "temp1">Temp</p>
+          <p class="card-text" id= "humidity1">Humidity</p>
+          <p class="card-text" id= "rain1">Rain</p>
+  
+      </div>
+    </div>
+  
+    <div class="card" style="width: 150px;">
+      <div class="card-divider" id= 'dayHeaderText2' id="date" id="temp" id="humidity">
+        <h4 class="daysForecast2" id="day3">Day 2</h4>
+      </div>
+      <div class= fiveDayForecast></div>
+      <img id= "icon2" src= "http://openweathermap.org/img/wn/01d@2x.png" alt= "icon">
+      <div class="card-section">
+          <p class="card-text" id= "temp2">Temp</p>
+          <p class="card-text" id= "humidity2">Humidity</p>
+          <p class="card-text" id= "rain2">Rain</p>
+      </div>
+    </div>
+  
+    <div class="card" style="width: 150px;">
+      <div class="card-divider" id= 'dayHeaderText3' id="date" id="temp" id="humidity">
+        <h4 class="daysForecast3" id="day3">Day 3</h4>
+      </div>
+      <div class= fiveDayForecast></div>
+      <img id= "icon3" src= "http://openweathermap.org/img/wn/01d@2x.png" alt= "icon">
+      <div class="card-section">
+          <p class="card-text" id= "temp3">Temp</p>
+          <p class="card-text" id= "humidity3">Humidity</p>
+          <p class="card-text" id= "rain3">Rain</p>
+      </div>
+    </div>
+  
+    <div class="card" style="width: 150px;">
+      <div class="card-divider" id= 'dayHeaderText4' id="date" id="temp" id="humidity">
+        <h4 class="daysForecast4" id="day4">Day 4</h4>
+      </div>
+      <div class= fiveDayForecast></div>
+      <img id= "icon4" src= "http://openweathermap.org/img/wn/01d@2x.png" alt= "icon">
+      <div class="card-section">
+          <p class="card-text" id= "temp4">Temp</p>
+          <p class="card-text" id= "humidity4">Humidity</p>
+          <p class="card-text" id= "rain4">Rain</p>
+      </div>
+    </div>
+  
+    <div class="card" style="width: 150px;">
+      <div class="card-divider" id= 'dayHeaderText5' id="date" id="temp" id="humidity">
+        <h4 class="daysForecast5" id="day5">Day 5</h4>
+      </div>
+      <div class= fiveDayForecast></div>
+      <img id= "icon5" src= "http://openweathermap.org/img/wn/01d@2x.png" alt= "icon">
+      <div class="card-section">
+          <p class="card-text" id= "temp5">Temp</p>
+          <p class="card-text" id= "humidity5">Humidity</p>
+          <p class="card-text" id= "rain5">Rain</p>
+      </div>
+    </div>
+  
+    <div class="card" style="width: 150px;">
+      <div class="card-divider" id= 'dayHeaderText6' id="date" id="temp" id="humidity">
+        <h4 class="daysForecast6" id="day6">Day 6 </h4>
+      </div>
+      <div class= fiveDayForecast></div>
+      <img id= "icon6" src= "http://openweathermap.org/img/wn/01d@2x.png" alt= "icon">
+      <div class="card-section">
+          <p class="card-text" id= "temp6">Temp</p>
+          <p class="card-text" id= "humidity6">Humidity</p>
+          <p class="card-text" id= "rain6">Rain</p>
+
+      </div>
+    </div>
+  </div> 
+
       </div>
     
      
@@ -83,8 +177,9 @@
 
 <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
     <script link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-rtl.min.css" integrity="sha256-F+9Ns8Z/1ZISonBbojH743hsmF3x3AlQdJEeD8DhQsE=" crossorigin="anonymous"> </script>
-  
+  <!-- // jquery  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
   
     <!-- moments library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
