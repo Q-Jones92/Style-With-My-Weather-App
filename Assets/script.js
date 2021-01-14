@@ -51,7 +51,7 @@ function weatherSearch(searchValue) {
 
       // Transfer content to HTML
       $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-      $(".wind").text("Wind Speed: " + response.wind.speed);
+      $(".wind").text(`Wind Speed: ${Math.round(response.wind.speed)}MPH`);
       $(".humidity").text("Humidity: " + response.main.humidity);
     $(".humidity").text(`Humidity: ${response.main.humidity}%`);
 
@@ -60,8 +60,10 @@ function weatherSearch(searchValue) {
       var tempF = (response.main.temp - 273.15) * 1.80 + 32;
 
       // add temp content to html
-      $(".temp").text("Temperature (K) " + response.main.temp);
-      $(".tempF").text("Temperature (F) " + tempF.toFixed(2));
+      // $(".temp").text("Temperature (K) " + response.main.temp);
+      // $(".tempF").text("Temperature (F) " + tempF.toFixed(2));
+      $(".tempF").text(`Temperature: ${Math.round((response.main.temp - 273.15) * 1.8 + 32)}°F`);
+
 
       // Log the data in the console as well
       console.log("Wind Speed: " + response.wind.speed);
