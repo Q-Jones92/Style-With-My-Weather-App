@@ -13,3 +13,23 @@
         margin: 0;
         padding: 0;
       }
+
+      .add-city-button {
+        display: flex;
+      }
+
+  
+@import 'foundation'; 
+@include foundation-xy-grid-classes {
+  
+  $base-grid: true,
+  $margin-grid: true,
+  $padding-grid: true,
+  $block-grid: true,
+  $collapse: true,
+  $offset: true,
+  $vertical-grid: true,
+  $frame-grid: true
+  
+      };
+
