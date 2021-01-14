@@ -51,6 +51,7 @@ function weatherSearch(searchValue) {
 
       // Transfer content to HTML
       $(".city").html("<h1>" + response.name + " Weather Details</h1>");
+      $("#icon0").attr("src", "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
       $(".wind").text(`Wind Speed: ${Math.round(response.wind.speed)}MPH`);
       $(".humidity").text("Humidity: " + response.main.humidity);
     $(".humidity").text(`Humidity: ${response.main.humidity}%`);

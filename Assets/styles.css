@@ -18,6 +18,28 @@
         display: flex;
       }
 
+      #icon1 {
+        animation-name: initial;
+        animation-iteration-count: infinite;
+        animation-duration: 10s;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
+      }
+
+      iframe {
+        border: 1px solid black;
+        width: 600%;
+        height: 300%;
+    }
+    
+    .output {
+        background: #eee;
+    }
+
+    .w3-cell-row {
+
+      height: 50px;
+    }
   
 @import 'foundation'; 
 @include foundation-xy-grid-classes {
