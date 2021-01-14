@@ -66,6 +66,136 @@
         zoom: 14,
       });
     }
+
+    function initialize() {
+
+var content = document.getElementById('iw');
+
+var lat = 39.9995601,
+  lng = -75.1395161,
+  latlng = new google.maps.LatLng(lat, lng);
+
+var mapOptions = {
+  center: new google.maps.LatLng(lat, lng),
+  zoom: 12,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+
+var mapCanvas = document.getElementById('map');
+
+var map = new google.maps.Map(mapCanvas, mapOptions);
+for (var i = 0; i < locations.length; i++) {
+  gmarkers[locations[i].name] =
+    createMarker(
+      new google.maps.LatLng(locations[i].location.lat, locations[i].location.lon),
+      locations[i].name + "<br>" +
+      locations[i].adress,
+      locations[i].lable
+    );
+  var infowindow = new google.maps.InfoWindow({
+    maxWidth: 350
+  });
+}
+function createMarker(latlng, html, lable) {
+  var marker = new google.maps.Marker({
+    position: latlng,
+    map: map,
+    icon: {
+      url: 'data:image/svg+xml;charset=utf-8,' +
+        encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
+      scaledSize: new google.maps.Size(44, 44),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(44, 44),
+      labelOrigin: new google.maps.Point(22, 18),
+    },
+    label: {
+      text: lable,
+      color: "#fff",
+    }
+  });
+  marker.setOpacity(.75);
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(html);
+    infowindow.open(map, marker);
+  });
+  google.maps.event.addListener(map, 'click', function() {
+    infowindow.close();
+  });
+  return marker;
+}
+}
+function myclick(i) {
+google.maps.event.trigger(gmarkers[i], 'click');
+};
+google.maps.event.addDomListener(window, 'load', initialize);
+$('a').on('click', function(e) {
+e.preventDefault();
+var $this = $(this),
+  loc = $this.data('location');
+// ----- Var 2 Wit wrap initialize function
+myclick(loc);
+});
+$('a').hover(
+function() {
+  var $this = $(this),
+    loc = $this.data('location');
+  gmarkers[loc].setOpacity(1.0);
+  gmarkers[loc].setIcon({
+    url: 'data:image/svg+xml;charset=utf-8,' +
+      encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path fill="red" d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
+    scaledSize: new google.maps.Size(44, 44),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(44, 44),
+    labelOrigin: new google.maps.Point(22, 18),
+  })
+},
+function() {
+  var $this = $(this),
+    loc = $this.data('location');
+  gmarkers[loc].setOpacity(.75);
+  gmarkers[loc].setIcon({
+    url: 'data:image/svg+xml;charset=utf-8,' +
+      encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>'),
+    scaledSize: new google.maps.Size(44, 44),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(44, 44),
+    labelOrigin: new google.maps.Point(22, 18),
+  });
+}
+);
+var locations = [{
+    'name': 'Location 1',
+    'adress': '215 West Girard Avenue 19123',
+    'location': {
+      'lat': 39.9695601,
+      'lon': -75.1395161
+    },
+    'lable': '200',
+    'prev': 'https://images.unsplash.com/photo-1489706920962-640fcad4b463?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=057570f4673903ff39658ee6ac17a66a&auto=format&fit=crop&w=600&q=60',
+  },
+  {
+    'name': 'Location 2',
+    'adress': '5360 Old York Road 19141',
+    'location': {
+      'lat': 40.034038,
+      'lon': -75.145223
+    },
+    'lable': '30',
+    'prev': 'https://images.unsplash.com/photo-1483519396903-1ef292f4974a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=594ae239b7e8e8ed17d447a9950adeb4&auto=format&fit=crop&w=600&q=60',
+  },
+  {
+    'name': 'Location 3',
+    'adress': '1350 W Girard Avenue 19123',
+    'location': {
+      'lat': 39.9713524,
+      'lon': -75.1590360
+    },
+    'lable': '45',
+    'prev': 'https://images.unsplash.com/photo-1520803703785-bfb8d67060b1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5101b3f0270554cf6224f12e70cb7fb9&auto=format&fit=crop&w=600&q=60',
+  }
+];
+gmarkers = [];
+
     </script>
           
           
