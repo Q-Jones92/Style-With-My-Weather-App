@@ -61,7 +61,7 @@ function weatherSearch(searchValue) {
       var tempF = (response.main.temp - 273.15) * 1.80 + 32;
 
       // add temp content to html
-      $(".temp").text("Temperature (K) " + response.main.temp);
+      // $(".temp").text("Temperature (K) " + response.main.temp);
       $(".tempF").text(`Temperature: ${Math.round((response.main.temp - 273.15) * 1.8 + 32)}°F`);
       $(".tempC").text(`Temperature: ${Math.round((response.main.temp - 273.15) )}°C`);
 
@@ -127,6 +127,11 @@ function weatherSearch(searchValue) {
       $("#temp1C").text(`Temperature (C): ${Math.round((response.daily[0].temp.day - 273.15))}`);
       // trying to get both F and C to fit in 1 line
       $("#tempall").text(`${Math.round((response.daily[0].temp.day - 273.15) * 1.8 + 32)})`/` (${Math.round(response.daily[0].temp.day - 273.15)} C`);
+      // hourly cloud percentage
+      $("#dailyClouds1").text(`Daily Clouds: ${response.daily[0].clouds}`);
+      $("#description1").text(`Description: ${response.daily[0].weather.description}`);
+
+
 
 
       console.log(response.daily[0].temp);
