@@ -151,8 +151,8 @@ function weatherSearch(searchValue) {
 
       $("#icon5").attr("src", "https://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png");
       $("#humidity5").text(`Humidity: ${response.daily[4].humidity}%`);
-      $("#temp5").text(`Temperature (F): ${Math.round((response.daily[4].temp.day - 273.15) * 1.8 + 32)}°F`);
-      $("#temp5C").text(`Temperature: ${Math.round((response.daily[4].temp.day - 273.15))}°C`);
+      $("#temp5").text(`Temperature (F): ${Math.round((response.daily[4].temp.day - 273.15) * 1.8 + 32)}`);
+      $("#temp5C").text(`Temperature (C): ${Math.round((response.daily[4].temp.day - 273.15))}`);
 
 
       $("#icon6").attr("src", "https://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png");
