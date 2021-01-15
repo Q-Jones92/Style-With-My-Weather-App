@@ -55,9 +55,9 @@ function weatherSearch(searchValue) {
       $(".wind").text(`Wind Speed: ${Math.round(response.wind.speed)}MPH`);
       // $(".humidity").text("Humidity: " + response.main.humidity);
       $(".humidity").text(`Humidity: ${response.main.humidity}%`);
-      $("#dailyClouds0").text(`Daily Clouds: ${response.daily[0].clouds}%`);
-      // .weather has to [0] to get the description
-      $("#description0").text(`Description: ${response.daily[0].weather[0].description}`);
+      // $("#dailyClouds").text(`Daily Clouds: ${response.daily[0].clouds}%`);
+
+      
 
       
       // Convert the temp to fahrenheit
@@ -132,7 +132,7 @@ function weatherSearch(searchValue) {
       // hourly cloud percentage
       $("#dailyClouds1").text(`Daily Clouds: ${response.daily[1].clouds}%`);
       // .weather has to [0] to get the description
-      $("#description1").text(`Description: ${response.daily[1].weather[0].description}`);
+      $("#description1").text(`Description: ${response.daily[0].weather[0].description}`);
 
 
 
