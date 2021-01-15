@@ -117,12 +117,14 @@ function weatherSearch(searchValue) {
     }).then(function (response) {
 
       // $("#hour1").text(`Hourly: ${response.timezone_offset[0].hourly[0].temp}`);
-      $("#hour1").text(`Hourly (F): ${Math.round((response.hourly[0].temp - 273.15) * 1.8 +32)}`);
+      $("#hour1").text((`Hourly (F): ${Math.round((response.hourly[0].temp - 273.15) * 1.8 +32)}`));
       $("#hour2").text(`Hourly (F): ${Math.round((response.hourly[1].temp - 273.15) * 1.8 +32)}`);
-      $("#hour4").text(`Hourly (F): ${Math.round((response.hourly[2].temp - 273.15) * 1.8 +32)}`);
-      $("#hour5").text(`Hourly (F): ${Math.round((response.hourly[3].temp - 273.15) * 1.8 +32)}`);
-      $("#hour6").text(`Hourly (F): ${Math.round((response.hourly[4].temp - 273.15) * 1.8 +32)}`);
-      $("#hour7").text(`Hourly (F): ${Math.round((response.hourly[5].temp - 273.15) * 1.8 +32)}`);
+      $("#hour3").text(`Hourly (F): ${Math.round((response.hourly[2].temp - 273.15) * 1.8 +32)}`);
+      $("#hour4").text(`Hourly (F): ${Math.round((response.hourly[3].temp - 273.15) * 1.8 +32)}`);
+      $("#hour5").text(`Hourly (F): ${Math.round((response.hourly[4].temp - 273.15) * 1.8 +32)}`);
+      $("#hour6").text(`Hourly (F): ${Math.round((response.hourly[5].temp - 273.15) * 1.8 +32)}`);
+      $("#hour7").text(`Hourly (F): ${Math.round((response.hourly[6].temp - 273.15) * 1.8 +32)}`);
+
 
 
 
