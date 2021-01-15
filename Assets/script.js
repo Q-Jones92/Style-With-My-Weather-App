@@ -55,11 +55,13 @@ function weatherSearch(searchValue) {
       $(".wind").text(`Wind Speed: ${Math.round(response.wind.speed)}MPH`);
       // $(".humidity").text("Humidity: " + response.main.humidity);
       $(".humidity").text(`Humidity: ${response.main.humidity}%`);
+      $("#dailyClouds0").text(`Daily Clouds: ${response.daily[0].clouds}%`);
+      // .weather has to [0] to get the description
+      $("#description0").text(`Description: ${response.daily[0].weather[0].description}`);
 
       
       // Convert the temp to fahrenheit
       var tempF = (response.main.temp - 273.15) * 1.80 + 32;
-
       // add temp content to html
       // $(".temp").text("Temperature (K) " + response.main.temp);
       $(".tempF").text(`Temperature: ${Math.round((response.main.temp - 273.15) * 1.8 + 32)}°F`);
@@ -128,8 +130,9 @@ function weatherSearch(searchValue) {
       // trying to get both F and C to fit in 1 line
       $("#tempall").text(`${Math.round((response.daily[0].temp.day - 273.15) * 1.8 + 32)})`/` (${Math.round(response.daily[0].temp.day - 273.15)} C`);
       // hourly cloud percentage
-      $("#dailyClouds1").text(`Daily Clouds: ${response.daily[0].clouds}`);
-      $("#description1").text(`Description: ${response.daily[0].weather.description}`);
+      $("#dailyClouds1").text(`Daily Clouds: ${response.daily[1].clouds}%`);
+      // .weather has to [0] to get the description
+      $("#description1").text(`Description: ${response.daily[1].weather[0].description}`);
 
 
 
