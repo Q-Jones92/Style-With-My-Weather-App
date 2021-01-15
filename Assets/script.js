@@ -140,13 +140,14 @@ function weatherSearch(searchValue) {
       $("#icon3").attr("src","https://openweathermap.org/img/wn/" + response.daily[2].weather[0].icon +"@2x.png");
       $("#humidity3").text(`Humidity: ${response.daily[2].humidity}%`);
       $("#temp3").text(`Temperature (F): ${Math.round((response.daily[2].temp.day - 273.15) * 1.8 + 32)}°F`);
-      $("#temp3C").text(`Temperature: ${Math.round((response.daily[1].temp.day - 273.15))}°C`);
+      $("#temp3C").text(`Temperature: ${Math.round((response.daily[2].temp.day - 273.15))}°C`);
 
 
       $("#icon4").attr("src","https://openweathermap.org/img/wn/" + response.daily[3].weather[0].icon + "@2x.png");
       $("#humidity4").text(`Humidity: ${response.daily[3].humidity}%`);
-      $("#temp4").text(`Temperature (F): ${Math.round((response.daily[3].temp.day - 273.15) * 1.8 + 32)}°F`
-      );
+      $("#temp4").text(`Temperature (F): ${Math.round((response.daily[3].temp.day - 273.15) * 1.8 + 32)}°F`);
+      $("#temp4C").text(`Temperature: ${Math.round((response.daily[3].temp.day - 273.15))}°C`);
+
 
       $("#icon5").attr("src", "https://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png");
       $("#humidity5").text(`Humidity: ${response.daily[4].humidity}%`);
