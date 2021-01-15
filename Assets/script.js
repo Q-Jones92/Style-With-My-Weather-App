@@ -123,8 +123,8 @@ function weatherSearch(searchValue) {
 
       $("#icon1").attr("src","https://openweathermap.org/img/wn/" + response.daily[0].weather[0].icon + "@2x.png");
       $("#humidity1").text(`Humidity: ${response.daily[0].humidity}%`);
-      $("#temp1").text(`Temperature: ${Math.round((response.daily[0].temp.day - 273.15) * 1.8 + 32)}°F`);
-      $("#temp1C").text(`Temperature: ${Math.round((response.daily[0].temp.day - 273.15))}°C`);
+      $("#temp1").text(`Temperature (F): ${Math.round((response.daily[0].temp.day - 273.15) * 1.8 + 32)}`);
+      $("#temp1C").text(`Temperature (C): ${Math.round((response.daily[0].temp.day - 273.15))}`);
       // trying to get both F and C to fit in 1 line
       $("#tempall").text(`${Math.round((response.daily[0].temp.day - 273.15) * 1.8 + 32)})`/` (${Math.round(response.daily[0].temp.day - 273.15)} C`);
 
@@ -133,19 +133,19 @@ function weatherSearch(searchValue) {
 
       $("#icon2").attr("src","https://openweathermap.org/img/wn/" + response.daily[1].weather[0].icon + "@2x.png");
       $("#humidity2").text(`Humidity: ${response.daily[1].humidity}%`);
-      $("#temp2").text(`Temp(F): ${Math.round((response.daily[1].temp.day - 273.15) * 1.8 + 32)}°F`);
-      $("#temp2C").text(`Temp (C): ${Math.round((response.daily[1].temp.day - 273.15))}°C`);
+      $("#temp2").text(`Temperature (F): ${Math.round((response.daily[1].temp.day - 273.15) * 1.8 + 32)}`);
+      $("#temp2C").text(`Temperature (C): ${Math.round((response.daily[1].temp.day - 273.15))}`);
 
 
       $("#icon3").attr("src","https://openweathermap.org/img/wn/" + response.daily[2].weather[0].icon +"@2x.png");
       $("#humidity3").text(`Humidity: ${response.daily[2].humidity}%`);
-      $("#temp3").text(`Temperature(F): ${Math.round((response.daily[2].temp.day - 273.15) * 1.8 + 32)}`);
-      $("#temp3C").text(`Temperature(C): ${Math.round((response.daily[2].temp.day - 273.15))}`);
+      $("#temp3").text(`Temperature (F): ${Math.round((response.daily[2].temp.day - 273.15) * 1.8 + 32)}`);
+      $("#temp3C").text(`Temperature (C): ${Math.round((response.daily[2].temp.day - 273.15))}`);
 
 
       $("#icon4").attr("src","https://openweathermap.org/img/wn/" + response.daily[3].weather[0].icon + "@2x.png");
       $("#humidity4").text(`Humidity: ${response.daily[3].humidity}%`);
-      $("#temp4").text(`Temperature(F): ${Math.round((response.daily[3].temp.day - 273.15) * 1.8 + 32)}`);
+      $("#temp4").text(`Temperature (F): ${Math.round((response.daily[3].temp.day - 273.15) * 1.8 + 32)}`);
       $("#temp4C").text(`Temperature (C): ${Math.round((response.daily[3].temp.day - 273.15))}`);
 
 
