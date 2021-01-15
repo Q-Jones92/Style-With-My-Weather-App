@@ -107,7 +107,10 @@ function weatherSearch(searchValue) {
     }).then(function (response) {
 
       $("#hour1").text(`Hourly: ${response.hourly[0].temp}`);
-      console.log (hour1);
+      $("#hour2").text(`Hourly: ${response.hourly[0].temp}`);
+      $("#hour3").text(`Hourly: ${response.hourly[0].temp}`);
+
+      
 
 
       $("#icon1").attr("src","https://openweathermap.org/img/wn/" + response.daily[0].weather[0].icon + "@2x.png");
