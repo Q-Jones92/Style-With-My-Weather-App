@@ -107,8 +107,16 @@ function weatherSearch(searchValue) {
     }).then(function (response) {
 
       $("#hour1").text(`Hourly: ${response.hourly[0].temp}`);
-      $("#hour2").text(`Hourly: ${response.hourly[0].temp}`);
-      $("#hour3").text(`Hourly: ${response.hourly[0].temp}`);
+      $("#hour2").text(`Hourly: ${response.hourly[1].temp}`);
+      $("#hour3").text(`Hourly: ${response.hourly[2].temp}`);
+      $("#hour4").text(`Hourly: ${response.hourly[3].temp}`);
+      $("#hour5").text(`Hourly: ${response.hourly[4].temp}`);
+      $("#hour6").text(`Hourly: ${response.hourly[5].temp}`);
+      $("#hour7").text(`Hourly: ${response.hourly[6].temp}`);
+
+
+
+
 
       
 
