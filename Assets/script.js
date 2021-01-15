@@ -105,7 +105,7 @@ function weatherSearch(searchValue) {
     // var part = hourly;
     console.log("Forecast", APIKey);
   
-    // excluded minuetly
+    // excluded minuetly, hourly
     var oneCallAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=currently,alerts&appid=" + APIKey;
     // var fiveDayForecast= "http://api.openweathermap.org/data/2.5/uvi?lat=" +lat+ "&lon=" +lon+ "&appid=" +APIKey;
     console.log("This is the var fivDayForecast: ", oneCallAPI);
@@ -116,13 +116,13 @@ function weatherSearch(searchValue) {
       method: "GET",
     }).then(function (response) {
 
-      $("#hour1").text(`Hourly: ${response.hourly[0].temp}`);
-      $("#hour2").text(`Hourly: ${response.hourly[1].temp}`);
-      $("#hour3").text(`Hourly: ${response.hourly[2].temp}`);
-      $("#hour4").text(`Hourly: ${response.hourly[3].temp}`);
-      $("#hour5").text(`Hourly: ${response.hourly[4].temp}`);
-      $("#hour6").text(`Hourly: ${response.hourly[5].temp}`);
-      $("#hour7").text(`Hourly: ${response.hourly[6].temp}`);
+      // $("#hour1").text(`Hourly: ${response.timezone_offset[0].hourly[0].temp}`);
+      $("#hour1").text(`Hourly (F): ${Math.round((response.hourly[0].temp - 273.15) * 1.8 +32)}`);
+      $("#hour2").text(`Hourly (F): ${Math.round((response.hourly[1].temp - 273.15) * 1.8 +32)}`);
+      $("#hour4").text(`Hourly (F): ${Math.round((response.hourly[2].temp - 273.15) * 1.8 +32)}`);
+      $("#hour5").text(`Hourly (F): ${Math.round((response.hourly[2].temp - 273.15) * 1.8 +32)}`);
+      $("#hour6").text(`Hourly (F): ${Math.round((response.hourly[2].temp - 273.15) * 1.8 +32)}`);
+      $("#hour7").text(`Hourly (F): ${Math.round((response.hourly[2].temp - 273.15) * 1.8 +32)}`);
 
 
 
@@ -212,6 +212,8 @@ function weatherSearch(searchValue) {
 
 
 
+
+// INTERACTIVE CARDS
 
 
 
