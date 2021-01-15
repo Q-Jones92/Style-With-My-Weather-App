@@ -154,6 +154,8 @@ function weatherSearch(searchValue) {
       $("#temp2C").text(`Temperature (C): ${Math.round((response.daily[1].temp.day - 273.15))}`);
       // $("#dailyClouds1").text(`Daily Clouds: ${response.hourly[24].clouds}%`);
       $("#dailyClouds2").text(`Daily Clouds: ${response.daily[1].clouds}%`);
+      $("#description2").text(`Description: ${response.daily[1].weather[0].description}`);
+
 
       
 
@@ -164,6 +166,8 @@ function weatherSearch(searchValue) {
       $("#temp3").text(`Temperature (F): ${Math.round((response.daily[2].temp.day - 273.15) * 1.8 + 32)}`);
       $("#temp3C").text(`Temperature (C): ${Math.round((response.daily[2].temp.day - 273.15))}`);
       $("#dailyClouds3").text(`Daily Clouds: ${response.hourly[2].clouds}%`);
+      $("#description3").text(`Description: ${response.daily[2].weather[0].description}`);
+
 
 
 
@@ -172,6 +176,8 @@ function weatherSearch(searchValue) {
       $("#temp4").text(`Temperature (F): ${Math.round((response.daily[3].temp.day - 273.15) * 1.8 + 32)}`);
       $("#temp4C").text(`Temperature (C): ${Math.round((response.daily[3].temp.day - 273.15))}`);
       $("#dailyClouds4").text(`Daily Clouds: ${response.daily[3].clouds}%`);
+      $("#description4").text(`Description: ${response.daily[3].weather[0].description}`);
+
 
 
 
@@ -180,6 +186,8 @@ function weatherSearch(searchValue) {
       $("#temp5").text(`Temperature (F): ${Math.round((response.daily[4].temp.day - 273.15) * 1.8 + 32)}`);
       $("#temp5C").text(`Temperature (C): ${Math.round((response.daily[4].temp.day - 273.15))}`);
       $("#dailyClouds5").text(`Daily Clouds: ${response.daily[4].clouds}%`);
+      $("#description5").text(`Description: ${response.daily[4].weather[0].description}`);
+
 
 
 
@@ -188,6 +196,8 @@ function weatherSearch(searchValue) {
       $("#temp6").text(`Temperature (F): ${Math.round((response.daily[4].temp.day - 273.15) * 1.8 + 32)}`);
       $("#temp6C").text(`Temperature (C): ${Math.round((response.daily[4].temp.day - 273.15))}`);
       $("#dailyClouds6").text(`Daily Clouds: ${response.daily[5].clouds}%`);
+      $("#description6").text(`Description: ${response.daily[5].weather[0].description}`);
+
 
 
 
