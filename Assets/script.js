@@ -33,6 +33,8 @@ function weatherSearch(searchValue) {
   console.log(APIKey);
 
   var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + APIKey;
+  // var oneCallAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=currently,alerts&appid=" + APIKey;
+
   console.log(queryURL, "this is with search results");
 
   // Here we run our AJAX call to the OpenWeatherMap API
@@ -55,7 +57,11 @@ function weatherSearch(searchValue) {
       $(".wind").text(`Wind Speed: ${Math.round(response.wind.speed)}MPH`);
       // $(".humidity").text("Humidity: " + response.main.humidity);
       $(".humidity").text(`Humidity: ${response.main.humidity}%`);
-      // $("#dailyClouds").text(`Daily Clouds: ${response.daily[0].clouds}%`);
+      // $("#dailyClouds").text(`Daily Clouds: ${response.current[0].clouds}%`);  
+      // does not work even after removing from 6 day forecast 
+      $("#dailyClouds").text(`Daily Clouds: ${response.clouds.all}%`);
+
+      //maybe use current day API key
 
       
 
@@ -129,8 +135,11 @@ function weatherSearch(searchValue) {
       $("#temp1C").text(`Temperature (C): ${Math.round((response.daily[0].temp.day - 273.15))}`);
       // trying to get both F and C to fit in 1 line
       $("#tempall").text(`${Math.round((response.daily[0].temp.day - 273.15) * 1.8 + 32)})`/` (${Math.round(response.daily[0].temp.day - 273.15)} C`);
-      // hourly cloud percentage
-      $("#dailyClouds1").text(`Daily Clouds: ${response.daily[1].clouds}%`);
+      // hourly cloud percentage. NEED THE [] number or is undefined
+      $("#dailyClouds1").text(`Daily Clouds: ${response.daily[0].clouds}%`);
+      // $("#dailyClouds1").text(`Daily Clouds: ${response.hourly[0].clouds}%`);
+
+
       // .weather has to [0] to get the description
       $("#description1").text(`Description: ${response.daily[0].weather[0].description}`);
 
@@ -143,30 +152,43 @@ function weatherSearch(searchValue) {
       $("#humidity2").text(`Humidity: ${response.daily[1].humidity}%`);
       $("#temp2").text(`Temperature (F): ${Math.round((response.daily[1].temp.day - 273.15) * 1.8 + 32)}`);
       $("#temp2C").text(`Temperature (C): ${Math.round((response.daily[1].temp.day - 273.15))}`);
+      // $("#dailyClouds1").text(`Daily Clouds: ${response.hourly[24].clouds}%`);
+      $("#dailyClouds2").text(`Daily Clouds: ${response.daily[1].clouds}%`);
+
+      
+
 
 
       $("#icon3").attr("src","https://openweathermap.org/img/wn/" + response.daily[2].weather[0].icon +"@2x.png");
       $("#humidity3").text(`Humidity: ${response.daily[2].humidity}%`);
       $("#temp3").text(`Temperature (F): ${Math.round((response.daily[2].temp.day - 273.15) * 1.8 + 32)}`);
       $("#temp3C").text(`Temperature (C): ${Math.round((response.daily[2].temp.day - 273.15))}`);
+      $("#dailyClouds3").text(`Daily Clouds: ${response.hourly[2].clouds}%`);
+
 
 
       $("#icon4").attr("src","https://openweathermap.org/img/wn/" + response.daily[3].weather[0].icon + "@2x.png");
       $("#humidity4").text(`Humidity: ${response.daily[3].humidity}%`);
       $("#temp4").text(`Temperature (F): ${Math.round((response.daily[3].temp.day - 273.15) * 1.8 + 32)}`);
       $("#temp4C").text(`Temperature (C): ${Math.round((response.daily[3].temp.day - 273.15))}`);
+      $("#dailyClouds4").text(`Daily Clouds: ${response.daily[3].clouds}%`);
+
 
 
       $("#icon5").attr("src", "https://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png");
       $("#humidity5").text(`Humidity: ${response.daily[4].humidity}%`);
       $("#temp5").text(`Temperature (F): ${Math.round((response.daily[4].temp.day - 273.15) * 1.8 + 32)}`);
       $("#temp5C").text(`Temperature (C): ${Math.round((response.daily[4].temp.day - 273.15))}`);
+      $("#dailyClouds5").text(`Daily Clouds: ${response.daily[4].clouds}%`);
 
 
-      $("#icon6").attr("src", "https://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png");
-      $("#humidity6").text(`Humidity: ${response.daily[4].humidity}%`);
+
+      $("#icon6").attr("src", "https://openweathermap.org/img/wn/" + response.daily[5].weather[0].icon + "@2x.png");
+      $("#humidity6").text(`Humidity: ${response.daily[5].humidity}%`);
       $("#temp6").text(`Temperature (F): ${Math.round((response.daily[4].temp.day - 273.15) * 1.8 + 32)}`);
       $("#temp6C").text(`Temperature (C): ${Math.round((response.daily[4].temp.day - 273.15))}`);
+      $("#dailyClouds6").text(`Daily Clouds: ${response.daily[5].clouds}%`);
+
 
 
 
