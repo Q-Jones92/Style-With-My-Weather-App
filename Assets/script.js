@@ -125,6 +125,7 @@ function weatherSearch(searchValue) {
       $("#humidity1").text(`Humidity: ${response.daily[0].humidity}%`);
       $("#temp1").text(`Temperature: ${Math.round((response.daily[0].temp.day - 273.15) * 1.8 + 32)}°F`);
       $("#temp1C").text(`Temperature: ${Math.round((response.daily[0].temp.day - 273.15))}°C`);
+      // trying to get both F and C to fit in 1 line
       $("#tempall").text(`${Math.round((response.daily[0].temp.day - 273.15) * 1.8 + 32)})`/` (${Math.round(response.daily[0].temp.day - 273.15)} C`);
 
 
