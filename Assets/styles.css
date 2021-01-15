@@ -65,3 +65,17 @@
   
       };
 
+      #container {
+        animation: responsive 15s infinite;
+        animation-timing-function: ease-in-out;
+      }
+      
+      @keyframes responsive {
+        0%, 100% {
+          width: 100%;
+        }
+        50% {
+          width: 110px;
+        }
+      }
+

@@ -60,6 +60,8 @@ function weatherSearch(searchValue) {
       // $("#dailyClouds").text(`Daily Clouds: ${response.current[0].clouds}%`);  
       // does not work even after removing from 6 day forecast BC did not have id tag attached. used the descriptions from current API 
       $("#dailyClouds").text(`Daily Clouds: ${response.clouds.all}%`);
+      $("#description").text(`Description: ${response.weather[0].description}`);
+
 
       //maybe use current day API key
 
