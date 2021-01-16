@@ -116,6 +116,8 @@ function weatherSearch(searchValue) {
       $("#hourTime1").html(`${((moment().add(1, "h").format(" h a")))}`);
       $("#hourIcon1").attr("src","https://openweathermap.org/img/wn/" + response.hourly[0].weather[0].icon + "@2x.png");
       $("#hour1").text((`${Math.round((response.hourly[0].temp - 273.15) * 1.8 +32)}°F`));
+      $("#hourRain1").text(`Precipitation: ${response.hourly[0].clouds}%`);
+
       // $("#hour1C").text(`Hourly /(C) ${Math.round(response.hourly[1].temp - 273.15)}`);
       // trying to get hour to display
       // $("#hourTime1").html(`<h2>${response.name} ( ${moment().endOf("day").fromNow()} ) </h2>`);
