@@ -114,7 +114,7 @@ function weatherSearch(searchValue) {
 
       // HOURLY FORECAST
       $("#hourTime1").html(`${((moment().add(1, "h").format(" h a")))}`);
-      $("#icon2").attr("src","https://openweathermap.org/img/wn/" + response.daily[1].weather[0].icon + "@2x.png");
+      $("#hourIcon1").attr("src","https://openweathermap.org/img/wn/" + response.hourly[0].weather[0].icon + "@2x.png");
       $("#hour1").text((`Hourly (F): ${Math.round((response.hourly[0].temp - 273.15) * 1.8 +32)}`));
       // $("#hour1C").text(`Hourly /(C) ${Math.round(response.hourly[1].temp - 273.15)}`);
       // trying to get hour to display
@@ -122,26 +122,28 @@ function weatherSearch(searchValue) {
       // $(".city").html(`<h2>${response.name} ( ${moment().format("MMMM DD, YYYY, h:mm a")} ) </h2>`);
 
 
-
-
-      // moment().endOf('day').fromNow(); 
       $("#hourTime2").html(`${moment().add(2,"h").format(" h a")}`);
-      
+      $("#hourIcon2").attr("src","https://openweathermap.org/img/wn/" + response.hourly[1].weather[0].icon + "@2x.png");
       $("#hour2").text(`Hourly (F): ${Math.round((response.hourly[1].temp - 273.15) * 1.8 +32)}`);
       
       $("#hourTime3").html(`${moment().add(3,"h").format(" h a")}`);
+      $("#hourIcon3").attr("src","https://openweathermap.org/img/wn/" + response.hourly[2].weather[0].icon + "@2x.png");
       $("#hour3").text(`Hourly (F): ${Math.round((response.hourly[2].temp - 273.15) * 1.8 +32)}`);
 
       $("#hourTime4").html(`${moment().add(4,"h").format(" h a")}`);
+      $("#hourIcon4").attr("src","https://openweathermap.org/img/wn/" + response.hourly[4].weather[0].icon + "@2x.png");
       $("#hour4").text(`Hourly (F): ${Math.round((response.hourly[3].temp - 273.15) * 1.8 +32)}`);
 
       $("#hourTime5").html(`${moment().add(5,"h").format(" h a")}`);
+      $("#hourIcon5").attr("src","https://openweathermap.org/img/wn/" + response.hourly[5].weather[0].icon + "@2x.png");
       $("#hour5").text(`Hourly (F): ${Math.round((response.hourly[4].temp - 273.15) * 1.8 +32)}`);
 
       $("#hourTime6").html(`${moment().add(6,"h").format(" h a")}`);
+      $("#hourIcon6").attr("src","https://openweathermap.org/img/wn/" + response.hourly[6].weather[0].icon + "@2x.png");
       $("#hour6").text(`Hourly (F): ${Math.round((response.hourly[5].temp - 273.15) * 1.8 +32)}`);
 
       $("#hourTime7").html(`${moment().add(7,"h").format(" h a")}`);
+      $("#hourIcon7").attr("src","https://openweathermap.org/img/wn/" + response.hourly[7].weather[0].icon + "@2x.png");
       $("#hour7").text(`Hourly (F): ${Math.round((response.hourly[6].temp - 273.15) * 1.8 +32)}`);
 
 
