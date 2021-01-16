@@ -125,24 +125,28 @@ function weatherSearch(searchValue) {
 
 
       $("#hourTime2").html(`${moment().add(2,"h").format(" h a")}`);
-      $("#hourIcon2").attr("src","https://openweathermap.org/img/wn/" + response.hourly[1].weather[0].icon + "@2x.png");
-      $("#hour2").text(`${Math.round((response.hourly[1].temp - 273.15) * 1.8 +32)}°F`);
+      $("#hourIcon2").attr("src","https://openweathermap.org/img/wn/" + response.hourly[2].weather[0].icon + "@2x.png");
+      $("#hour2").text(`${Math.round((response.hourly[2].temp - 273.15) * 1.8 +32)}°F`);
       $("#hourRain2").text(`Precipitation: ${response.hourly[2].clouds}%`);
 
       
       $("#hourTime3").html(`${moment().add(3,"h").format(" h a")}`);
-      $("#hourIcon3").attr("src","https://openweathermap.org/img/wn/" + response.hourly[2].weather[0].icon + "@2x.png");
-      $("#hour3").text(`${Math.round((response.hourly[2].temp - 273.15) * 1.8 +32)}°F`);
+      $("#hourIcon3").attr("src","https://openweathermap.org/img/wn/" + response.hourly[3].weather[0].icon + "@2x.png");
+      $("#hour3").text(`${Math.round((response.hourly[3].temp - 273.15) * 1.8 +32)}°F`);
       $("#hourRain3").text(`Precipitation: ${response.hourly[3].clouds}%`);
 
 
       $("#hourTime4").html(`${moment().add(4,"h").format(" h a")}`);
       $("#hourIcon4").attr("src","https://openweathermap.org/img/wn/" + response.hourly[4].weather[0].icon + "@2x.png");
-      $("#hour4").text(`${Math.round((response.hourly[3].temp - 273.15) * 1.8 +32)}°F`);
+      $("#hour4").text(`${Math.round((response.hourly[4].temp - 273.15) * 1.8 +32)}°F`);
+      $("#hourRain4").text(`Precipitation: ${response.hourly[4].clouds}%`);
+
 
       $("#hourTime5").html(`${moment().add(5,"h").format(" h a")}`);
       $("#hourIcon5").attr("src","https://openweathermap.org/img/wn/" + response.hourly[5].weather[0].icon + "@2x.png");
-      $("#hour5").text(`${Math.round((response.hourly[4].temp - 273.15) * 1.8 +32)}°F`);
+      $("#hour5").text(`${Math.round((response.hourly[5].temp - 273.15) * 1.8 +32)}°F`);
+      $("#hourRain5").text(`Precipitation: ${response.hourly[5].clouds}%`);
+
 
       $("#hourTime6").html(`${moment().add(6,"h").format(" h a")}`);
       $("#hourIcon6").attr("src","https://openweathermap.org/img/wn/" + response.hourly[6].weather[0].icon + "@2x.png");
