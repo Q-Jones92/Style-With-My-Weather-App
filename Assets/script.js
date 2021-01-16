@@ -17,16 +17,11 @@
       $("#search").click();
     }
     });
-
- 
     // ************************Need the below line 76, 78, 85 to recall search
     $('[name="add-city-button"]').on("click", function () {
     // need prevent default for page to load
     event.preventDefault();
   });
-
-   
-
 
 function weatherSearch(searchValue) {
   var APIKey = "76867f1d9d820e6fd45b355d5a55ddc8";
@@ -53,7 +48,10 @@ function weatherSearch(searchValue) {
 
       // Transfer content to HTML
       // $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-      $(".city").html(`<h2>${response.name} ( ${moment().format("MMMM DD, YYYY")} ) </h2>`);
+      $(".city").html(`<h2>${response.name} ( ${moment().format("MMMM DD, YYYY, h:mm a")} ) </h2>`);
+      // $(".luxon").html(`luxon <h2>${response.name} ( ${DateTime.local().toFormat('MMMM dd, yyyy')} ) </h2>`);
+
+      
       $("#icon0").attr("src", "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
       $(".wind").text(`Wind Speed: ${Math.round(response.wind.speed)}MPH`);
       // $(".humidity").text("Humidity: " + response.main.humidity);
@@ -117,6 +115,11 @@ function weatherSearch(searchValue) {
       // HOURLY FORECAST
       $("#hour1").text((`Hourly (F): ${Math.round((response.hourly[0].temp - 273.15) * 1.8 +32)}`));
       $("#hour1C").text(`Hourly /(C) ${Math.round(response.hourly[1].temp - 273.15)}`);
+      $("#hour1C").text(`Hourly /(C) ${Math.round(response.hourly[1].temp - 273.15)}`);
+      $(".city").html(`<h2>${response.name} ( ${moment().format("MMMM DD, YYYY, h:mm a")} ) </h2>`);
+
+
+      moment().endOf('day').fromNow(); 
     
       $("#hour2").text(`Hourly (F): ${Math.round((response.hourly[1].temp - 273.15) * 1.8 +32)}`);
       $("#hour3").text(`Hourly (F): ${Math.round((response.hourly[2].temp - 273.15) * 1.8 +32)}`);
@@ -152,10 +155,7 @@ function weatherSearch(searchValue) {
       // $("#dailyClouds1").text(`Daily Clouds: ${response.hourly[24].clouds}%`);
       $("#dailyClouds2").text(`Precipitation: ${response.daily[1].clouds}%`);
       $("#description2").text(`Description: ${response.daily[1].weather[0].description}`);
-
-
-      
-
+      $("#time").text(`Time: ${response.timezone_offset}`);
 
 
       $("#icon3").attr("src","https://openweathermap.org/img/wn/" + response.daily[2].weather[0].icon +"@2x.png");
@@ -165,9 +165,6 @@ function weatherSearch(searchValue) {
       $("#dailyClouds3").text(`Precipitation: ${response.hourly[2].clouds}%`);
       $("#description3").text(`Description: ${response.daily[2].weather[0].description}`);
 
-
-
-
       $("#icon4").attr("src","https://openweathermap.org/img/wn/" + response.daily[3].weather[0].icon + "@2x.png");
       $("#humidity4").text(`Humidity: ${response.daily[3].humidity}%`);
       $("#temp4").text(`Temperature (F): ${Math.round((response.daily[3].temp.day - 273.15) * 1.8 + 32)}`);
@@ -175,18 +172,12 @@ function weatherSearch(searchValue) {
       $("#dailyClouds4").text(`Precipitation: ${response.daily[3].clouds}%`);
       $("#description4").text(`Description: ${response.daily[3].weather[0].description}`);
 
-
-
-
       $("#icon5").attr("src", "https://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png");
       $("#humidity5").text(`Humidity: ${response.daily[4].humidity}%`);
       $("#temp5").text(`Temperature (F): ${Math.round((response.daily[4].temp.day - 273.15) * 1.8 + 32)}`);
       $("#temp5C").text(`Temperature (C): ${Math.round((response.daily[4].temp.day - 273.15))}`);
       $("#dailyClouds5").text(`Precipitation: ${response.daily[4].clouds}%`);
       $("#description5").text(`Description: ${response.daily[4].weather[0].description}`);
-
-
-
 
       $("#icon6").attr("src", "https://openweathermap.org/img/wn/" + response.daily[5].weather[0].icon + "@2x.png");
       $("#humidity6").text(`Humidity: ${response.daily[5].humidity}%`);
@@ -202,7 +193,6 @@ function weatherSearch(searchValue) {
       forecast(searchValue); //calling the forecast function
     });
   }
-
   });
 
 
