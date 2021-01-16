@@ -113,19 +113,33 @@ function weatherSearch(searchValue) {
     }).then(function (response) {
 
       // HOURLY FORECAST
+      $("#hourTime1").html(`${Math.round(moment().add(1, "h").format(" h a"))}`);
       $("#hour1").text((`Hourly (F): ${Math.round((response.hourly[0].temp - 273.15) * 1.8 +32)}`));
-      $("#hour1C").text(`Hourly /(C) ${Math.round(response.hourly[1].temp - 273.15)}`);
-      $("#hour1C").text(`Hourly /(C) ${Math.round(response.hourly[1].temp - 273.15)}`);
-      $(".city").html(`<h2>${response.name} ( ${moment().format("MMMM DD, YYYY, h:mm a")} ) </h2>`);
+      // $("#hour1C").text(`Hourly /(C) ${Math.round(response.hourly[1].temp - 273.15)}`);
+      // trying to get hour to display
+      // $("#hourTime1").html(`<h2>${response.name} ( ${moment().endOf("day").fromNow()} ) </h2>`);
+      // $(".city").html(`<h2>${response.name} ( ${moment().format("MMMM DD, YYYY, h:mm a")} ) </h2>`);
 
 
-      moment().endOf('day').fromNow(); 
-    
+
+
+      // moment().endOf('day').fromNow(); 
+      $("#hourTime2").html(`${moment().add(2,"h").format(" h a")}`);
       $("#hour2").text(`Hourly (F): ${Math.round((response.hourly[1].temp - 273.15) * 1.8 +32)}`);
+      
+      $("#hourTime2").html(`${moment().add(3,"h").format(" h a")}`);
       $("#hour3").text(`Hourly (F): ${Math.round((response.hourly[2].temp - 273.15) * 1.8 +32)}`);
+
+      $("#hourTime2").html(`${moment().add(4,"h").format(" h a")}`);
       $("#hour4").text(`Hourly (F): ${Math.round((response.hourly[3].temp - 273.15) * 1.8 +32)}`);
+
+      $("#hourTime2").html(`${moment().add(5,"h").format(" h a")}`);
       $("#hour5").text(`Hourly (F): ${Math.round((response.hourly[4].temp - 273.15) * 1.8 +32)}`);
+
+      $("#hourTime2").html(`${moment().add(6,"h").format(" h a")}`);
       $("#hour6").text(`Hourly (F): ${Math.round((response.hourly[5].temp - 273.15) * 1.8 +32)}`);
+
+      $("#hourTime2").html(`${moment().add(7,"h").format(" h a")}`);
       $("#hour7").text(`Hourly (F): ${Math.round((response.hourly[6].temp - 273.15) * 1.8 +32)}`);
 
 
