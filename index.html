@@ -90,12 +90,13 @@
       <br>
       <div class="w3-container w3-dark-grey">
         <p>Hourly Forecast</p>
-        <div class= "hourlyForecast" id= "hour1"> Hour1
-            <div class= "timezone1" id= "timezone1"></div>
-         <div class= "hourlyForecast" id= "hour1c"> Hour2</div>
-
-
-        </div>
+     
+        <div class= "timezone1" id= "timezone1"></div>
+        <div class= "hourCard">
+        <div class= "hourlyForecast" id= "hour1"> Hour1</div>
+        <div class= "hourlyForecast"id= "#hour1C"> Hour1C</div>
+      </div>
+        
         <div class= "hourlyForecast" id= "hour2"> Hour2</div>
         <div class= "hourlyForecast" id= "hour3"> Hour3</div>
         <div class= "hourlyForecast" id= "hour4"> Hour4</div>
@@ -105,16 +106,37 @@
 
         
 
+        <div class="cards-list">
+          <div class="card 1">
+            <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
+            
+            <div class="card_title title-white">
+              <p>Hour 1</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cards-list">
+          <div class="card 1">
+            <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
+            
+            <div class="card_title title-white">
+              <p>Hour 1</p>
+            </div>
+          </div>
+        </div>
+
 
       </div>
       <br>
       
       <div class="w3-container w3-dark-grey">
         <p>Forecast by Days</p>
-        <div id="forecast"> </div>
+        <div id="forecast" > </div>
 
 
     <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+
       <div class="card" style="width: 150px;">
           <div class="card-divider" id= 'dayHeaderText1' id="date" id="temp" id="humidity">
           <h4 class="daysForecast1" id="day1">Day 1</h4>
@@ -125,12 +147,9 @@
           <p class="card-text" id= "temp1">Temp</p>
           <p class="card-text" id= "temp1C">Temp</p>
           <p class="card-text" id= "tempAll">Temp</p>
-
           <p class="card-text" id= "humidity1">Humidity</p>
           <p class="card-text" id= "dailyClouds1">Daily Clouds</p>
           <p class="card-text" id= "description1">Description</p>
-
-  
       </div>
     </div>
   
@@ -227,7 +246,7 @@
       <div id="container">
   
         <!-- Code generated at https://WeatherWidget.io -->  
-      <a class="weatherwidget-io" href="https://forecast7.com/en/51d51n0d13/london/" data-label_1="LONDON" data-label_2="WEATHER" data-theme="orange" >LONDON WEATHER</a>
+      <a class="weatherwidget-io" href="https://forecast7.com/en/51d51n0d13/" + SearchValue  data-label_1="Hourly Forecast " data-label_2="WEATHER" data-theme="orange" >LONDON WEATHER</a>
       <script>
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://weatherwidget.io/js/widget.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","weatherwidget-io-js");
       </script>

@@ -65,9 +65,6 @@ function weatherSearch(searchValue) {
 
       //maybe use current day API key
 
-      
-
-      
       // Convert the temp to fahrenheit
       var tempF = (response.main.temp - 273.15) * 1.80 + 32;
       // add temp content to html
@@ -118,7 +115,7 @@ function weatherSearch(searchValue) {
 
       // $("#hour1").text(`Hourly: ${response.timezone_offset[0].hourly[0].temp}`);
       $("#hour1").text((`Hourly (F): ${Math.round((response.hourly[0].temp - 273.15) * 1.8 +32)}`));
-      $("#hour1c")(`/(C)` ${Math.round((response.hourly[0].temp - 273.15))});
+      $("#hour1C").text(`Hourly /(C) ${Math.round(response.hourly[1].temp - 273.15)}`);
     
       $("#hour2").text(`Hourly (F): ${Math.round((response.hourly[1].temp - 273.15) * 1.8 +32)}`);
       $("#hour3").text(`Hourly (F): ${Math.round((response.hourly[2].temp - 273.15) * 1.8 +32)}`);
@@ -126,13 +123,6 @@ function weatherSearch(searchValue) {
       $("#hour5").text(`Hourly (F): ${Math.round((response.hourly[4].temp - 273.15) * 1.8 +32)}`);
       $("#hour6").text(`Hourly (F): ${Math.round((response.hourly[5].temp - 273.15) * 1.8 +32)}`);
       $("#hour7").text(`Hourly (F): ${Math.round((response.hourly[6].temp - 273.15) * 1.8 +32)}`);
-
-
-
-
-
-
-      
 
 
       $("#icon1").attr("src","https://openweathermap.org/img/wn/" + response.daily[0].weather[0].icon + "@2x.png");
