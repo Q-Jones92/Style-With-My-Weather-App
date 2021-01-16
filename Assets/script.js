@@ -114,6 +114,7 @@ function weatherSearch(searchValue) {
 
       // HOURLY FORECAST
       $("#hourTime1").html(`${((moment().add(1, "h").format(" h a")))}`);
+      $("#icon2").attr("src","https://openweathermap.org/img/wn/" + response.daily[1].weather[0].icon + "@2x.png");
       $("#hour1").text((`Hourly (F): ${Math.round((response.hourly[0].temp - 273.15) * 1.8 +32)}`));
       // $("#hour1C").text(`Hourly /(C) ${Math.round(response.hourly[1].temp - 273.15)}`);
       // trying to get hour to display
@@ -125,6 +126,7 @@ function weatherSearch(searchValue) {
 
       // moment().endOf('day').fromNow(); 
       $("#hourTime2").html(`${moment().add(2,"h").format(" h a")}`);
+      
       $("#hour2").text(`Hourly (F): ${Math.round((response.hourly[1].temp - 273.15) * 1.8 +32)}`);
       
       $("#hourTime3").html(`${moment().add(3,"h").format(" h a")}`);
@@ -206,19 +208,6 @@ function weatherSearch(searchValue) {
     });
   }
   });
-
-
-
-
-// INTERACTIVE CARDS
-
-
-
-
-  
-
-
-
 
 
 
