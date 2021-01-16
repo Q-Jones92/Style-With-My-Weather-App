@@ -114,7 +114,7 @@ body {
 <body>
 
     <div class="w3-bar w3-light-grey">
-        <a href="index.html" class="w3-bar-item w3-button">Home</a>
+        <a href="index.html" class="w3-bar-item w3-button">Weather</a>
         <a href="clothing.html" class="w3-bar-item w3-button">Nearby Clothing Store </a>
         <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
         <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
@@ -154,6 +154,11 @@ body {
     </script> -->
 
 <script>
+
+  var city= localStorage.getItem("recallHistory");
+  
+  // get var city 
+  
 // This example adds a search box to a map, using the Google Place Autocomplete
 // feature. People can enter geographical searches. The search box will return a
 // pick list containing a mix of places and predicted search terms.
@@ -223,17 +228,10 @@ body {
   });
 
 }
-
-
 // end search bar 
 
 
-
-
-
-
     let map;
-
 function initMap() {
   const localContextMapView = new google.maps.localContext.LocalContextMapView ({
     element: document.getElementById("map"),
@@ -246,6 +244,9 @@ function initMap() {
     zoom: 14,
   });
 }
+
+
+
   
 </script>
 

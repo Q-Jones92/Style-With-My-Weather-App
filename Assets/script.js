@@ -47,7 +47,7 @@ function weatherSearch(searchValue) {
     // We store all of the retrieved data inside of an object called "response"
     .then(function(response) {
       recallHistory.push(searchValue);
-      localStorage.setItem("recallHistory", JSON.stringify(recallHistory));
+      localStorage.setItem(searchValue);
 
       // / ADD LOCAL STORAGE****************************
     // Update city list history in local storage    localStorage.setItem("cities", JSON.stringify(cityList));}
@@ -236,12 +236,12 @@ function weatherSearch(searchValue) {
     });
   }
 
-  var recallHistory = JSON.parse(localStorage.getItem("recallHistory")) || [];
+  // var recallHistory = JSON.parse(localStorage.getItem("recallHistory")) || [];
 
-  for (var i=0; i< recallHistory.length; i++) {
-    addButton(recallHistory[i]);
-  }
-  weatherSearch(recallHistory[recallHistory.length -1])
+  // for (var i=0; i< recallHistory.length; i++) {
+  //   addButton(recallHistory[i]);
+  
+  // weatherSearch(recallHistory[recallHistory.length -1])
   });
 
 
