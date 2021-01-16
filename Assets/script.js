@@ -10,6 +10,13 @@
       weatherSearch(searchValue);
     });
 
+
+
+
+
+
+
+
     $("searchValue").keypress(function (event) {
     // try to use keyCode === 13
     if (event.keyCode === 13) {
@@ -39,6 +46,11 @@ function weatherSearch(searchValue) {
   })
     // We store all of the retrieved data inside of an object called "response"
     .then(function(response) {
+      recallHistory.push(searchValue);
+      localStorage.setItem("recallHistory", JSON.stringify(recallHistory));
+
+      // / ADD LOCAL STORAGE****************************
+    // Update city list history in local storage    localStorage.setItem("cities", JSON.stringify(cityList));}
 
       // Log the queryURL
       console.log(queryURL);
@@ -223,6 +235,13 @@ function weatherSearch(searchValue) {
       forecast(searchValue); //calling the forecast function
     });
   }
+
+  var recallHistory = JSON.parse(localStorage.getItem("recallHistory")) || [];
+
+  for (var i=0; i< recallHistory.length; i++) {
+    addButton(recallHistory[i]);
+  }
+  weatherSearch(recallHistory[recallHistory.length -1])
   });
 
 
