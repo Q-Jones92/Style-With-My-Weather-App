@@ -9,7 +9,7 @@
     <link href="styles.css" rel="stylesheet">
     <!-- interactive style sheet -->
     <!-- style.css -->
-     <link href="./Assets/style.css" rel="stylesheet"> 
+     <!-- <link href="./Assets/style.css" rel="stylesheet">  -->
     <!-- stacking cards -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet"></head>
 
@@ -21,7 +21,42 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
 <!-- Compressed JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    <title>Weather and More </title>
+<!-- jQuery must be imported before Foundation -->
+<script src="js/jquery.min.js"></script>
+<!-- this will include every plugin and utility required by Foundation -->
+<script src="js/foundation.min.js"></script>    
+
+
+<title>Weather and More </title>
+
+<style>
+    .cards {
+        display: flex;
+        --distance: -4rem;  
+    }
+
+   
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-left: -4rem;
+      box-shadow: 4px 4px 15px 2px
+      rgba(black, 0.75);
+      transition: 0.2s;
+    }
+
+
+    .card:hover { 
+      transform: translateY(-1rem); 
+  }
+
+  .card:hover ~ .card {
+    transform: translateX(calc(var(--distance)));
+ 
+} 
+</style>
 </head>
 
 <body>
@@ -44,6 +79,7 @@
           <!-- <div class= "city-container"> </div> -->
           <form>
             <p class="citySearch">Search for a City:</p>
+            <p class="date"></p> 
           <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
           <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
           <div id="buttons-view"></div>
@@ -88,54 +124,55 @@
   </div>
 
       <br>
-      <div class="w3-container w3-dark-grey">
+  <!-- <div class="w3-container w3-dark-grey"> -->
+    <div class= "row">
         <p>Hourly Forecast</p>
      
-        <div class= "timezone1" id= "timezone1"></div>
-        <div class= "hourCard">
-        <div class= "hourlyForecast" id= "hour1"> Hour1</div>
-        <div class= "hourlyForecast"id= "#hour1C"> Hour1C</div>
+        <!-- <div class= "timezone1" id= "timezone1"></div> -->
+    <div class= "cards">
+        <div class= "card">
+          <div class= "hourlyForecast" id= "hour1"> Hour1</div>
+          <!-- <div class= "hourlyForecast"id= "#hour1C"> </div> -->
       </div>
-        
-        <div class= "hourlyForecast" id= "hour2"> Hour2</div>
+      <!-- </div> -->
+      <div class= "card" id= "hour2">Hour2</div>
+         <!-- <div class= "hourlyForecast" id= "hour2"> Hour2</div> -->
+         <!-- <div class= "hourlyForecast" id= "hour2"> Hour2</div>
+
+      </div> -->
+
+      <div class= "card">
         <div class= "hourlyForecast" id= "hour3"> Hour3</div>
-        <div class= "hourlyForecast" id= "hour4"> Hour4</div>
-        <div class= "hourlyForecast" id= "hour5"> Hour5</div>
-        <div class= "hourlyForecast" id= "hour6"> Hour6</div>
-        <div class= "hourlyForecast" id= "hour7"> Hour7</div>
-
-        
-
-        <div class="cards-list">
-          <div class="card 1">
-            <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
-            
-            <div class="card_title title-white">
-              <p>Hour 1</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="cards-list">
-          <div class="card 1">
-            <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
-            
-            <div class="card_title title-white">
-              <p>Hour 1</p>
-            </div>
-          </div>
-        </div>
-
-
       </div>
+
+      <div class= "card">
+        <div class= "hourlyForecast" id= "hour4"> Hour4</div>
+      </div>
+      <div class= "card">
+        <div class= "hourlyForecast" id= "hour5"> Hour5</div>
+      </div>
+      <div class= "card">
+        <div class= "hourlyForecast" id= "hour6"> Hour6</div>
+      </div>
+      <div class= "card">
+        <div class= "hourlyForecast" id= "hour7"> Hour7</div>
+        </div>
+
+      
+
+
+    </div>
+  </div>
+  <!-- </div> -->
       <br>
+
       
       <div class="w3-container w3-dark-grey">
         <p>Forecast by Days</p>
         <div id="forecast" > </div>
 
 
-    <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+    <!-- <div class="grid-x grid-margin-x small-up-2 medium-up-3">
 
       <div class="card" style="width: 150px;">
           <div class="card-divider" id= 'dayHeaderText1' id="date" id="temp" id="humidity">
@@ -235,9 +272,9 @@
           <p class="card-text" id= "dailyClouds6">Daily Clouds</p>
           <p class="card-text" id= "description6">Description</p>
       </div>
-    </div>
+    </div> -->
     <!-- ends dailt forecast -->
-  </div> 
+  <!-- </div>  -->
 <!-- ends container -->
       </div>
   
@@ -245,13 +282,7 @@
       <!-- animation -->
       <div id="container">
   
-        <!-- Code generated at https://WeatherWidget.io -->  
-      <a class="weatherwidget-io" href="https://forecast7.com/en/51d51n0d13/" + SearchValue  data-label_1="Hourly Forecast " data-label_2="WEATHER" data-theme="orange" >LONDON WEATHER</a>
-      <script>
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://weatherwidget.io/js/widget.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","weatherwidget-io-js");
-      </script>
-      <!-- / Code generated at https://WeatherWidget.io --> 
-        
+    
       </div>
 
 
