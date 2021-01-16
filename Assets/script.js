@@ -113,7 +113,7 @@ function weatherSearch(searchValue) {
     }).then(function (response) {
 
       // HOURLY FORECAST
-      $("#hourTime1").html(`${Math.round(moment().add(1, "h").format(" h a"))}`);
+      $("#hourTime1").html(`${((moment().add(1, "h").format(" h a")))}`);
       $("#hour1").text((`Hourly (F): ${Math.round((response.hourly[0].temp - 273.15) * 1.8 +32)}`));
       // $("#hour1C").text(`Hourly /(C) ${Math.round(response.hourly[1].temp - 273.15)}`);
       // trying to get hour to display
@@ -127,19 +127,19 @@ function weatherSearch(searchValue) {
       $("#hourTime2").html(`${moment().add(2,"h").format(" h a")}`);
       $("#hour2").text(`Hourly (F): ${Math.round((response.hourly[1].temp - 273.15) * 1.8 +32)}`);
       
-      $("#hourTime2").html(`${moment().add(3,"h").format(" h a")}`);
+      $("#hourTime3").html(`${moment().add(3,"h").format(" h a")}`);
       $("#hour3").text(`Hourly (F): ${Math.round((response.hourly[2].temp - 273.15) * 1.8 +32)}`);
 
-      $("#hourTime2").html(`${moment().add(4,"h").format(" h a")}`);
+      $("#hourTime4").html(`${moment().add(4,"h").format(" h a")}`);
       $("#hour4").text(`Hourly (F): ${Math.round((response.hourly[3].temp - 273.15) * 1.8 +32)}`);
 
-      $("#hourTime2").html(`${moment().add(5,"h").format(" h a")}`);
+      $("#hourTime5").html(`${moment().add(5,"h").format(" h a")}`);
       $("#hour5").text(`Hourly (F): ${Math.round((response.hourly[4].temp - 273.15) * 1.8 +32)}`);
 
-      $("#hourTime2").html(`${moment().add(6,"h").format(" h a")}`);
+      $("#hourTime6").html(`${moment().add(6,"h").format(" h a")}`);
       $("#hour6").text(`Hourly (F): ${Math.round((response.hourly[5].temp - 273.15) * 1.8 +32)}`);
 
-      $("#hourTime2").html(`${moment().add(7,"h").format(" h a")}`);
+      $("#hourTime7").html(`${moment().add(7,"h").format(" h a")}`);
       $("#hour7").text(`Hourly (F): ${Math.round((response.hourly[6].temp - 273.15) * 1.8 +32)}`);
 
 
@@ -169,8 +169,6 @@ function weatherSearch(searchValue) {
       // $("#dailyClouds1").text(`Daily Clouds: ${response.hourly[24].clouds}%`);
       $("#dailyClouds2").text(`Precipitation: ${response.daily[1].clouds}%`);
       $("#description2").text(`Description: ${response.daily[1].weather[0].description}`);
-      $("#time").text(`Time: ${response.timezone_offset}`);
-
 
       $("#icon3").attr("src","https://openweathermap.org/img/wn/" + response.daily[2].weather[0].icon +"@2x.png");
       $("#humidity3").text(`Humidity: ${response.daily[2].humidity}%`);
