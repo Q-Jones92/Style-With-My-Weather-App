@@ -75,9 +75,11 @@
         place-items: center;
     } */
 
+
+    /* NOT WORKING HAD TO COPY TO HTML  */
     .cards {
         display: flex;
-      /* padding: 10rem; */
+      padding: rem;
 
         /* --distance: -4rem;   */
     }

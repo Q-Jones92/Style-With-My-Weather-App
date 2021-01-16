@@ -112,7 +112,7 @@ function weatherSearch(searchValue) {
       method: "GET",
     }).then(function (response) {
 
-      // HOURLY FORECAST
+      // HOURLY FORECAST***************************************************************************************
       $("#hourTime1").html(`${((moment().add(1, "h").format(" h a")))}`);
       $("#hourIcon1").attr("src","https://openweathermap.org/img/wn/" + response.hourly[1].weather[0].icon + "@2x.png");
       $("#hour1").text((`${Math.round((response.hourly[1].temp - 273.15) * 1.8 +32)}°F`));
@@ -150,13 +150,17 @@ function weatherSearch(searchValue) {
 
       $("#hourTime6").html(`${moment().add(6,"h").format(" h a")}`);
       $("#hourIcon6").attr("src","https://openweathermap.org/img/wn/" + response.hourly[6].weather[0].icon + "@2x.png");
-      $("#hour6").text(`${Math.round((response.hourly[5].temp - 273.15) * 1.8 +32)}°F`);
+      $("#hour6").text(`${Math.round((response.hourly[6].temp - 273.15) * 1.8 +32)}°F`);
+      $("#hourRain6").text(`Precipitation: ${response.hourly[6].clouds}%`);
+
 
       $("#hourTime7").html(`${moment().add(7,"h").format(" h a")}`);
       $("#hourIcon7").attr("src","https://openweathermap.org/img/wn/" + response.hourly[7].weather[0].icon + "@2x.png");
-      $("#hour7").text(`${Math.round((response.hourly[6].temp - 273.15) * 1.8 +32)}°F`);
+      $("#hour7").text(`${Math.round((response.hourly[7].temp - 273.15) * 1.8 +32)}°F`);
+      $("#hourRain7").text(`Precipitation: ${response.hourly[7].clouds}%`);
 
 
+// DAYS FORECAST ****************************************************************************************************
       $("#icon1").attr("src","https://openweathermap.org/img/wn/" + response.daily[0].weather[0].icon + "@2x.png");
       $("#humidity1").text(`Humidity: ${response.daily[0].humidity}%`);
       $("#temp1").text(`Temperature (F): ${Math.round((response.daily[0].temp.day - 273.15) * 1.8 + 32)}`);
