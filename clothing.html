@@ -147,11 +147,7 @@ body {
 <script>
 // tish help with this 
   // var city= localStorage.getItem("recallHistory");
-  var lat= localStorage.getItem("recallLat", lat);
-  lng=lon;
-  var lng= localStorage.getItem("recallLon", lon);
-  console.log(lat);
-  console.log(lng);
+  
 
 
 
@@ -163,9 +159,15 @@ function initMap() {
     maxPlaceCount: 10,
   });
   map = localContextMapView.map;
+  var lat= localStorage.getItem("recallLat", lat);
+  lng=lon;
+  var lng= localStorage.getItem("recallLon", lon);
+  console.log(lat);
+  console.log(lng);
+
   map.setOptions({
     // center: { lat: 51.507307, lng: -0.08114 }, // original default code
-    center: { lat, lng},
+    center: {lat, lng},
     zoom: 14,
   });
 }
