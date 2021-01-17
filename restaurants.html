@@ -55,8 +55,10 @@
      </script> -->
 
      <script>
+
+  var city= localStorage.getItem("recallHistory");
+
         let map;
-    
     function initMap() {
       const localContextMapView = new google.maps.localContext.LocalContextMapView ({
         element: document.getElementById("map"),
