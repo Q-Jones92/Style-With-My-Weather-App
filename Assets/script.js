@@ -23,7 +23,7 @@ $(document).ready(function () {
     event.preventDefault();
   });
 
-  // Function to display an image and text depending on the temperature
+  // Greg Function to display an image and text depending on the temperature
   function whatToWear(temperature) {
 
     console.log("Inside What to wear");
@@ -130,6 +130,9 @@ $(document).ready(function () {
 
         // Convert the temp to fahrenheit
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+
+        whatToWear(tempF);
+
         // add temp content to html
         // $(".temp").text("Temperature (K) " + response.main.temp);
         $(".tempF").text(`Temperature: ${Math.round((response.main.temp - 273.15) * 1.8 + 32)}°F`);
