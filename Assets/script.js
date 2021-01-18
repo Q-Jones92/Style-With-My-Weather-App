@@ -46,7 +46,8 @@ function weatherSearch(searchValue) {
   })
     // We store all of the retrieved data inside of an object called "response"
     .then(function(response) {
-      localStorage.setItem("recallHistory", searchValue);
+      // comment try to to set lat and long to local storage 
+      // localStorage.setItem("recallHistory", searchValue);
 
       // / ADD LOCAL STORAGE****************************
     // Update city list history in local storage    localStorage.setItem("cities", JSON.stringify(cityList));}
@@ -92,6 +93,11 @@ function weatherSearch(searchValue) {
       lat = response.coord.lat;
       lon = response.coord.lon;
       console.log("This is lat and lon from weather function", lat, lon);
+      localStorage.setItem("recallLat", lat);
+      localStorage.setItem("recallLon", lon);
+
+
+
       forecast(lat, lon); 
 
   
