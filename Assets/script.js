@@ -7,9 +7,25 @@
       // run logic to get data from API
       // tutor help
       console.log (searchValue, "button works");
+      // local storage for city
+      localStorage.setItem("recallHistory", searchValue);
+
+      //iframe
+    //   var iframeInput= $(".location-search-input css-3pa8tf").val();
+    //  console.log(iframeInput, "this is the iframe");
+
+    // new way
+
+    // var iframe = document.getElementById('iframeId');
+    // var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
+    // // console.log(iframe, "this is iframe");
+    // // console.log (innerDoc, "this is innerDoc");
+    // console.log ("Testing iframe");
+
       weatherSearch(searchValue);
     });
 
+    //iframe 
 
 
 
@@ -30,7 +46,11 @@
     event.preventDefault();
   });
 
+
+
 function weatherSearch(searchValue) {
+  //make search value to be last value in local storage 
+  search
   var APIKey = "76867f1d9d820e6fd45b355d5a55ddc8";
   console.log(APIKey);
 
@@ -244,7 +264,9 @@ function weatherSearch(searchValue) {
   // for (var i=0; i< recallHistory.length; i++) {
   //   addButton(recallHistory[i]);
   
-  // weatherSearch(recallHistory[recallHistory.length -1])
+  var lastCity= localStorage.getItem("recallHistory");
+  weatherSearch(lastCity);
+  
   });
 
 

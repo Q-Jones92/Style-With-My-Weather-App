@@ -121,11 +121,19 @@
               title="Inline Frame Example"
               width="500"
               height="300"
-              src="https://www.dressbyweather.com/">
+              src= "https://www.dressbyweather.com/what-to-wear/" +lastCity+ "/undefined/women?q=weather+" lastCity>
+            </iframe>
+        </div>
+              <!-- src= "https://www.dressbyweather.com/what-to-wear/"houston/undefined/women?q=weather+houston">  -->
+              <!-- src="https://www.dressbyweather.com/what-to-wear/" + city + "/undefined/women?q=weather+" + city> -->
+                  
+              <!-- src="https://www.dressbyweather.com/what-to-wear/" +searchValue+ "/undefined/women?q=weather" +houston+"> -->
+
+
+
               <!-- src=""> -->
               <!-- src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"> -->
-          </iframe>
-         </div>
+          
   </div>
         
     
@@ -311,7 +319,7 @@
     
   
 
-     
+
 
       
       
@@ -338,6 +346,22 @@
     
     <!-- <script src= "script.js"></script> -->
     <script src= "Assets/script.js"></script> 
-</body>clear
+
+
+    <script>
+
+//tutor
+  var lastCity = localStorage.getItem('recallHistory')
+  console.log (lastCity, "iframe local storage")
+
+
+
+    </script>
+
+
+
+
+
+</body>
 
 </html>

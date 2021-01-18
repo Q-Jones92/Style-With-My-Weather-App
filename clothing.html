@@ -124,7 +124,7 @@ body {
     </div>
     <h1>Nearby Clothing Stores  </h1>
     <form>
-    <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
+    <input id='searchValue' type="text" name='searchValue' value= '' placeholder="search for a city"> </input> 
     <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
     <div id="buttons-view"></div>
   </form>
@@ -145,13 +145,28 @@ body {
   
 
 <script>
-// tish help with this 
-  // var city= localStorage.getItem("recallHistory");
+// tish help with 1st one
+var city= localStorage.getItem("recallHistory");
+// got bottom from class activity
+  // var city= JASON.parse(localStorage.getItem("recallHistory"));
+  // tried to do bottom from an activity
+  //  recallHistory.textContent = city.searchValue
   
 
 
 
     let map;
+
+    //have to store iside pareseInt() so can go from string to integer.
+    //will use pareFloat bc need decimal
+  var latFromLocalStorage= parseFloat(localStorage.getItem("recallLat"));
+
+  // lng=lon; //not need bc already have 2 variables
+  var lngFromLocalStorage = parseFloat(localStorage.getItem("recallLon"));
+  //added typeof() to console.log
+  console.log(latFromLocalStorage, "this is the city lat");
+  console.log(lngFromLocalStorage, "this is city long");
+  
 function initMap() {
   const localContextMapView = new google.maps.localContext.LocalContextMapView ({
     element: document.getElementById("map"),
@@ -159,15 +174,16 @@ function initMap() {
     maxPlaceCount: 10,
   });
   map = localContextMapView.map;
-  var lat= localStorage.getItem("recallLat", lat);
-  lng=lon;
-  var lng= localStorage.getItem("recallLon", lon);
-  console.log(lat);
-  console.log(lng);
+ 
 
   map.setOptions({
+  
     // center: { lat: 51.507307, lng: -0.08114 }, // original default code
-    center: {lat, lng},
+    //lat and lng need to be a number 
+    //need to grab string and make into int so parseInt()
+
+    center: {lat:latFromLocalStorage , lng:lngFromLocalStorage }, 
+
     zoom: 14,
   });
 }
