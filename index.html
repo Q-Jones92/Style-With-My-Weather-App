@@ -121,23 +121,18 @@
               title="Inline Frame Example"
               width="500"
               height="300"
-              src= `https://www.dressbyweather.com/what-to-wear/${lastCity}/undefined/women?q=weather+${lastCity}`>
+              src= "https://www.dressbyweather.com/what-to-wear/`${lastCity}`/undefined/women?q=weather+${lastCity}">
+
+              <!-- //not working temperate literals: -->
+              <!-- src= "https://www.dressbyweather.com/what-to-wear/" + lastCity + "/undefined/women?q=weather+" + lastCity -->
+              <!-- tried to add "${inside}" but website said undefined 
+              src= "https://www.dressbyweather.com/what-to-wear/${lastCity}/undefined/women?q=weather+${lastCity}"-->
+              <!-- Tried temperate literal did not work
+              src= `https://www.dressbyweather.com/what-to-wear/${lastCity}/undefined/women?q=weather+${lastCity}` -->
   
             </iframe>
         </div>
-              <!-- src= "https://www.dressbyweather.com/what-to-wear/"houston/undefined/women?q=weather+houston">  -->
-              <!-- src="https://www.dressbyweather.com/what-to-wear/" + city + "/undefined/women?q=weather+" + city> -->
-                  
-              <!-- src="https://www.dressbyweather.com/what-to-wear/" +searchValue+ "/undefined/women?q=weather" +houston+"> -->
-
-
-
-              <!-- src=""> -->
-              <!-- src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"> -->
-          
   </div>
-        
-    
   </div>
 
       <br>
@@ -145,7 +140,6 @@
     <div class= "row">
         <p>Hourly Forecast</p>
      
-        <!-- <div class= "timezone1" id= "timezone1"></div> -->
     <div class= "cards">
 
             <div class= "card">
@@ -164,22 +158,18 @@
 
           </div>
             
-
           <div class= "card">
             <h4> <div class= "hourTime" id= "hourTime3"> </div> </h4>
             <img class= "hourIcon" id="hourIcon3" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour3"> Hour3</div>
             <div class= "hourRain" id= "hourRain3"></div>
 
-
           </div>
-
           <div class= "card">
             <h4> <div class= "hourTime" id= "hourTime4"> </div> </h4>
             <img class= "hourIcon" id="hourIcon4" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour4"> Hour4</div>
             <div class= "hourRain" id= "hourRain4"></div>
-
 
           </div>
           <div class= "card">
@@ -188,14 +178,12 @@
             <div class= "hourForecast" id= "hour5"> Hour5</div>
             <div class= "hourRain" id= "hourRain5"></div>
 
-
           </div>
           <div class= "card">
             <h4> <div class= "hourTime" id= "hourTime6"></div> </h4>
             <img class= "hourIcon" id="hourIcon6" src= "http://openweathermap.org/img/wn/09d@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour6"> Hour6</div>
             <div class= "hourRain" id= "hourRain6"></div>
-
 
           </div>
           <div class= "card">
@@ -208,10 +196,7 @@
             </div>
     </div>
   </div>
-  <!-- </div> -->
       <br>
-
-      
       <div class="w3-container w3-dark-grey">
         <p>Forecast by Days</p>
         <div class= "cards" id="forecast">
@@ -241,12 +226,9 @@
       <div class="card-section">
           <p class="card-text" id= "temp2">Temp</p>
           <p class="card-text" id= "temp2C">Temp</p>
-
           <p class="card-text" id= "humidity2">Humidity</p>
           <p class="card-text" id= "dailyClouds2">Daily Clouds</p>
           <p class="card-text" id= "description2">Description</p>
-
-
       </div>
     </div>
   
@@ -262,8 +244,6 @@
           <p class="card-text" id= "humidity3">Humidity</p>
           <p class="card-text" id= "dailyClouds3">Daily Clouds</p>
           <p class="card-text" id= "description3">Description</p>
-
-
       </div>
     </div>
   
@@ -279,8 +259,6 @@
           <p class="card-text" id= "humidity4">Humidity</p>
           <p class="card-text" id= "dailyClouds4">Daily Clouds</p>
           <p class="card-text" id= "description4">Description</p>
-
-
       </div>
     </div>
   
@@ -296,8 +274,6 @@
           <p class="card-text" id= "humidity5">Humidity</p>
           <p class="card-text" id= "dailyClouds5">Daily Clouds</p>
           <p class="card-text" id= "description5">Description</p>
-
-
       </div>
     </div>
   
@@ -317,16 +293,6 @@
     </div> 
     </div>
     </div>
-    
-  
-
-
-
-      
-      
-
-
-    
      
       <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->  
     <script link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-float.min.css" integrity="sha256-4ldVyEvC86/kae2IBWw+eJrTiwNEbUUTmN0zkP4luL4=" crossorigin="anonymous"> </script>
@@ -339,11 +305,8 @@
   <!-- // jquery  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  
     <!-- moments library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
-  <!--Greg-->
     
     <!-- <script src= "script.js"></script> -->
     <script src= "Assets/script.js"></script> 
@@ -351,7 +314,7 @@
 
     <script>
 
-//tutor
+//tutor to call the city for iframe from local storage 
   var lastCity = localStorage.getItem('recallHistory')
   console.log (lastCity, "iframe local storage")
 
