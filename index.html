@@ -121,7 +121,7 @@
               title="Inline Frame Example"
               width="500"
               height="300"
-              src= "https://www.dressbyweather.com/what-to-wear/`${lastCity}`/undefined/women?q=weather+${lastCity}">
+              src= "https://www.dressbyweather.com/what-to-wear/${lastCity}/undefined/women?q=weather+${lastCity}">
 
               <!-- //not working temperate literals: -->
               <!-- src= "https://www.dressbyweather.com/what-to-wear/" + lastCity + "/undefined/women?q=weather+" + lastCity -->
@@ -315,7 +315,7 @@
     <script>
 
 //tutor to call the city for iframe from local storage 
-  var lastCity = localStorage.getItem('recallHistory')
+  // var lastCity = localStorage.getItem('recallHistory')
   console.log (lastCity, "iframe local storage")
 
 
