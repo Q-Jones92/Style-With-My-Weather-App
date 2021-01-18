@@ -157,13 +157,13 @@ var city= localStorage.getItem("recallHistory");
 
     let map;
 
-    //have to store iside pareseInt() so can go from string to integer.
+    //have to store inside pareseInt() so can go from string to integer.
     //will use pareFloat bc need decimal
   var latFromLocalStorage= parseFloat(localStorage.getItem("recallLat"));
 
   // lng=lon; //not need bc already have 2 variables
   var lngFromLocalStorage = parseFloat(localStorage.getItem("recallLon"));
-  //added typeof() to console.log
+  //added typeof(latFromLocalStorage) to console.log to know if number, or object, etc
   console.log(latFromLocalStorage, "this is the city lat");
   console.log(lngFromLocalStorage, "this is city long");
   
@@ -182,7 +182,7 @@ function initMap() {
     //lat and lng need to be a number 
     //need to grab string and make into int so parseInt()
 
-    center: {lat:latFromLocalStorage , lng:lngFromLocalStorage }, 
+    center: {lat:latFromLocalStorage, lng:lngFromLocalStorage }, 
 
     zoom: 14,
   });

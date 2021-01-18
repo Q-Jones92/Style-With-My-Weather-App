@@ -56,6 +56,10 @@
     // console.log(lng);
 
         let map;
+  var latFromLocalStorage= parseFloat(localStorage.getItem("recallLat"));
+  var lngFromLocalStorage = parseFloat(localStorage.getItem("recallLon"));
+
+
     
     function initMap() {
       const localContextMapView = new google.maps.localContext.LocalContextMapView ({
@@ -65,7 +69,7 @@
       });
       map = localContextMapView.map;
       map.setOptions({
-        center: { lat: 51.507307, lng: -0.08114 },
+        center: {lat:latFromLocalStorage, lng:lngFromLocalStorage},
         zoom: 14,
       });
     }
