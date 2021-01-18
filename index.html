@@ -120,7 +120,7 @@
             <iframe id="inlineFrameExample"
               title="Inline Frame Example"
               width="500"
-              height="300"
+              height="340"
               src= "https://www.dressbyweather.com/what-to-wear/${lastCity}/undefined/women?q=weather+${lastCity}">
 
               <!-- Link gives no errors BUT does not work
@@ -321,7 +321,6 @@
   var lastCity = localStorage.getItem('recallHistory')
   // console.log (lastCity, "iframe local storage")
 
-  
   // try bottom way for website string concatenation 
       var lastCity = "London"
       var newCity = "https://www.dressbyweather.com/what-to-wear/" + lastCity + "/undefined/women?q=weather+" +lastCity;
