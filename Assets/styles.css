@@ -12,7 +12,7 @@
 
 /* bottom changed for daily forecast  */
 
-     
+         
         
           .w3-container-hourly {
           background-image: url('https://cdn.vox-cdn.com/thumbor/tZLxhLAWoEFRpf0pe-CirjvF0XY=/1400x788/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/15788040/20150428-cloud-computing.0.1489222360.jpg');
@@ -24,17 +24,55 @@
           padding-right: 1em;
 
         }
-        
+
+        .column {
+          float: left;
+          width: 50%;
+          padding: 10px;
+
+        }
+
+        .w3-cell-row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        #searches-view {
+          font-family: 'Prata', serif;
+          font-size: 20px;
+          text-align: center;
+
+        }
+        .hour-time {
+          text-align: center;
+        }
+
+        .card-divider {
+          font-family: 10 px, 'Volkhov', serif;
+        }
+        /* small bottom section for all daily forecast */
         .cards {
           display: flex;
           --distance: -4rem;  
           text-align: center;
           color:black;
+          font-family: 'Prata', serif;
+          font-size: 20px;
+          
           /* background-color:blue */
        }
 
+       /* //card for each daily forecast  */
        .card {
-        background-color: rgb(157, 217, 247);
+         background-color: aquamarine;
+
+       }
+
+       .card {
+        /* background-color: rgb(157, 217, 247);
+        background-color: #E0E5FA;
+         */
         /* background: linear-gradient(to left rgb(8, 40, 223), rgb(99, 222, 238)); */
         border-radius: 2rem;
         padding: 2rem;
@@ -43,21 +81,25 @@
         box-shadow: 10px 410x 15px 2px
         /* rgba(black, 0.75); */
         /* transition: 0.2s; */
+        
       }
+
 
        .cardsHourly {
         display: flex;
           --distance: -4rem;  
           text-align: center;
-          color:black;
+          
        }
 
+       /* each hourly card */
        .cardHourly{
-        background-color: rgb(225, 229, 231);
+        background-color: rgb(163, 215, 241);
         /* background: linear-gradient(to left rgb(8, 40, 223), rgb(99, 222, 238)); */
         border-radius: 1rem;
         padding: 2rem;
         margin-right: 6px;
+        margin-left: 6px;
         display: center;
   
         /* margin-left: -4rem; */
@@ -65,6 +107,8 @@
         box-shadow: 10px 410x 15px 2px
         rgba(black, 0.75);
         transition: 0.2s;
+        font-family: 'Volkhov', serif;
+        font-size: 20px;
   
        }
      
@@ -139,7 +183,15 @@
 
     .hourlyForecast {
       display: block;
+      text-align: center;
+      color: rgb(84, 247, 247)
+      
+      
   }
+    .daysForecast {
+      text-align: center;
+      color: rgb(82, 245, 245)
+    }
 
         /* Tooltip container */
 .tooltip {

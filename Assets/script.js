@@ -80,7 +80,9 @@ function weatherSearch(searchValue) {
 
       // Transfer content to HTML
       // $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-      $(".city").html(`<h2>${response.name} ( ${moment().format("MMMM DD, YYYY, h:mm a")} ) </h2>`);
+      $(".city").html; //(`<h2>${response.name} ( ${moment().format("MMMM DD, YYYY, h:mm a")} ) </h2>`);
+      $(".currentTime").html(`<h2>${response.name} ( ${moment().format("MMM DD, YYYY, h:mm a")} ) </h2>`);
+
       // $(".luxon").html(`luxon <h2>${response.name} ( ${DateTime.local().toFormat('MMMM dd, yyyy')} ) </h2>`);
 
       

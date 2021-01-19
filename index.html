@@ -32,7 +32,7 @@
 <style>
    
 
-   
+
 
   /* .card:hover ~ .card {
     transform: translateX(calc(var(--distance)));
@@ -54,24 +54,28 @@
         <!-- <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
         <a href="www.google.com" class="w3-bar-item w3-button w3-green">Go</a> -->
       </div>
+      <br>
 
 
-  <div class="w3-cell-row">
+ 
 
   <div class= "w3-container">
+    <div class="w3-cell-row">
           <!-- <div class= "city-container"> </div> -->
-          <form>
-            <p class="citySearch">Search for a City:</p>
-            <p class="date"></p> 
-          <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
-          <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
-          <div id="buttons-view"></div>
-        </form>
+          
         
-    <div class="row weatherview">
-        <div class="col-md-3" id="searches-view"></div>
-        <div class="current"></div>
+    <!-- <div class="row weatherview"> -->
+        <div class="column" style="background-color:" id="searches-view">
+          <form>
+                <p class="citySearch">Search for a City:</p>
+                <p class="date"></p> 
+              <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
+              <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
+              <div id="buttons-view"></div>
+        </form>
         <div class="city"> </div>
+        <div class="currentTime"></div>
+        
         <img id= "icon0" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon"> 
         <div class="wind"></div>
         <div class="humidity"></div>
@@ -80,7 +84,14 @@
         <div class="temp"></div>
         <div class="tempF"></div>
         <div class="tempC"></div>
+      </div>
+    
+
+    <div class="column" style="background-colo:" id="weatherClothes">
+      <img src="https://via.placeholder.com/150" width="460" height="345">
     </div>
+
+  </div> // row ends 
   </div>
 
 
@@ -108,9 +119,9 @@
               src= `https://www.dressbyweather.com/what-to-wear/${lastCity}/undefined/women?q=weather+${lastCity}` -->
   
             <!-- </iframe> -->
-        </div>
-  </div>
-  </div>
+        <!-- </div> -->
+  <!-- </div>
+  </div> -->
 
       <br>
   <div class="w3-container-hourly">
@@ -165,8 +176,8 @@
   <!-- </div>  row-->
       <br>
       <!-- <div class="w3-container-daily"> -->
-        <h3>Forecast by Days</h3>
-        <div class= "cards" id="forecast">
+        <h3 class= "daysForecast" id= "daysForecastId">Forecast by Days</h3>
+        <div class= "cards" id="cards">
 
       <div class="card" style="width: 150px;">
           <div class="card-divider" id= 'dayHeaderText1' id="date" id="temp" id="humidity">
@@ -258,6 +269,9 @@
       </div>
     </div> 
     </div>
+    <br>
+    <br>
+    <br>
     <!-- </div> -->
      
       <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->  
