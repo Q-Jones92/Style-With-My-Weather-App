@@ -3,8 +3,102 @@
       #map {
         /* height: 100%; */
 
+        /* .w3-container-hourly {  */
+          /* width: 780px; 
+          background: #FFF url('picture') no-repeat center top; 
+          margin: 0 auto; 
+          height:'your-img-size'; } */
+
+
+/* bottom changed for daily forecast  */
+
+     
+        
+          .w3-container-hourly {
+          background-image: url('https://cdn.vox-cdn.com/thumbor/tZLxhLAWoEFRpf0pe-CirjvF0XY=/1400x788/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/15788040/20150428-cloud-computing.0.1489222360.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed; 
+          background-size: 100% 100%;
+          /* padding-left: 2em; */
+          padding-left: 1em;
+          padding-right: 1em;
+
+        }
+        
+        .cards {
+          display: flex;
+          --distance: -4rem;  
+          text-align: center;
+          color:black;
+          /* background-color:blue */
+       }
+
+       .card {
+        background-color: rgb(157, 217, 247);
+        /* background: linear-gradient(to left rgb(8, 40, 223), rgb(99, 222, 238)); */
+        border-radius: 2rem;
+        padding: 2rem;
+        /* margin-left: -4rem; */
+        margin-left: 0rem;
+        box-shadow: 10px 410x 15px 2px
+        /* rgba(black, 0.75); */
+        /* transition: 0.2s; */
+      }
+
+       .cardsHourly {
+        display: flex;
+          --distance: -4rem;  
+          text-align: center;
+          color:black;
+       }
+
+       .cardHourly{
+        background-color: rgb(225, 229, 231);
+        /* background: linear-gradient(to left rgb(8, 40, 223), rgb(99, 222, 238)); */
+        border-radius: 1rem;
+        padding: 2rem;
+        margin-right: 6px;
+        display: center;
   
-    
+        /* margin-left: -4rem; */
+        margin-left: -10 rem;
+        box-shadow: 10px 410x 15px 2px
+        rgba(black, 0.75);
+        transition: 0.2s;
+  
+       }
+     
+  
+      .cardHourly-selection {
+        padding:1rem;
+      }
+  
+      .card-selection {
+        padding:1rem;
+      }
+  
+      .cardHourly:hover { 
+        transform: translateY(-1rem); 
+    }
+  
+      .card:hover { 
+        transform: translateY(-1rem); 
+    }
+  
+        .hourTime {
+          text-align: center;
+          display:flex;
+        }
+
+        .hourForecast {
+          Color: black;
+          text-align: center;
+        }
+
+        .hourRain {
+          Color: black;
+          text-align: center;
+        }
 
       #map {
         height: 100%;
@@ -98,63 +192,40 @@
     body {
       background-color: lightblue;
     }
+    /* .w3-container-daily {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+      } */
   }
   
-/* @import 'foundation'; 
-@include foundation-xy-grid-classes {
-  
-  $base-grid: true,
-  $margin-grid: true,
-  $padding-grid: true,
-  $block-grid: true,
-  $collapse: true,
-  $offset: true,
-  $vertical-grid: true,
-  $frame-grid: true
-  
-      }; */
-
-      /* body {
-        background: #777;
-        height: 100vh;
-        margin: 0;
-        display: grid;
-        place-items: center;
-    } */
-
 
     /* NOT WORKING HAD TO COPY TO HTML  */
-    .cards {
+    /* .cards {
         display: flex;
+        Color: black;
+        
       padding: rem;
 
-        /* --distance: -4rem;   */
-    }
+    } */
 
    
 
-    .card {
+    /* .card {
       background-color: linear-gradient(to left rgb(8, 40, 223), rgb(99, 222, 238));
       border-radius: 1rem;
+      text-align: center;
       /* padding: 2rem; */
       /* margin-left: -4rem; */
       /* margin-left: 100rem; */
 
-      box-shadow: 4px 4px 15px 2px
-      rgba(black, 0.75);
+      /* box-shadow: 4px 4px 15px 2px
+      rgba(black, 0.75); */
       /* transition: 0.2s; */
-    }
+    /* }  */
 
 
-    /* .card:hover { 
-      transform: translateY(-1rem); 
-  } */
-
-  /* .card:hover ~ .card {
-    transform: translateX(calc(var(--distance)));
- 
-}   */
-
+  
 
 
 

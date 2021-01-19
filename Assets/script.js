@@ -7,9 +7,25 @@
       // run logic to get data from API
       // tutor help
       console.log (searchValue, "button works");
+      // local storage for city
+      localStorage.setItem("recallHistory", searchValue);
+
+      //iframe
+    //   var iframeInput= $(".location-search-input css-3pa8tf").val();
+    //  console.log(iframeInput, "this is the iframe");
+
+    // new way
+
+    // var iframe = document.getElementById('iframeId');
+    // var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
+    // // console.log(iframe, "this is iframe");
+    // // console.log (innerDoc, "this is innerDoc");
+    // console.log ("Testing iframe");
+
       weatherSearch(searchValue);
     });
 
+    //iframe 
 
 
 
@@ -30,7 +46,11 @@
     event.preventDefault();
   });
 
+
+
 function weatherSearch(searchValue) {
+  //make search value to be last value in local storage 
+  search
   var APIKey = "76867f1d9d820e6fd45b355d5a55ddc8";
   console.log(APIKey);
 
@@ -46,7 +66,7 @@ function weatherSearch(searchValue) {
   })
     // We store all of the retrieved data inside of an object called "response"
     .then(function(response) {
-      // comment try to to set lat and long to local storage 
+      // try to recall history by lat and long
       // localStorage.setItem("recallHistory", searchValue);
 
       // / ADD LOCAL STORAGE****************************
@@ -70,7 +90,7 @@ function weatherSearch(searchValue) {
       $(".humidity").text(`Humidity: ${response.main.humidity}%`);
       // $("#dailyClouds").text(`Daily Clouds: ${response.current[0].clouds}%`);  
       // does not work even after removing from 6 day forecast BC did not have id tag attached. used the descriptions from current API 
-      $("#dailyClouds").text(`Rain: ${response.clouds.all}%`);
+      $("#dailyClouds").text(`Precipitation: ${response.clouds.all}%`);
       $("#description").text(`Description: ${response.weather[0].description}`);
 
 
@@ -95,10 +115,8 @@ function weatherSearch(searchValue) {
       console.log("This is lat and lon from weather function", lat, lon);
       localStorage.setItem("recallLat", lat);
       localStorage.setItem("recallLon", lon);
-
-
-
       forecast(lat, lon); 
+
 
   
     });
@@ -174,54 +192,50 @@ function weatherSearch(searchValue) {
 // DAYS FORECAST ****************************************************************************************************
       $("#icon1").attr("src","https://openweathermap.org/img/wn/" + response.daily[0].weather[0].icon + "@2x.png");
       $("#humidity1").text(`Humidity: ${response.daily[0].humidity}%`);
-      $("#temp1").text(`Temperature (F): ${Math.round((response.daily[0].temp.day - 273.15) * 1.8 + 32)}`);
-      $("#temp1C").text(`Temperature (C): ${Math.round((response.daily[0].temp.day - 273.15))}`);
+      $("#temp1").text(`Temp (F): ${Math.round((response.daily[0].temp.day - 273.15) * 1.8 + 32)}`);
+      $("#temp1C").text(`Temp (C): ${Math.round((response.daily[0].temp.day - 273.15))}`);
       // hourly cloud percentage. NEED THE [] number or is undefined
       $("#dailyClouds1").text(`Rain: ${response.daily[0].clouds}%`);
       // $("#dailyClouds1").text(`Daily Clouds: ${response.hourly[0].clouds}%`);
-
-
       // .weather has to [0] to get the description
       $("#description1").text(`Description: ${response.daily[0].weather[0].description}`);
-
-
 
 
       console.log(response.daily[0].temp);
 
       $("#icon2").attr("src","https://openweathermap.org/img/wn/" + response.daily[1].weather[0].icon + "@2x.png");
       $("#humidity2").text(`Humidity: ${response.daily[1].humidity}%`);
-      $("#temp2").text(`Temperature (F): ${Math.round((response.daily[1].temp.day - 273.15) * 1.8 + 32)}`);
-      $("#temp2C").text(`Temperature (C): ${Math.round((response.daily[1].temp.day - 273.15))}`);
+      $("#temp2").text(`Temp (F): ${Math.round((response.daily[1].temp.day - 273.15) * 1.8 + 32)}`);
+      $("#temp2C").text(`Temp (C): ${Math.round((response.daily[1].temp.day - 273.15))}`);
       // $("#dailyClouds1").text(`Daily Clouds: ${response.hourly[24].clouds}%`);
       $("#dailyClouds2").text(`Rain: ${response.daily[1].clouds}%`);
       $("#description2").text(`Description: ${response.daily[1].weather[0].description}`);
 
       $("#icon3").attr("src","https://openweathermap.org/img/wn/" + response.daily[2].weather[0].icon +"@2x.png");
       $("#humidity3").text(`Humidity: ${response.daily[2].humidity}%`);
-      $("#temp3").text(`Temperature (F): ${Math.round((response.daily[2].temp.day - 273.15) * 1.8 + 32)}`);
-      $("#temp3C").text(`Temperature (C): ${Math.round((response.daily[2].temp.day - 273.15))}`);
+      $("#temp3").text(`Temp (F): ${Math.round((response.daily[2].temp.day - 273.15) * 1.8 + 32)}`);
+      $("#temp3C").text(`Temp (C): ${Math.round((response.daily[2].temp.day - 273.15))}`);
       $("#dailyClouds3").text(`Rain: ${response.hourly[2].clouds}%`);
       $("#description3").text(`Description: ${response.daily[2].weather[0].description}`);
 
       $("#icon4").attr("src","https://openweathermap.org/img/wn/" + response.daily[3].weather[0].icon + "@2x.png");
       $("#humidity4").text(`Humidity: ${response.daily[3].humidity}%`);
-      $("#temp4").text(`Temperature (F): ${Math.round((response.daily[3].temp.day - 273.15) * 1.8 + 32)}`);
-      $("#temp4C").text(`Temperature (C): ${Math.round((response.daily[3].temp.day - 273.15))}`);
+      $("#temp4").text(`Temp (F): ${Math.round((response.daily[3].temp.day - 273.15) * 1.8 + 32)}`);
+      $("#temp4C").text(`Temp(C): ${Math.round((response.daily[3].temp.day - 273.15))}`);
       $("#dailyClouds4").text(`Rain: ${response.daily[3].clouds}%`);
       $("#description4").text(`Description: ${response.daily[3].weather[0].description}`);
 
       $("#icon5").attr("src", "https://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png");
       $("#humidity5").text(`Humidity: ${response.daily[4].humidity}%`);
-      $("#temp5").text(`Temperature (F): ${Math.round((response.daily[4].temp.day - 273.15) * 1.8 + 32)}`);
-      $("#temp5C").text(`Temperature (C): ${Math.round((response.daily[4].temp.day - 273.15))}`);
+      $("#temp5").text(`Temp (F): ${Math.round((response.daily[4].temp.day - 273.15) * 1.8 + 32)}`);
+      $("#temp5C").text(`Temp (C): ${Math.round((response.daily[4].temp.day - 273.15))}`);
       $("#dailyClouds5").text(`Rain: ${response.daily[4].clouds}%`);
       $("#description5").text(`Description: ${response.daily[4].weather[0].description}`);
 
       $("#icon6").attr("src", "https://openweathermap.org/img/wn/" + response.daily[5].weather[0].icon + "@2x.png");
       $("#humidity6").text(`Humidity: ${response.daily[5].humidity}%`);
-      $("#temp6").text(`Temperature (F): ${Math.round((response.daily[4].temp.day - 273.15) * 1.8 + 32)}`);
-      $("#temp6C").text(`Temperature (C): ${Math.round((response.daily[4].temp.day - 273.15))}`);
+      $("#temp6").text(`Temp (F): ${Math.round((response.daily[4].temp.day - 273.15) * 1.8 + 32)}`);
+      $("#temp6C").text(`Temp (C): ${Math.round((response.daily[4].temp.day - 273.15))}`);
       $("#dailyClouds6").text(`Rain: ${response.daily[5].clouds}%`);
       $("#description6").text(`Description: ${response.daily[5].weather[0].description}`);
 
@@ -238,7 +252,9 @@ function weatherSearch(searchValue) {
   // for (var i=0; i< recallHistory.length; i++) {
   //   addButton(recallHistory[i]);
   
-  // weatherSearch(recallHistory[recallHistory.length -1])
+  var lastCity= localStorage.getItem("recallHistory");
+  weatherSearch(lastCity);
+  
   });
 
 
