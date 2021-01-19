@@ -10,7 +10,7 @@ $(document).ready(function () {
     weatherSearch(searchValue);
   });
 
-  $("searchValue").keypress(function (event) {
+    $("searchValue").keypress(function (event) {
     // try to use keyCode === 13
     if (event.keyCode === 13) {
       event.preventDefault();
@@ -150,7 +150,20 @@ $(document).ready(function () {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + APIKey;
     // var oneCallAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=currently,alerts&appid=" + APIKey;
 
+
     console.log(queryURL, "this is with search results");
+  // Here we run our AJAX call to the OpenWeatherMap API
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  })
+    // We store all of the retrieved data inside of an object called "response"
+    .then(function(response) {
+      localStorage.setItem("recallHistory", searchValue);
+
+      // / ADD LOCAL STORAGE****************************
+    // Update city list history in local storage    localStorage.setItem("cities", JSON.stringify(cityList));}
+
 
     // Here we run our AJAX call to the OpenWeatherMap API
     $.ajax({
@@ -346,7 +359,18 @@ $(document).ready(function () {
       forecast(searchValue); //calling the forecast function
     });
   }
+
 });
+
+
+  // var recallHistory = JSON.parse(localStorage.getItem("recallHistory")) || [];
+
+  // for (var i=0; i< recallHistory.length; i++) {
+  //   addButton(recallHistory[i]);
+  
+  // weatherSearch(recallHistory[recallHistory.length -1])
+  });
+
 
 
 
