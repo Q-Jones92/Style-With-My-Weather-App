@@ -81,7 +81,7 @@ function weatherSearch(searchValue) {
       // Transfer content to HTML
       // $(".city").html("<h1>" + response.name + " Weather Details</h1>");
       $(".city").html; //(`<h2>${response.name} ( ${moment().format("MMMM DD, YYYY, h:mm a")} ) </h2>`);
-      $(".currentTime").html(`<h2>${response.name} ( ${moment().format("MMM DD, YYYY, h:mm a")} ) </h2>`);
+      $(".currentTime").html(`<h2>${response.name} ( ${moment().format("MMM DD, YYYY/ h:mm a")} ) </h2>`);
 
       // $(".luxon").html(`luxon <h2>${response.name} ( ${DateTime.local().toFormat('MMMM dd, yyyy')} ) </h2>`);
 
@@ -120,14 +120,14 @@ function weatherSearch(searchValue) {
       forecast(lat, lon); 
 
 
-  
-    });
     $(".daysForecast1").html(`${moment().add(1, "d").format("MMMM DD, YYYY")}`);
     $(".daysForecast2").html(`${moment().add(2, "d").format("MMMM DD, YYYY")}`);
     $(".daysForecast3").html(`${moment().add(3, "d").format("MMMM DD, YYYY")}`);
     $(".daysForecast4").html(`${moment().add(4, "d").format("MMMM DD, YYYY")}`);
     $(".daysForecast5").html(`${moment().add(5, "d").format("MMMM DD, YYYY")}`);
     $(".daysForecast6").html(`${moment().add(6, "d").format("MMMM DD, YYYY")}`);
+    });
+    
 
   }
 

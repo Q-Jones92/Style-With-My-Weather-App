@@ -30,6 +30,14 @@
 <title>Weather and More </title>
 
 <style>
+  /* had to add here bc having conflict showing on on script file */
+  .card {
+         background-color: rgb(166, 203, 252);
+       }
+  .cardHourly {
+        background-color: rgb(206, 234, 248);
+  }
+
    
 
 
@@ -67,7 +75,7 @@
     <!-- <div class="row weatherview"> -->
         <div class="column" style="background-color:" id="searches-view">
           <form>
-                <p class="citySearch">Search for a City:</p>
+                <h4 class="citySearch">Search for a City:</h4>
                 <p class="date"></p> 
               <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
               <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
@@ -77,17 +85,19 @@
         <div class="currentTime"></div>
         
         <img id= "icon0" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon"> 
+        <div class="temp"></div>
+        <div class="tempF"></div>
+        <div class="tempC"></div>
         <div class="wind"></div>
         <div class="humidity"></div>
         <div id= "dailyClouds" class="dailyClouds"></div>
         <div id= "description" class="description"></div>
-        <div class="temp"></div>
-        <div class="tempF"></div>
-        <div class="tempC"></div>
+        
       </div>
     
 
     <div class="column" style="background-colo:" id="weatherClothes">
+      <h4 class="weatherToDress">Weather To Dress:</h4>
       <img src="https://via.placeholder.com/150" width="460" height="345">
     </div>
 
@@ -131,43 +141,43 @@
     <div class= "cardsHourly">
 
             <div class= "cardHourly">
-              <h4> <div class= "hourTime" id= "hourTime1"> </div></h4>
+              <h4> <div class= "hourTime" id= "hourTime1"> Hour 1</div></h4>
               <img class= "hourIcon" id="hourIcon1" src= "http://openweathermap.org/img/wn/01d@2x.png" alt= "icon">
               <div class= "hourForecast" id= "hour1"> </div>
               <div class= "hourRain" id= "hourRain1"></div>
           </div>
           <div class= "cardHourly">
-            <h4> <div class= "hourTime" id= "hourTime2"> </div> </h4>
+            <h4> <div class= "hourTime" id= "hourTime2">Hour 2 </div> </h4>
             <img class= "hourIcon" id="hourIcon2" src= "http://openweathermap.org/img/wn/01n@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour2"></div>
             <div class= "hourRain" id= "hourRain2"></div>
           </div>
           <div class= "cardHourly">
-            <h4> <div class= "hourTime" id= "hourTime3"> </div> </h4>
+            <h4> <div class= "hourTime" id= "hourTime3">Hour 3 </div> </h4>
             <img class= "hourIcon" id="hourIcon3" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour3"> </div>
             <div class= "hourRain" id= "hourRain3"></div>
           </div>
           <div class= "cardHourly">
-            <h4> <div class= "hourTime" id= "hourTime4"> </div> </h4>
+            <h4> <div class= "hourTime" id= "hourTime4"> Hour 4</div> </h4>
             <img class= "hourIcon" id="hourIcon4" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour4"></div>
             <div class= "hourRain" id= "hourRain4"></div>
           </div>
           <div class= "cardHourly">
-            <h4> <div class= "hourTime" id= "hourTime5"></div> </h4>
+            <h4> <div class= "hourTime" id= "hourTime5">Hour 5</div> </h4>
             <img class= "hourIcon" id="hourIcon5" src= "http://openweathermap.org/img/wn/50d@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour5"></div>
             <div class= "hourRain" id= "hourRain5"></div>
           </div>
           <div class= "cardHourly">
-            <h4> <div class= "hourTime" id= "hourTime6"></div> </h4>
+            <h4> <div class= "hourTime" id= "hourTime6">Hour 6</div> </h4>
             <img class= "hourIcon" id="hourIcon6" src= "http://openweathermap.org/img/wn/09d@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour6"></div>
             <div class= "hourRain" id= "hourRain6"></div>
           </div>
           <div class= "cardHourly">
-            <h4> <div class= "hourTime" id= "hourTime7"> </div> </h4>
+            <h4> <div class= "hourTime" id= "hourTime7">Hour 7 </div> </h4>
             <img class= "hourIcon" id="hourIcon7" src= "http://openweathermap.org/img/wn/11d@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour7"></div>
             <div class= "hourRain" id= "hourRain7"></div>
@@ -186,8 +196,8 @@
           <div class= fiveDayForecast></div>
           <img id= "icon1" src= "http://openweathermap.org/img/wn/11d@2x.png" alt= "icon">
           <div class="card-section">
-          <p class="card-text" id= "temp1">Temp</p>
-          <p class="card-text" id= "temp1C">Temp</p>
+          <p class="card-text" id= "temp1">Temp F</p>
+          <p class="card-text" id= "temp1C">Temp C</p>
           <p class="card-text" id= "humidity1">Humidity</p>
           <p class="card-text" id= "dailyClouds1">Daily Clouds</p>
           <p class="card-text" id= "description1">Description</p>
@@ -201,8 +211,8 @@
       <div class= fiveDayForecast></div>
       <img id= "icon2" src= "http://openweathermap.org/img/wn/11d@2x.png" alt= "icon">
       <div class="card-section">
-          <p class="card-text" id= "temp2">Temp</p>
-          <p class="card-text" id= "temp2C">Temp</p>
+          <p class="card-text" id= "temp2">Temp F</p>
+          <p class="card-text" id= "temp2C">Temp C</p>
           <p class="card-text" id= "humidity2">Humidity</p>
           <p class="card-text" id= "dailyClouds2">Daily Clouds</p>
           <p class="card-text" id= "description2">Description</p>
@@ -216,8 +226,8 @@
       <div class= fiveDayForecast></div>
       <img id= "icon3" src= "http://openweathermap.org/img/wn/10d@2x.png" alt= "icon">
       <div class="card-section">
-          <p class="card-text" id= "temp3">Temp</p>
-          <p class="card-text" id= "temp3C">Temp</p>
+          <p class="card-text" id= "temp3">Temp F</p>
+          <p class="card-text" id= "temp3C">Temp C</p>
           <p class="card-text" id= "humidity3">Humidity</p>
           <p class="card-text" id= "dailyClouds3">Daily Clouds</p>
           <p class="card-text" id= "description3">Description</p>
@@ -231,8 +241,8 @@
       <div class= fiveDayForecast></div>
       <img id= "icon4" src= "http://openweathermap.org/img/wn/10n@2x.png" alt= "icon">
       <div class="card-section">
-          <p class="card-text" id= "temp4">Temp</p>
-          <p class="card-text" id= "temp4C">Temp</p>
+          <p class="card-text" id= "temp4">Temp F</p>
+          <p class="card-text" id= "temp4C">Temp C</p>
           <p class="card-text" id= "humidity4">Humidity</p>
           <p class="card-text" id= "dailyClouds4">Daily Clouds</p>
           <p class="card-text" id= "description4">Description</p>
@@ -246,8 +256,8 @@
       <div class= fiveDayForecast></div>
       <img id= "icon5" src= "http://openweathermap.org/img/wn/13d@2x.png" alt= "icon">
       <div class="card-section">
-          <p class="card-text" id= "temp5">Temp</p>
-          <p class="card-text" id= "temp5C">Temp</p>
+          <p class="card-text" id= "temp5">Temp F</p>
+          <p class="card-text" id= "temp5C">Temp C</p>
           <p class="card-text" id= "humidity5">Humidity</p>
           <p class="card-text" id= "dailyClouds5">Daily Clouds</p>
           <p class="card-text" id= "description5">Description</p>
@@ -261,8 +271,8 @@
       <div class= fiveDayForecast></div>
       <img id= "icon6" src= "http://openweathermap.org/img/wn/13d@2x.png" alt= "icon">
       <div class="card-section">
-          <p class="card-text" id= "temp6">Temp</p>
-          <p class="card-text" id= "temp6C">Temp</p>
+          <p class="card-text" id= "temp6">Temp F</p>
+          <p class="card-text" id= "temp6C">Temp C</p>
           <p class="card-text" id= "humidity6">Humidity</p>
           <p class="card-text" id= "dailyClouds6">Daily Clouds</p>
           <p class="card-text" id= "description6">Description</p>
