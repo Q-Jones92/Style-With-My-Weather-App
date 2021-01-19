@@ -33,11 +33,10 @@
     .cards {
         display: flex;
         --distance: -4rem;  
+        text-align: center;
+        color:black;
         /* background-color:blue */
      }
-
-   
-
     .card {
       background-color:rgb(164, 227, 250);
       /* background: linear-gradient(to left rgb(8, 40, 223), rgb(99, 222, 238)); */
@@ -46,11 +45,12 @@
 
       /* margin-left: -4rem; */
       margin-left: 0rem;
-     
-
       box-shadow: 10px 410x 15px 2px
       rgba(black, 0.75);
       transition: 0.2s;
+    }
+    .card-selection {
+      padding:1rem;
     }
 
 
@@ -74,6 +74,8 @@
         <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
         <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
         <a href="#" class="w3-bar-item w3-button">Attraction </a>
+        <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
+
         <!-- <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
         <a href="www.google.com" class="w3-bar-item w3-button w3-green">Go</a> -->
       </div>
@@ -94,11 +96,7 @@
     <div class="row weatherview">
         <div class="col-md-3" id="searches-view"></div>
         <div class="current"></div>
-
         <div class="city"> </div>
-        <!-- <div class="luxon"> </div> -->
-
-        
         <img id= "icon0" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon"> 
         <div class="wind"></div>
         <div class="humidity"></div>
@@ -107,10 +105,6 @@
         <div class="temp"></div>
         <div class="tempF"></div>
         <div class="tempC"></div>
-       
-
-
-
     </div>
   </div>
 
@@ -153,55 +147,45 @@
             <div class= "card">
               <h4> <div class= "hourTime" id= "hourTime1"> </div></h4>
               <img class= "hourIcon" id="hourIcon1" src= "http://openweathermap.org/img/wn/01d@2x.png" alt= "icon">
-              <div class= "hourForecast" id= "hour1"> Hour1</div>
+              <div class= "hourForecast" id= "hour1"> </div>
               <div class= "hourRain" id= "hourRain1"></div>
-
           </div>
-
           <div class= "card">
             <h4> <div class= "hourTime" id= "hourTime2"> </div> </h4>
             <img class= "hourIcon" id="hourIcon2" src= "http://openweathermap.org/img/wn/01n@2x.png" alt= "icon">
-            <div class= "hourForecast" id= "hour2">Hour2</div>
+            <div class= "hourForecast" id= "hour2"></div>
             <div class= "hourRain" id= "hourRain2"></div>
-
           </div>
-            
           <div class= "card">
             <h4> <div class= "hourTime" id= "hourTime3"> </div> </h4>
             <img class= "hourIcon" id="hourIcon3" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon">
-            <div class= "hourForecast" id= "hour3"> Hour3</div>
+            <div class= "hourForecast" id= "hour3"> </div>
             <div class= "hourRain" id= "hourRain3"></div>
-
           </div>
           <div class= "card">
             <h4> <div class= "hourTime" id= "hourTime4"> </div> </h4>
             <img class= "hourIcon" id="hourIcon4" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon">
-            <div class= "hourForecast" id= "hour4"> Hour4</div>
+            <div class= "hourForecast" id= "hour4"></div>
             <div class= "hourRain" id= "hourRain4"></div>
-
           </div>
           <div class= "card">
-            <h4> <div class= "hourTime" id= "hourTime5"> </div> </h4>
+            <h4> <div class= "hourTime" id= "hourTime5"></div> </h4>
             <img class= "hourIcon" id="hourIcon5" src= "http://openweathermap.org/img/wn/50d@2x.png" alt= "icon">
-            <div class= "hourForecast" id= "hour5"> Hour5</div>
+            <div class= "hourForecast" id= "hour5"></div>
             <div class= "hourRain" id= "hourRain5"></div>
-
           </div>
           <div class= "card">
             <h4> <div class= "hourTime" id= "hourTime6"></div> </h4>
             <img class= "hourIcon" id="hourIcon6" src= "http://openweathermap.org/img/wn/09d@2x.png" alt= "icon">
-            <div class= "hourForecast" id= "hour6"> Hour6</div>
+            <div class= "hourForecast" id= "hour6"></div>
             <div class= "hourRain" id= "hourRain6"></div>
-
           </div>
           <div class= "card">
             <h4> <div class= "hourTime" id= "hourTime7"> </div> </h4>
             <img class= "hourIcon" id="hourIcon7" src= "http://openweathermap.org/img/wn/11d@2x.png" alt= "icon">
-            <div class= "hourForecast" id= "hour7"> Hour7</div>
+            <div class= "hourForecast" id= "hour7"></div>
             <div class= "hourRain" id= "hourRain7"></div>
-
-
-            </div>
+          </div>
     </div>
   </div>
       <br>
@@ -218,13 +202,12 @@
           <div class="card-section">
           <p class="card-text" id= "temp1">Temp</p>
           <p class="card-text" id= "temp1C">Temp</p>
-          <p class="card-text" id= "tempAll">Temp</p>
           <p class="card-text" id= "humidity1">Humidity</p>
           <p class="card-text" id= "dailyClouds1">Daily Clouds</p>
           <p class="card-text" id= "description1">Description</p>
       </div>
     </div>
-  
+
     <div class="card" style="width: 150px;">
       <div class="card-divider" id= 'dayHeaderText2' id="date" id="temp" id="humidity">
         <h4 class="daysForecast2" id="day3">Day 2</h4>

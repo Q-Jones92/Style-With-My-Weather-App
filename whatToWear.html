@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>What to Wear </title>
+
+    <style>
+        .weatherToDress {
+            display: center;
+        }
+        #inlineFrameExample {
+            display: center;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -15,7 +25,33 @@
         <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
         <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
         <a href="attractions.html" class="w3-bar-item w3-button">Attraction </a>
+        <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
+
+       
     </div>
-    
+
+    <div class="weatherToDress">
+        <h4 class= "weatherToDress">Weather to Dress</h4>
+        <iframe id="inlineFrameExample"
+          title="Inline Frame Example"
+          width="500"
+          height="340"
+          src= "https://www.dressbyweather.com/what-to-wear/${lastCity}">
+        </iframe>
+    </div>
+
+    <script>
+
+        //tutor to call the city for iframe from local storage 
+          var lastCity = localStorage.getItem('recallHistory')
+          // console.log (lastCity, "iframe local storage")
+        
+          // try bottom way for website string concatenation 
+              var lastCity = "London"
+            //   var newCity = "https://www.dressbyweather.com/what-to-wear/" + lastCity + "/undefined/women?q=weather+" +lastCity;
+            //  document.getElementById("dressIframe").src = newCity;
+    </script>
+    <script src= "Assets/hotel_script.js"></script> 
+
 </body>
 </html>

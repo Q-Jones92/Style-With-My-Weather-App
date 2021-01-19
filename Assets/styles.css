@@ -4,7 +4,20 @@
         /* height: 100%; */
 
   
-    
+        .hourTime {
+          text-align: center;
+          display:flex;
+        }
+
+        .hourForecast {
+          Color: black;
+          text-align: center;
+        }
+
+        .hourRain {
+          Color: black;
+          text-align: center;
+        }
 
       #map {
         height: 100%;
@@ -100,32 +113,12 @@
     }
   }
   
-/* @import 'foundation'; 
-@include foundation-xy-grid-classes {
-  
-  $base-grid: true,
-  $margin-grid: true,
-  $padding-grid: true,
-  $block-grid: true,
-  $collapse: true,
-  $offset: true,
-  $vertical-grid: true,
-  $frame-grid: true
-  
-      }; */
-
-      /* body {
-        background: #777;
-        height: 100vh;
-        margin: 0;
-        display: grid;
-        place-items: center;
-    } */
-
-
+/
     /* NOT WORKING HAD TO COPY TO HTML  */
     .cards {
         display: flex;
+        Color: black;
+        
       padding: rem;
 
         /* --distance: -4rem;   */
@@ -136,6 +129,7 @@
     .card {
       background-color: linear-gradient(to left rgb(8, 40, 223), rgb(99, 222, 238));
       border-radius: 1rem;
+      text-align: center;
       /* padding: 2rem; */
       /* margin-left: -4rem; */
       /* margin-left: 100rem; */
@@ -146,15 +140,7 @@
     }
 
 
-    /* .card:hover { 
-      transform: translateY(-1rem); 
-  } */
-
-  /* .card:hover ~ .card {
-    transform: translateX(calc(var(--distance)));
- 
-}   */
-
+  
 
 
 
