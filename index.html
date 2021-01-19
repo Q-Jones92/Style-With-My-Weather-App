@@ -6,7 +6,7 @@
     <!-- W3 Shool Style sheet  -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- basic style sheet -->
-    <link href="styles.css" rel="stylesheet">
+    <link href="Assets/styles.css" rel="stylesheet">
     <!-- interactive style sheet -->
     <!-- style.css -->
      <!-- <link href="./Assets/style.css" rel="stylesheet">  -->
@@ -30,37 +30,12 @@
 <title>Weather and More </title>
 
 <style>
-    .cards {
-        display: flex;
-        --distance: -4rem;  
-        text-align: center;
-        color:black;
-        /* background-color:blue */
-     }
-    .card {
-      background-color:rgb(164, 227, 250);
-      /* background: linear-gradient(to left rgb(8, 40, 223), rgb(99, 222, 238)); */
-      border-radius: 1rem;
-      padding: 2rem;
+   
 
-      /* margin-left: -4rem; */
-      margin-left: 0rem;
-      box-shadow: 10px 410x 15px 2px
-      rgba(black, 0.75);
-      transition: 0.2s;
-    }
-    .card-selection {
-      padding:1rem;
-    }
-
-
-    .card:hover { 
-      transform: translateY(-1rem); 
-  }
+   
 
   /* .card:hover ~ .card {
     transform: translateX(calc(var(--distance)));
- 
 }  */
 </style>
 </head>
@@ -83,7 +58,7 @@
 
   <div class="w3-cell-row">
 
-  <div class= "w3-container w3-dark-grey w3-cell w3-cell-middle">
+  <div class= "w3-container">
           <!-- <div class= "city-container"> </div> -->
           <form>
             <p class="citySearch">Search for a City:</p>
@@ -110,13 +85,13 @@
 
 
         <!-- <div class="w3-container w3-yellow w3-cell w3-cell-middle"> -->
-        <div class="w3-container w3-dark-grey w3-cell w3-cell-middle">
+        <!-- <div class="w3-container w3-dark-grey w3-cell w3-cell-middle">
             <p>How to dress icon</p>
             <iframe id="inlineFrameExample"
               title="Inline Frame Example"
               width="500"
               height="340"
-              src= "https://www.dressbyweather.com/what-to-wear/${lastCity}">
+              src= "https://www.dressbyweather.com/what-to-wear/${lastCity}"> -->
               <!-- https://www.dressbyweather.com/what-to-wear/what-to-wear/mumbai/women?q=weather+what-to-wear -->
 
               <!-- Link gives no errors BUT does not work -->
@@ -132,65 +107,65 @@
               <!-- Tried temperate literal did not work
               src= `https://www.dressbyweather.com/what-to-wear/${lastCity}/undefined/women?q=weather+${lastCity}` -->
   
-            </iframe>
+            <!-- </iframe> -->
         </div>
   </div>
   </div>
 
       <br>
-  <div class="w3-container w3-dark-grey">
-    <div class= "row">
-        <p>Hourly Forecast</p>
+  <div class="w3-container-hourly">
+    <!-- <div class= "row"> -->
+        <h3 class= "hourlyForecast" id= "hourlyForecastId">Hourly Forecast</h3>
      
-    <div class= "cards">
+    <div class= "cardsHourly">
 
-            <div class= "card">
+            <div class= "cardHourly">
               <h4> <div class= "hourTime" id= "hourTime1"> </div></h4>
               <img class= "hourIcon" id="hourIcon1" src= "http://openweathermap.org/img/wn/01d@2x.png" alt= "icon">
               <div class= "hourForecast" id= "hour1"> </div>
               <div class= "hourRain" id= "hourRain1"></div>
           </div>
-          <div class= "card">
+          <div class= "cardHourly">
             <h4> <div class= "hourTime" id= "hourTime2"> </div> </h4>
             <img class= "hourIcon" id="hourIcon2" src= "http://openweathermap.org/img/wn/01n@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour2"></div>
             <div class= "hourRain" id= "hourRain2"></div>
           </div>
-          <div class= "card">
+          <div class= "cardHourly">
             <h4> <div class= "hourTime" id= "hourTime3"> </div> </h4>
             <img class= "hourIcon" id="hourIcon3" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour3"> </div>
             <div class= "hourRain" id= "hourRain3"></div>
           </div>
-          <div class= "card">
+          <div class= "cardHourly">
             <h4> <div class= "hourTime" id= "hourTime4"> </div> </h4>
             <img class= "hourIcon" id="hourIcon4" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour4"></div>
             <div class= "hourRain" id= "hourRain4"></div>
           </div>
-          <div class= "card">
+          <div class= "cardHourly">
             <h4> <div class= "hourTime" id= "hourTime5"></div> </h4>
             <img class= "hourIcon" id="hourIcon5" src= "http://openweathermap.org/img/wn/50d@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour5"></div>
             <div class= "hourRain" id= "hourRain5"></div>
           </div>
-          <div class= "card">
+          <div class= "cardHourly">
             <h4> <div class= "hourTime" id= "hourTime6"></div> </h4>
             <img class= "hourIcon" id="hourIcon6" src= "http://openweathermap.org/img/wn/09d@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour6"></div>
             <div class= "hourRain" id= "hourRain6"></div>
           </div>
-          <div class= "card">
+          <div class= "cardHourly">
             <h4> <div class= "hourTime" id= "hourTime7"> </div> </h4>
             <img class= "hourIcon" id="hourIcon7" src= "http://openweathermap.org/img/wn/11d@2x.png" alt= "icon">
             <div class= "hourForecast" id= "hour7"></div>
             <div class= "hourRain" id= "hourRain7"></div>
           </div>
     </div>
-  </div>
+  <!-- </div>  row-->
       <br>
-      <div class="w3-container w3-dark-grey">
-        <p>Forecast by Days</p>
+      <!-- <div class="w3-container-daily"> -->
+        <h3>Forecast by Days</h3>
         <div class= "cards" id="forecast">
 
       <div class="card" style="width: 150px;">
@@ -283,7 +258,7 @@
       </div>
     </div> 
     </div>
-    </div>
+    <!-- </div> -->
      
       <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->  
     <script link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-float.min.css" integrity="sha256-4ldVyEvC86/kae2IBWw+eJrTiwNEbUUTmN0zkP4luL4=" crossorigin="anonymous"> </script>
