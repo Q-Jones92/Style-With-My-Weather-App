@@ -30,10 +30,10 @@ $(document).ready(function () {
     console.log("Temperature=" + temperature);
 
 
-    if (temperature >= 0 && temperature <= 75) {
+    if (temperature >= 0 && temperature <= 50) {
       var img = document.createElement('img');
       img.src =
-        '../Style-With-My-Weather-App-main/images/winter.jpg';
+        '../Style-With-My-Weather-App/images/Winterwm.jpg';
       img.style.height = '500px';
       img.style.width = '500px';
       // CLear the previous content
@@ -42,8 +42,8 @@ $(document).ready(function () {
 
       var link1 = document.createElement('a');
       link1.target = '_blank';
-      link1.href = 'https://www.amazon.com/s?k=pullover';
-      link1.innerText = 'Pull Over';
+      link1.href = 'https://www.amazon.com/s?k=winter+clothes+for+men&ref=nb_sb_noss_1';
+      link1.innerText = 'Winter Clothes For Mens';
 
       var container = document.getElementById('link1');
       document.getElementById('link1').innerHTML = "";
@@ -51,16 +51,16 @@ $(document).ready(function () {
 
       var link2 = document.createElement('a');
       link2.target = '_blank';
-      link2.href = 'https://www.amazon.com/s?k=pullover';
-      link2.innerText = 'Sweater';
+      link2.href = 'https://www.amazon.com/s?k=winter+clothes+for+women&ref=nb_sb_noss_1';
+      link2.innerText = 'Winter Clothes For Womens';
 
       var container = document.getElementById('link2');
       document.getElementById('link2').innerHTML = "";
       container.appendChild(link2);
-    } else if (temperature >= 75) {
+    } else if (temperature >= 66 && temperature <= 75) {
       var img2 = document.createElement('img');
       img2.src =
-        '../Style-With-My-Weather-App-main/images/summer.jpg';
+        '../Style-With-My-Weather-App/images/Springwm.jpg';
       img2.style.height = '500px';
       img2.style.width = '500px';
       // CLear the previous content
@@ -69,8 +69,8 @@ $(document).ready(function () {
 
       var link1 = document.createElement('a');
       link1.target = '_blank';
-      link1.href = 'https://www.amazon.com/s?k=summer+hat&ref=nb_sb_noss_1';
-      link1.innerText = 'Summer Hat';
+      link1.href = 'https://www.amazon.com/s?k=spring+clothes+for+men&ref=nb_sb_noss_1';
+      link1.innerText = 'Spring Clothes For Mens';
 
       var container = document.getElementById('link1');
       document.getElementById('link1').innerHTML = "";
@@ -78,8 +78,64 @@ $(document).ready(function () {
 
       var link2 = document.createElement('a');
       link2.target = '_blank';
-      link2.href = 'https://www.amazon.com/s?k=bikini&ref=nb_sb_noss_2';
-      link2.innerText = 'Bikini';
+      link2.href = 'https://www.amazon.com/s?k=spring+clothes+for+women&ref=nb_sb_noss_1';
+      link2.innerText = 'Spring Clothes For Womens';
+
+      var container = document.getElementById('link2');
+      document.getElementById('link2').innerHTML = "";
+      container.appendChild(link2);
+
+    } else if (temperature >= 51 && temperature <= 65) {
+      var img2 = document.createElement('img');
+      img2.src =
+        '../Style-With-My-Weather-App/images/Autumnwm.jpg';
+      img2.style.height = '500px';
+      img2.style.width = '500px';
+      // CLear the previous content
+      document.getElementById('imagePlaceHolder').innerHTML = "";
+      document.getElementById('imagePlaceHolder').appendChild(img2);
+
+      var link1 = document.createElement('a');
+      link1.target = '_blank';
+      link1.href = 'https://www.amazon.com/s?k=autumn+clothes+for+men&ref=nb_sb_noss_1';
+      link1.innerText = 'Autumn Clothes For Mens';
+
+      var container = document.getElementById('link1');
+      document.getElementById('link1').innerHTML = "";
+      container.appendChild(link1);
+
+      var link2 = document.createElement('a');
+      link2.target = '_blank';
+      link2.href = 'https://www.amazon.com/s?k=autumn+clothes+for+women&ref=nb_sb_noss_1';
+      link2.innerText = 'Autumn Clothes For Womens';
+
+      var container = document.getElementById('link2');
+      document.getElementById('link2').innerHTML = "";
+      container.appendChild(link2);
+
+    } else if (temperature >= 75) {
+      var img2 = document.createElement('img');
+      img2.src =
+        '../Style-With-My-Weather-App/images/Summerwm.jpg';
+      img2.style.height = '500px';
+      img2.style.width = '500px';
+      // CLear the previous content
+      document.getElementById('imagePlaceHolder').innerHTML = "";
+      document.getElementById('imagePlaceHolder').appendChild(img2);
+
+      var link1 = document.createElement('a');
+      link1.target = '_blank';
+      link1.href = 'https://www.amazon.com/s?k=summer+clothes+for+men&ref=nb_sb_noss_1';
+      link1.innerText = 'Summer Clothes For Mens';
+
+      var container = document.getElementById('link1');
+      document.getElementById('link1').innerHTML = "";
+      container.appendChild(link1);
+
+      var link2 = document.createElement('a');
+      link2.target = '_blank';
+      link2.href = 'https://www.amazon.com/s?k=summer+clothes+for+women&ref=nb_sb_noss_1';
+      link2.innerText = 'Summer Clothes For Womens';
 
       var container = document.getElementById('link2');
       document.getElementById('link2').innerHTML = "";
