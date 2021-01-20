@@ -11,22 +11,23 @@
         /* Always set the map height explicitly to define the size of the */
 
         #map {
-          height: 80%;
-          width: 60%;
+          height: 90%;
+          width: 70%;
         }
         html, body {
           height: 90%;
-          width: 90;
-          margin: 0;
-          padding: 0;
+          /* width: 90; */
+          margin: 10;
+          padding: 10;
         }
 
         .title{
         text-align: center;
+        font-family: 'Satisfy', cursive;
         }
 
         #top {
-        margin-left: 80px;
+        margin-left: 20px;
        }
 
        #map {
@@ -68,8 +69,8 @@
      <div id="map"></div>
     
 
-     <script>
-  //      var lat= localStorage.getItem("recallLat", lat);
+  <script>
+      //  var lat= localStorage.getItem("recallLat", lat);
   // lng=lon;
   // var lng= localStorage.getItem("recallLon", lon);
   // console.log(lat);
@@ -89,8 +90,9 @@
         maxPlaceCount: 10,
       });
       map = localContextMapView.map;
+
       map.setOptions({
-        center: {lat:latFromLocalStorage, lng:lngFromLocalStorage},
+        center:{lat:latFromLocalStorage, lng:lngFromLocalStorage},
         zoom: 14,
       });
     }
