@@ -24,7 +24,11 @@
 <!-- jQuery must be imported before Foundation -->
 <script src="js/jquery.min.js"></script>
 <!-- this will include every plugin and utility required by Foundation -->
-<script src="js/foundation.min.js"></script>    
+<script src="js/foundation.min.js"></script>   
+
+<!-- Put these into the <head> -->
+  <link rel="stylesheet" href="responsive-nav.css">
+  <script src="responsive-nav.js"></script>
 
 
 <title>Weather and More </title>
@@ -32,7 +36,7 @@
 <style>
   /* had to add here bc having conflict showing on on script file */
   .card {
-         background-color: rgb(166, 203, 252);
+         background-color: rgb(185, 213, 250);
        }
   .cardHourly {
         background-color: rgb(206, 234, 248);
@@ -51,29 +55,34 @@
 <body>
 
     <div class="w3-bar w3-blue-grey">
-        <a href="index.html" class="w3-bar-item w3-button">Weather</a>
-        <a href="whatToWear.html" class="w3-bar-item w3-button">Weather to Dress</a>
+      <nav class="nav-collapse">
+     <ul>
+      
+      <!-- <ul class="vertical menu" data-responsive-menu="drilldown medium-accordion" style="max-width: 250px;"> -->
+        <li><a href="index.html" class="w3-bar-item w3-button">Weather</a></li>
+        <li><a href="whatToWear.html" class="w3-bar-item w3-button">Weather to Dress</a></li>
         <a href="clothing.html" class="w3-bar-item w3-button">Nearby Clothing Store </a>
         <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
         <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
         <a href="#" class="w3-bar-item w3-button">Attraction </a>
         <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
+        <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i> -->
+        </nav>
+    </ul>
+      
 
         <!-- <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
         <a href="www.google.com" class="w3-bar-item w3-button w3-green">Go</a> -->
       </div>
       <br>
 
-
- 
-
   <div class= "w3-container">
     <div class="w3-cell-row">
           <!-- <div class= "city-container"> </div> -->
-          
-        
+             
     <!-- <div class="row weatherview"> -->
-        <div class="column" style="background-color:" id="searches-view">
+    <div class="column" style="background-color:" id="searches-view">
           <form>
                 <h4 class="citySearch">Search for a City:</h4>
                 <p class="date"></p> 
@@ -93,15 +102,14 @@
         <div id= "dailyClouds" class="dailyClouds"></div>
         <div id= "description" class="description"></div>
         
-      </div>
+    </div>
     
-
     <div class="column" style="background-colo:" id="weatherClothes">
       <h4 class="weatherToDress">Weather To Dress:</h4>
       <img src="https://via.placeholder.com/150" width="460" height="345">
     </div>
 
-  </div> // row ends 
+  </div> 
   </div>
 
 
@@ -135,7 +143,7 @@
 
       <br>
   <div class="w3-container-hourly">
-    <!-- <div class= "row"> -->
+    <div class= "hourlyRow">
         <h3 class= "hourlyForecast" id= "hourlyForecastId">Hourly Forecast</h3>
      
     <div class= "cardsHourly">
@@ -183,9 +191,12 @@
             <div class= "hourRain" id= "hourRain7"></div>
           </div>
     </div>
-  <!-- </div>  row-->
+    </div>
+    
       <br>
       <!-- <div class="w3-container-daily"> -->
+
+    <div class= "dailyRow">
         <h3 class= "daysForecast" id= "daysForecastId">Forecast by Days</h3>
         <div class= "cards" id="cards">
 
@@ -279,6 +290,8 @@
       </div>
     </div> 
     </div>
+    </div>
+  </div>
     <br>
     <br>
     <br>
@@ -315,8 +328,10 @@
     </script>
 
 
-
-    </script>
+<script>
+  var nav = responsiveNav(".nav-collapse");
+</script>
+    
 
 
 
