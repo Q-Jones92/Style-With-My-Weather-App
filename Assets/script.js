@@ -10,7 +10,8 @@ $(document).ready(function () {
     weatherSearch(searchValue);
   });
 
-  $("searchValue").keypress(function (event) {
+
+    $("searchValue").keypress(function (event) {
     // try to use keyCode === 13
     if (event.keyCode === 13) {
       event.preventDefault();
@@ -39,6 +40,8 @@ $(document).ready(function () {
       // CLear the previous content
       document.getElementById('imagePlaceHolder').innerHTML = "";
       document.getElementById('imagePlaceHolder').appendChild(img);
+      document.getElementById('backgroundPlaceholder').style.backgroundImage="url('../Style-With-My-Weather-App/images/winter.jpg')";
+
 
       var link1 = document.createElement('a');
       link1.target = '_blank';
@@ -143,71 +146,59 @@ $(document).ready(function () {
     }
   }
 
-  function weatherSearch(searchValue) {
-    var APIKey = "76867f1d9d820e6fd45b355d5a55ddc8";
-    console.log(APIKey);
+function weatherSearch(searchValue) {
+  var APIKey = "76867f1d9d820e6fd45b355d5a55ddc8";
+  console.log(APIKey);
 
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + APIKey;
-    // var oneCallAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=currently,alerts&appid=" + APIKey;
+  var queryURL ="https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + APIKey;
+  console.log(queryURL, "this is with search results");
 
-    console.log(queryURL, "this is with search results");
+  // Here we run our AJAX call to the OpenWeatherMap API
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  })
+    // We store all of the retrieved data inside of an object called "response"
+    .then(function(response) {
 
-    // Here we run our AJAX call to the OpenWeatherMap API
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    })
-      // We store all of the retrieved data inside of an object called "response"
-      .then(function (response) {
+      // Log the queryURL
+      console.log(queryURL);
 
-        // Log the queryURL
-        console.log(queryURL);
+      // Log the resulting object
+      console.log(response);
 
-        // Log the resulting object
-        console.log(response);
+      // Transfer content to HTML
+      $(".city").html("<h1>" + response.name + " Weather Details</h1>");
+      $("#icon0").attr("src", "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
+      $(".wind").text(`Wind Speed: ${Math.round(response.wind.speed)}MPH`);
+      // $(".humidity").text("Humidity: " + response.main.humidity);
+      $(".humidity").text(`Humidity: ${response.main.humidity}%`);
 
-        // Transfer content to HTML
-        // $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-        $(".city").html(`<h2>${response.name} ( ${moment().format("MMMM DD, YYYY, h:mm a")} ) </h2>`);
-        // $(".luxon").html(`luxon <h2>${response.name} ( ${DateTime.local().toFormat('MMMM dd, yyyy')} ) </h2>`);
+     
+      // Convert the temp to fahrenheit
+      var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+ 
+ whatToWear(tempF);
 
-
-        $("#icon0").attr("src", "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
-        $(".wind").text(`Wind Speed: ${Math.round(response.wind.speed)}MPH`);
-        // $(".humidity").text("Humidity: " + response.main.humidity);
-        $(".humidity").text(`Humidity: ${response.main.humidity}%`);
-        // $("#dailyClouds").text(`Daily Clouds: ${response.current[0].clouds}%`);  
-        // does not work even after removing from 6 day forecast BC did not have id tag attached. used the descriptions from current API 
-        $("#dailyClouds").text(`Precipitation: ${response.clouds.all}%`);
-        $("#description").text(`Description: ${response.weather[0].description}`);
-
-
-        //maybe use current day API key
-
-        // Convert the temp to fahrenheit
-        var tempF = (response.main.temp - 273.15) * 1.80 + 32;
-
-        whatToWear(tempF);
-
-        // add temp content to html
-        // $(".temp").text("Temperature (K) " + response.main.temp);
-        $(".tempF").text(`Temperature: ${Math.round((response.main.temp - 273.15) * 1.8 + 32)}°F`);
-        $(".tempC").text(`Temperature: ${Math.round((response.main.temp - 273.15))}°C`);
+      // add temp content to html
+      $(".temp").text("Temperature (K) " + response.main.temp);
+      $(".tempF").text(`Temperature: ${Math.round((response.main.temp - 273.15) * 1.8 + 32)}°F`);
+      $(".tempC").text(`Temperature: ${Math.round((response.main.temp - 273.15) )}°C`);
 
 
 
-        // Log the data in the console as well
-        console.log("Wind Speed: " + response.wind.speed);
-        console.log("Humidity: " + response.main.humidity);
-        console.log("Temperature (F): " + tempF);
+      // Log the data in the console as well
+      console.log("Wind Speed: " + response.wind.speed);
+      console.log("Humidity: " + response.main.humidity);
+      console.log("Temperature (F): " + tempF);
 
-        lat = response.coord.lat;
-        lon = response.coord.lon;
-        console.log("This is lat and lon from weather function", lat, lon);
-        forecast(lat, lon);
+      lat = response.coord.lat;
+      lon = response.coord.lon;
+      console.log("This is lat and lon from weather function", lat, lon);
+      forecast(lat, lon);
 
-
-      });
+ 
+    });
     $(".daysForecast1").html(`${moment().add(1, "d").format("MMMM DD, YYYY")}`);
     $(".daysForecast2").html(`${moment().add(2, "d").format("MMMM DD, YYYY")}`);
     $(".daysForecast3").html(`${moment().add(3, "d").format("MMMM DD, YYYY")}`);
@@ -345,9 +336,6 @@ $(document).ready(function () {
 
       forecast(searchValue); //calling the forecast function
     });
-  }
+}
+
 });
-
-
-
-
