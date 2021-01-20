@@ -240,37 +240,11 @@ function weatherSearch(searchValue) {
       $("#temp6C").text(`Temp (C): ${Math.round((response.daily[4].temp.day - 273.15))}`);
       $("#dailyClouds6").text(`Rain: ${response.daily[5].clouds}%`);
       $("#description6").text(`Description: ${response.daily[5].weather[0].description}`);
-
-
-
-
-
       forecast(searchValue); //calling the forecast function
     });
   }
-
-  // var recallHistory = JSON.parse(localStorage.getItem("recallHistory")) || [];
-
-  // for (var i=0; i< recallHistory.length; i++) {
-  //   addButton(recallHistory[i]);
-  
   var lastCity= localStorage.getItem("recallHistory");
   weatherSearch(lastCity);
-  
+
   });
-
-
-
-  /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-  var x = document.getElementById("w3-bar");
-  if (x.className === "w3-bar") {
-    x.className += " responsive";
-  } else {
-    x.className = "w3-bar";
-  }
-}
-
-
-
 
