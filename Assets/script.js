@@ -405,25 +405,19 @@ function weatherSearch(searchValue) {
       $("#temp6C").text(`Temp (C): ${Math.round((response.daily[4].temp.day - 273.15))}`);
       $("#dailyClouds6").text(`Rain: ${response.daily[5].clouds}%`);
       $("#description6").text(`Description: ${response.daily[5].weather[0].description}`);
-
-
-
-
-
       forecast(searchValue); //calling the forecast function
     });
 
 }
 
   }
-
-  // var recallHistory = JSON.parse(localStorage.getItem("recallHistory")) || [];
-
-  // for (var i=0; i< recallHistory.length; i++) {
-  //   addButton(recallHistory[i]);
-  
   var lastCity= localStorage.getItem("recallHistory");
   weatherSearch(lastCity);
+<<<<<<< HEAD
+
+  });
+
+=======
   
   });
 
@@ -439,3 +433,4 @@ function myFunction() {
   }
 }
 });
+>>>>>>> 8f953a2b9741e3083fe84492d9f1dbe913ca70da
