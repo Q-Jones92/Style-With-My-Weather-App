@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <!-- jQuery must be imported before Foundation -->
+    <script src="js/jquery.min.js"></script>
+    <!-- this will include every plugin and utility required by Foundation -->
+    <script src="js/foundation.min.js"></script>   
+    
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <title>Restaurants</title>
 
@@ -27,7 +35,7 @@
         }
 
         #top {
-        margin-left: 20px;
+        margin-left: 40px;
        }
 
        #map {
@@ -39,13 +47,18 @@
         padding-left: 30px;
         margin-left: 30px;
         margin-right: 30px;
-
+        margin-bottom: 20px;
         display:center;
+      }
+
+      nav {
+        background-color: #607d8b;
       }
 
       </style>
 </head>
 <body>
+  <nav>
     <div class="w3-bar w3-light-grey">
         <a href="index.html" class="w3-bar-item w3-button">Weather</a>
         <a href="whatToWear.html" class="w3-bar-item w3-button">Weather to Dress</a>
@@ -53,29 +66,20 @@
         <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
         <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
         <a href="attractions.html" class="w3-bar-item w3-button">Attraction </a>
+        <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
         <!-- <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
         <a href="#" class="w3-bar-item w3-button w3-green">Go</a> -->
+ 
     </div>
+  </nav>
     <h1 class= "title">Night Life</h1>
-
-    <!-- <h4> Map</h4> -->
-    <!-- <form>
-      <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
-      <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
-      <div id="buttons-view"></div>
-    </form> -->
     <h4 id="top"> Top Picks</h4>
-
-     <div id="map"></div>
+    <div id="map"></div>
+    <br>
+    <br>
     
 
   <script>
-      //  var lat= localStorage.getItem("recallLat", lat);
-  // lng=lon;
-  // var lng= localStorage.getItem("recallLon", lon);
-  // console.log(lat);
-  // console.log(lng);
-
 
         let map;
   var latFromLocalStorage= parseFloat(localStorage.getItem("recallLat"));

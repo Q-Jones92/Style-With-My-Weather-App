@@ -7,12 +7,6 @@
 // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&libraries=places">
 
 let map;
-// TRYING TO RECALL LOCAL STORAGE CITY 
-var latFromLocalStorage= parseFloat(localStorage.getItem("recallLat"));
-var lngFromLocalStorage = parseFloat(localStorage.getItem("recallLon"));
-console.log(latFromLocalStorage, "this is the city lat");
-console.log(lngFromLocalStorage, "this is city long");
-
 
 let places;
 let infoWindow;

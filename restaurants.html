@@ -20,6 +20,7 @@
           width: 90;
           margin: 10;
           padding: 10;
+          padding-bottom: 30px;
         }
 
         .title{
@@ -38,8 +39,9 @@
         padding-right: 30px;
         padding-bottom: 30px;
         padding-left: 30px;
-        margin-left: 0px;
+        margin-left: 40px;
         margin-right: 30px;
+        margin-bottom: 20px;
         /* text-align: center; */
         align-items: center;
 
@@ -56,21 +58,16 @@
         <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
         <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
         <a href="attractions.html" class="w3-bar-item w3-button">Attraction </a>
+        <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
         <!-- <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
         <a href="#" class="w3-bar-item w3-button w3-green">Go</a> -->
     </div>
     <h1 class= "title">Nearby Restaurants   </h1>
-
-    <!-- <h4> Map Restaurants </h4> --->
-     <!-- <form>
-    <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
-    <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
-    <div id="buttons-view"></div>
-  </form>  -->
     <h4 id="top"> Top Restaurants</h4>
-
      <!-- google maps script  -->
      <div id="map"></div>
+     <br>
+     <br>
     
 
      <script>
@@ -93,6 +90,7 @@
         placeTypePreferences: ["restaurant"],
         maxPlaceCount: 10,
       });
+
       map = localContextMapView.map;
       map.setOptions({
         center: {lat:latFromLocalStorage, lng:lngFromLocalStorage},
@@ -106,6 +104,13 @@
     <script defer 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&libraries=localContext&v=beta&callback=initMap"></script>
 
+
+
+    <!-- 
+    localStorage.getItem("recallHistory", searchValue)
+
+
+     -->
     
 </body>
 </html>

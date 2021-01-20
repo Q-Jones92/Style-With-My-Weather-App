@@ -1,16 +1,20 @@
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-#map {
-  height: 100%;
+  #map {
+  height: 60%;
+  width: 60%
+  
+ 
 }
 
 /* Optional: Makes the sample page fill the window. */
-html,
+ html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
+  
+}  
 
 body {
   padding: 0 !important;
@@ -28,9 +32,9 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  left: 0;
+  left: 20px;
   position: absolute;
-  top: 0;
+  top: 40px;
   width: 440px;
   z-index: 1;
 }
@@ -38,21 +42,29 @@ table {
 #map {
   margin-top: 40px;
   width: 440px;
+  padding-left: 30px;
+  margin-left: 40px;
 }
 
 #listing {
   position: absolute;
+  /* position: right; */
   width: 200px;
   height: 470px;
   overflow: auto;
   left: 442px;
-  top: 0px;
+  top: 60px;
   cursor: pointer;
   overflow-x: hidden;
+  /* overflow-x: show; */
+  padding-left: 30px;
+  margin-left: 40px;
 }
 
 #findhotels {
   font-size: 14px;
+  padding-left: 30px;
+  margin-left: 40px;
 }
 
 #locationField {
