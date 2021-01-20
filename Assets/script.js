@@ -10,7 +10,6 @@ $(document).ready(function () {
     weatherSearch(searchValue);
   });
 
-
     $("searchValue").keypress(function (event) {
     // try to use keyCode === 13
     if (event.keyCode === 13) {
