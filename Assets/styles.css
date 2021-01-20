@@ -200,6 +200,9 @@
   border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
+#link1{
+  background-color: red;
+}
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
