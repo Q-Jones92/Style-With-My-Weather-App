@@ -10,8 +10,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 
 ## Usage 
-
-Provide instructions and examples for use. Include screenshots as needed. 
+For you to maneuver through this application with anyproblems the user will type in the city they wish to search on the weather tab. The user will be presented with a layout of the weather forcast up to the next 6 hours as well as the predicted forcast for the next 5 days, detailing the temperature in both fahrenheit and celsius, humidity, and precipitation. When the user tabs over to one of the other four tabs, night life, clothing stores, attractions, or restaurants they will be able to have their previous search on these pages pull up in the new tabs.
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
@@ -19,10 +18,9 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 ![alt text](assets/images/screenshot.png)
 ```
 
+## Collaborators
 
-## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
+https://github.com/Q-Jones92
 
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 

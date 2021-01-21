@@ -72,13 +72,22 @@
 <body>
 
     <div class="w3-bar w3-blue-grey">
+
         <a href="index.html" class="w3-bar-item w3-button">Home</a>
+
+      <nav>
+      
+      <!-- <ul class="vertical menu" data-responsive-menu="drilldown medium-accordion" style="max-width: 250px;"> -->
+        <a href="index.html" class="w3-bar-item w3-button">Weather</a>
+        <a href="whatToWear.html" class="w3-bar-item w3-button">Weather to Dress</a>
+
         <a href="clothing.html" class="w3-bar-item w3-button">Nearby Clothing Store </a>
         <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
         <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
         <a href="#" class="w3-bar-item w3-button">Attraction </a>
         <!-- <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
         <a href="www.google.com" class="w3-bar-item w3-button w3-green">Go</a> -->
+
     </div>
 
 
@@ -126,6 +135,42 @@
             </div>
             <p id="link1"></p>
             <p id="link2"></p>
+
+      </div>
+      <br>
+
+  <div class= "w3-container">
+    <div class="w3-cell-row">
+          <!-- <div class= "city-container"> </div> -->
+             
+    <!-- <div class="row weatherview"> -->
+    <div class="column" style="background-color:" id="searches-view">
+          <form>
+                <h4 class="citySearch">Search for a City:</h4>
+                <p class="date"></p> 
+              <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
+              <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
+              <div id="buttons-view"></div>
+        </form>
+        <div class="city"> </div>
+        <div class="currentTime"></div>
+        
+        <img id= "icon0" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon"> 
+        <div class="temp"></div>
+        <div class="tempF"></div>
+        <div class="tempC"></div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+        <div id= "dailyClouds" class="dailyClouds"></div>
+        <div id= "description" class="description"></div>
+        
+    </div>
+    
+    <div class="column" style="background-colo:" id="weatherClothes">
+      <h4 class="weatherToDress">Weather To Dress:</h4>
+      <img src="https://via.placeholder.com/150" width="460" height="345">
+    </div>
+
 
         </div>
     </div>
