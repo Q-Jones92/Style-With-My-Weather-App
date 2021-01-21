@@ -26,17 +26,22 @@
 </head>
 <body>
     <div class="w3-bar w3-light-grey">
-        <a href="index.html" class="w3-bar-item w3-button">Home</a>
+        <a href="index.html" class="w3-bar-item w3-button">Weather</a>
         <a href="clothing.html" class="w3-bar-item w3-button">Nearby Clothing Store </a>
         <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
         <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
         <a href="attractions.html" class="w3-bar-item w3-button">Attraction </a>
-        <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
-        <a href="#" class="w3-bar-item w3-button w3-green">Go</a>
+        <!-- <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
+        <a href="#" class="w3-bar-item w3-button w3-green">Go</a> -->
     </div>
     <h1>Nearby Attractions</h1>
 
-    <h4> Map</h4>
+    <!-- <h4> Map</h4> -->
+    <form>
+    <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
+    <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
+    <div id="buttons-view"></div>
+  </form>
     <h4> Top Picks</h4>
 
      <!-- google maps script  -->
@@ -165,43 +170,25 @@ function() {
   });q
 }
 );
-var locations = [{
-    'name': 'Location 1',
-    'adress': '215 West Girard Avenue 19123',
-    'location': {
-      'lat': 39.9695601,
-      'lon': -75.1395161
-    },
-    'lable': '200',
-    'prev': 'https://images.unsplash.com/photo-1489706920962-640fcad4b463?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=057570f4673903ff39658ee6ac17a66a&auto=format&fit=crop&w=600&q=60',
-  },
-  {
-    'name': 'Location 2',
-    'adress': '5360 Old York Road 19141',
-    'location': {
-      'lat': 40.034038,
-      'lon': -75.145223
-    },
-    'lable': '30',
-    'prev': 'https://images.unsplash.com/photo-1483519396903-1ef292f4974a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=594ae239b7e8e8ed17d447a9950adeb4&auto=format&fit=crop&w=600&q=60',
-  },
-  {
-    'name': 'Location 3',
-    'adress': '1350 W Girard Avenue 19123',
-    'location': {
-      'lat': 39.9713524,
-      'lon': -75.1590360
-    },
-    'lable': '45',
-    'prev': 'https://images.unsplash.com/photo-1520803703785-bfb8d67060b1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5101b3f0270554cf6224f12e70cb7fb9&auto=format&fit=crop&w=600&q=60',
-  }
-];
-gmarkers = [];
+v
 
     </script>
           
           
-
+          <!-- <h6>(1) The Queen's Walk</h6>
+            <h8>A two hour leisure walk that'll start from Westminster Underground and end at St. Paul's Underground</h8>
+          <h6>(2) Steampunk Statue</h6>
+          <h6>(3) Shard</h6>
+            <h8>A seventy-two storey skyscraper</h8>
+          <h6>(4) Lanthorn Tower</h6>
+            <h8>Built between 1238 and 1272, one of twenty-one towers that form the Tower of London</h8>
+          <h6>(5) Martin Tower</h6>
+            <h8>Also one of the twenty one towers that form the Tower of London. Throughout the years served as many different functions, such as a fortress, palace, and prison</h8>
+          <h6>(6) Southwark View Point</h6>
+          <h6>(7) John Keats Statue</h6>
+          <h6>(8)London's Roman Amphitheatre</h6>
+          <h6>(9) Old Hospital Block</h6>
+          <h6>(10) London Wall</h6> -->
     
     <script defer 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&libraries=localContext&v=beta&callback=initMap"></script>

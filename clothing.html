@@ -21,25 +21,128 @@
           margin: 0;
           padding: 0;
         }
+
+
+
+        /* /* searh box css */
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+  height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#description {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+#infowindow-content .title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+}
+
+#map #infowindow-content {
+  display: inline;
+}
+
+.pac-card {
+  margin: 10px 10px 0 0;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  font-family: Roboto;
+}
+
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 12px;
+}
+
+.pac-controls {
+  display: inline-block;
+  padding: 5px 11px;
+}
+
+.pac-controls label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 400px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+#title {
+  color: #fff;
+  background-color: #4d90fe;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+
+#target {
+  width: 345px;
+}
+         
       </style>
 </head>
 <body>
 
     <div class="w3-bar w3-light-grey">
-        <a href="index.html" class="w3-bar-item w3-button">Home</a>
+        <a href="index.html" class="w3-bar-item w3-button">Weather</a>
         <a href="clothing.html" class="w3-bar-item w3-button">Nearby Clothing Store </a>
         <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
         <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
         <a href="attractions.html" class="w3-bar-item w3-button">Attraction </a>
-        <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
-        <a href="#" class="w3-bar-item w3-button w3-green">Go</a>
+        <!-- <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
+        <a href="#" class="w3-bar-item w3-button w3-green">Go</a> -->
     </div>
     <h1>Nearby Clothing Stores  </h1>
+    <form>
+    <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
+    <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
+    <div id="buttons-view"></div>
+  </form>
 
-    <h4> Map </h4>
+  
     <h4> Top Stores</h4>
 
     <!-- google maps script  -->
+    <input
+    id="pac-input"
+    class="controls"
+    type="text"
+    placeholder="Search Box"
+  />
+    <div id="map"></div>
+   
     <div id="map"></div>
     <!-- <script>
       var map;
@@ -53,8 +156,20 @@
     </script> -->
 
 <script>
-    let map;
 
+// Tish helped get local storage 
+  // var lat= localStorage.getItem("recallHistory");
+  var lat= localStorage.getItem("recallLat", lat);
+  lng=lon;
+  var lng= localStorage.getItem("recallLon", lon);
+  console.log(lat);
+  console.log(lng);
+
+  
+  
+
+
+    let map;
 function initMap() {
   const localContextMapView = new google.maps.localContext.LocalContextMapView ({
     element: document.getElementById("map"),
@@ -63,21 +178,111 @@ function initMap() {
   });
   map = localContextMapView.map;
   map.setOptions({
-    center: { lat: 51.507307, lng: -0.08114 },
+    //center:  { lat: 51.507307, lng: -0.08114 },
+    center: { lat, lng },
+    
+    
+  
     zoom: 14,
+   
   });
+  console.log (center);
 }
+
+
+
+  
 </script>
 
-
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&callback=initMap"async defer></script> -->
     <!-- places Maps API  -->
     <!-- <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&libraries=places&callback=initMap"></script> -->
     <!-- google maps library local context, places types preference -->
     <script defer 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&libraries=localContext&v=beta&callback=initMap"></script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&libraries=places,localContext&v=beta&callback=initMap"></script>
+
 
 
 
 </body>
 </html>
+
+
+
+
+<!-- NOTES FOR SEARCH BAR FROM GOOGLE -->
+<!-- // This example adds a search box to a map, using the Google Place Autocomplete
+// feature. People can enter geographical searches. The search box will return a
+// pick list containing a mix of places and predicted search terms.
+// This example requires the Places library. Include the libraries=places
+// parameter when you first load the API. For example: -->
+// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+//   function initAutocomplete() {
+//   const map = new google.maps.Map(document.getElementById("map"), {
+//     // center: { lat: -33.8688, lng: 151.2195 },
+//     zoom: 13,
+//     mapTypeId: "roadmap",
+//   });
+//   // Create the search box and link it to the UI element.
+//   const input = document.getElementById("pac-input");
+//   const searchBox = new google.maps.places.SearchBox(input);
+//   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+//   // Bias the SearchBox results towards current map's viewport.
+//   map.addListener("bounds_changed", () => {
+//     searchBox.setBounds(map.getBounds());
+//   });
+//   let markers = [];
+//   // Listen for the event fired when the user selects a prediction and retrieve
+//   // more details for that place.
+//   searchBox.addListener("places_changed", () => {
+//     const places = searchBox.getPlaces();
+
+//     if (places.length == 0) {
+//       return;
+//     }
+//     // Clear out the old markers.
+//     markers.forEach((marker) => {
+//       marker.setMap(null);
+//     });
+//     markers = [];
+//     // For each place, get the icon, name and location.
+//     const bounds = new google.maps.LatLngBounds();
+//     places.forEach((place) => {
+//       if (!place.geometry) {
+//         console.log("Returned place contains no geometry");
+//         return;
+//       }
+//       const icon = {
+//         url: place.icon,
+//         size: new google.maps.Size(71, 71),
+//         origin: new google.maps.Point(0, 0),
+//         anchor: new google.maps.Point(17, 34),
+//         scaledSize: new google.maps.Size(25, 25),
+//       };
+//       // Create a marker for each place.
+//       markers.push(
+//         new google.maps.Marker({
+//           map,
+//           icon,
+//           title: place.name,
+//           position: place.geometry.location,
+//         })
+//       );
+
+//       if (place.geometry.viewport) {
+//         // Only geocodes have viewport.
+//         bounds.union(place.geometry.viewport);
+//       } else {
+//         bounds.extend(place.geometry.location);
+//       }
+//     });
+//     map.fitBounds(bounds);
+//   });
+
+// }
+// end search bar 

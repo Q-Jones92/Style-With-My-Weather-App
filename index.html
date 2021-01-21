@@ -6,7 +6,7 @@
     <!-- W3 Shool Style sheet  -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- basic style sheet -->
-    <link href="styles.css" rel="stylesheet">
+    <link href="Assets/styles.css" rel="stylesheet">
     <!-- interactive style sheet -->
     <!-- style.css -->
      <!-- <link href="./Assets/style.css" rel="stylesheet">  -->
@@ -24,43 +24,30 @@
 <!-- jQuery must be imported before Foundation -->
 <script src="js/jquery.min.js"></script>
 <!-- this will include every plugin and utility required by Foundation -->
-<script src="js/foundation.min.js"></script>    
+<script src="js/foundation.min.js"></script>   
+
+<!-- Put these into the <head> -->
+  <link rel="stylesheet" href="responsive-nav.css">
+  <script src="responsive-nav.js"></script>
 
 
 <title>Weather and More </title>
 
 <style>
-    .cards {
-        display: flex;
-        --distance: -4rem;  
-        /* background-color:blue */
-     }
+  /* had to add here bc having conflict showing on on script file */
+  .card {
+         background-color: rgb(185, 213, 250);
+       }
+  .cardHourly {
+        background-color: rgb(206, 234, 248);
+  }
 
    
 
-    .card {
-      background-color:rgb(164, 227, 250);
-      /* background: linear-gradient(to left rgb(8, 40, 223), rgb(99, 222, 238)); */
-      border-radius: 1rem;
-      padding: 2rem;
 
-      /* margin-left: -4rem; */
-      margin-left: 0rem;
-     
-
-      box-shadow: 10px 410x 15px 2px
-      rgba(black, 0.75);
-      transition: 0.2s;
-    }
-
-
-    .card:hover { 
-      transform: translateY(-1rem); 
-  }
 
   /* .card:hover ~ .card {
     transform: translateX(calc(var(--distance)));
- 
 }  */
 </style>
 </head>
@@ -68,144 +55,149 @@
 <body>
 
     <div class="w3-bar w3-blue-grey">
-        <a href="index.html" class="w3-bar-item w3-button">Home</a>
+      <nav>
+      
+      <!-- <ul class="vertical menu" data-responsive-menu="drilldown medium-accordion" style="max-width: 250px;"> -->
+        <a href="index.html" class="w3-bar-item w3-button">Weather</a>
+        <a href="whatToWear.html" class="w3-bar-item w3-button">Weather to Dress</a>
         <a href="clothing.html" class="w3-bar-item w3-button">Nearby Clothing Store </a>
         <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
         <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
         <a href="#" class="w3-bar-item w3-button">Attraction </a>
+        <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
+        <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i> -->
+        </nav>
+    </ul>
+      
+
         <!-- <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
         <a href="www.google.com" class="w3-bar-item w3-button w3-green">Go</a> -->
       </div>
+      <br>
 
-
-  <div class="w3-cell-row">
-
-  <div class= "w3-container w3-dark-grey w3-cell w3-cell-middle">
+  <div class= "w3-container">
+    <div class="w3-cell-row">
           <!-- <div class= "city-container"> </div> -->
+             
+    <!-- <div class="row weatherview"> -->
+    <div class="column" style="background-color:" id="searches-view">
           <form>
-            <p class="citySearch">Search for a City:</p>
-            <p class="date"></p> 
-          <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
-          <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
-          <div id="buttons-view"></div>
+                <h4 class="citySearch">Search for a City:</h4>
+                <p class="date"></p> 
+              <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
+              <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
+              <div id="buttons-view"></div>
         </form>
-        
-    <div class="row weatherview">
-        <div class="col-md-3" id="searches-view"></div>
-        <div class="current"></div>
-
         <div class="city"> </div>
-        <!-- <div class="luxon"> </div> -->
-
+        <div class="currentTime"></div>
         
         <img id= "icon0" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon"> 
+        <div class="temp"></div>
+        <div class="tempF"></div>
+        <div class="tempC"></div>
         <div class="wind"></div>
         <div class="humidity"></div>
         <div id= "dailyClouds" class="dailyClouds"></div>
         <div id= "description" class="description"></div>
-        <div class="temp"></div>
-        <div class="tempF"></div>
-        <div class="tempC"></div>
-       
-
-
-
+        
     </div>
+    
+    <div class="column" style="background-colo:" id="weatherClothes">
+      <h4 class="weatherToDress">Weather To Dress:</h4>
+      <img src="https://via.placeholder.com/150" width="460" height="345">
+    </div>
+
+  </div> 
   </div>
 
 
         <!-- <div class="w3-container w3-yellow w3-cell w3-cell-middle"> -->
-        <div class="w3-container w3-dark-grey w3-cell w3-cell-middle">
+        <!-- <div class="w3-container w3-dark-grey w3-cell w3-cell-middle">
             <p>How to dress icon</p>
             <iframe id="inlineFrameExample"
               title="Inline Frame Example"
               width="500"
-              height="300"
-              src="https://www.dressbyweather.com/">
-              <!-- src=""> -->
-              <!-- src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"> -->
-          </iframe>
-         </div>
-  </div>
-        
-    
-  </div>
+              height="340"
+              src= "https://www.dressbyweather.com/what-to-wear/${lastCity}"> -->
+              <!-- https://www.dressbyweather.com/what-to-wear/what-to-wear/mumbai/women?q=weather+what-to-wear -->
+
+              <!-- Link gives no errors BUT does not work -->
+            <!-- src= "https://www.dressbyweather.com/what-to-wear/${lastCity}/undefined/women?q=weather+${lastCity}" -->
+
+            <!-- tried to shorten website too
+             src= "https://www.dressbyweather.com/what-to-wear/${lastCity}> -->
+
+              <!-- //not working temperate literals: -->
+              <!-- src= "https://www.dressbyweather.com/what-to-wear/" + lastCity + "/undefined/women?q=weather+" + lastCity -->
+              <!-- tried to add "${inside}" but website said undefined 
+              src= "https://www.dressbyweather.com/what-to-wear/${lastCity}/undefined/women?q=weather+${lastCity}"-->
+              <!-- Tried temperate literal did not work
+              src= `https://www.dressbyweather.com/what-to-wear/${lastCity}/undefined/women?q=weather+${lastCity}` -->
+  
+            <!-- </iframe> -->
+        <!-- </div> -->
+  <!-- </div>
+  </div> -->
 
       <br>
-  <div class="w3-container w3-dark-grey">
-    <div class= "row">
-        <p>Hourly Forecast</p>
+  <div class="w3-container-hourly">
+    <div class= "hourlyRow">
+        <h3 class= "hourlyForecast" id= "hourlyForecastId">Hourly Forecast</h3>
      
-        <!-- <div class= "timezone1" id= "timezone1"></div> -->
-    <div class= "cards">
+    <div class= "cardsHourly">
 
-            <div class= "card">
-              <h4> <div class= "hourTime" id= "hourTime1"> </div></h4>
+            <div class= "cardHourly">
+              <h4> <div class= "hourTime" id= "hourTime1"> Hour 1</div></h4>
               <img class= "hourIcon" id="hourIcon1" src= "http://openweathermap.org/img/wn/01d@2x.png" alt= "icon">
-              <div class= "hourForecast" id= "hour1"> Hour1</div>
+              <div class= "hourForecast" id= "hour1"> </div>
               <div class= "hourRain" id= "hourRain1"></div>
-
           </div>
-
-          <div class= "card">
-            <h4> <div class= "hourTime" id= "hourTime2"> </div> </h4>
+          <div class= "cardHourly">
+            <h4> <div class= "hourTime" id= "hourTime2">Hour 2 </div> </h4>
             <img class= "hourIcon" id="hourIcon2" src= "http://openweathermap.org/img/wn/01n@2x.png" alt= "icon">
-            <div class= "hourForecast" id= "hour2">Hour2</div>
+            <div class= "hourForecast" id= "hour2"></div>
             <div class= "hourRain" id= "hourRain2"></div>
-
           </div>
-            
-
-          <div class= "card">
-            <h4> <div class= "hourTime" id= "hourTime3"> </div> </h4>
+          <div class= "cardHourly">
+            <h4> <div class= "hourTime" id= "hourTime3">Hour 3 </div> </h4>
             <img class= "hourIcon" id="hourIcon3" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon">
-            <div class= "hourForecast" id= "hour3"> Hour3</div>
+            <div class= "hourForecast" id= "hour3"> </div>
             <div class= "hourRain" id= "hourRain3"></div>
-
-
           </div>
-
-          <div class= "card">
-            <h4> <div class= "hourTime" id= "hourTime4"> </div> </h4>
+          <div class= "cardHourly">
+            <h4> <div class= "hourTime" id= "hourTime4"> Hour 4</div> </h4>
             <img class= "hourIcon" id="hourIcon4" src= "http://openweathermap.org/img/wn/02d@2x.png" alt= "icon">
-            <div class= "hourForecast" id= "hour4"> Hour4</div>
+            <div class= "hourForecast" id= "hour4"></div>
             <div class= "hourRain" id= "hourRain4"></div>
-
-
           </div>
-          <div class= "card">
-            <h4> <div class= "hourTime" id= "hourTime5"> </div> </h4>
+          <div class= "cardHourly">
+            <h4> <div class= "hourTime" id= "hourTime5">Hour 5</div> </h4>
             <img class= "hourIcon" id="hourIcon5" src= "http://openweathermap.org/img/wn/50d@2x.png" alt= "icon">
-            <div class= "hourForecast" id= "hour5"> Hour5</div>
+            <div class= "hourForecast" id= "hour5"></div>
             <div class= "hourRain" id= "hourRain5"></div>
-
-
           </div>
-          <div class= "card">
-            <h4> <div class= "hourTime" id= "hourTime6"></div> </h4>
+          <div class= "cardHourly">
+            <h4> <div class= "hourTime" id= "hourTime6">Hour 6</div> </h4>
             <img class= "hourIcon" id="hourIcon6" src= "http://openweathermap.org/img/wn/09d@2x.png" alt= "icon">
-            <div class= "hourForecast" id= "hour6"> Hour6</div>
+            <div class= "hourForecast" id= "hour6"></div>
             <div class= "hourRain" id= "hourRain6"></div>
-
-
           </div>
-          <div class= "card">
-            <h4> <div class= "hourTime" id= "hourTime7"> </div> </h4>
+          <div class= "cardHourly">
+            <h4> <div class= "hourTime" id= "hourTime7">Hour 7 </div> </h4>
             <img class= "hourIcon" id="hourIcon7" src= "http://openweathermap.org/img/wn/11d@2x.png" alt= "icon">
-            <div class= "hourForecast" id= "hour7"> Hour7</div>
+            <div class= "hourForecast" id= "hour7"></div>
             <div class= "hourRain" id= "hourRain7"></div>
-
-
-            </div>
+          </div>
     </div>
-  </div>
-  <!-- </div> -->
+    </div>
+    
       <br>
+      <!-- <div class="w3-container-daily"> -->
 
-      
-      <div class="w3-container w3-dark-grey">
-        <p>Forecast by Days</p>
-        <div class= "cards" id="forecast">
+    <div class= "dailyRow">
+        <h3 class= "daysForecast" id= "daysForecastId">Forecast by Days</h3>
+        <div class= "cards" id="cards">
 
       <div class="card" style="width: 150px;">
           <div class="card-divider" id= 'dayHeaderText1' id="date" id="temp" id="humidity">
@@ -214,15 +206,14 @@
           <div class= fiveDayForecast></div>
           <img id= "icon1" src= "http://openweathermap.org/img/wn/11d@2x.png" alt= "icon">
           <div class="card-section">
-          <p class="card-text" id= "temp1">Temp</p>
-          <p class="card-text" id= "temp1C">Temp</p>
-          <p class="card-text" id= "tempAll">Temp</p>
+          <p class="card-text" id= "temp1">Temp F</p>
+          <p class="card-text" id= "temp1C">Temp C</p>
           <p class="card-text" id= "humidity1">Humidity</p>
           <p class="card-text" id= "dailyClouds1">Daily Clouds</p>
           <p class="card-text" id= "description1">Description</p>
       </div>
     </div>
-  
+
     <div class="card" style="width: 150px;">
       <div class="card-divider" id= 'dayHeaderText2' id="date" id="temp" id="humidity">
         <h4 class="daysForecast2" id="day3">Day 2</h4>
@@ -230,14 +221,11 @@
       <div class= fiveDayForecast></div>
       <img id= "icon2" src= "http://openweathermap.org/img/wn/11d@2x.png" alt= "icon">
       <div class="card-section">
-          <p class="card-text" id= "temp2">Temp</p>
-          <p class="card-text" id= "temp2C">Temp</p>
-
+          <p class="card-text" id= "temp2">Temp F</p>
+          <p class="card-text" id= "temp2C">Temp C</p>
           <p class="card-text" id= "humidity2">Humidity</p>
           <p class="card-text" id= "dailyClouds2">Daily Clouds</p>
           <p class="card-text" id= "description2">Description</p>
-
-
       </div>
     </div>
   
@@ -248,13 +236,11 @@
       <div class= fiveDayForecast></div>
       <img id= "icon3" src= "http://openweathermap.org/img/wn/10d@2x.png" alt= "icon">
       <div class="card-section">
-          <p class="card-text" id= "temp3">Temp</p>
-          <p class="card-text" id= "temp3C">Temp</p>
+          <p class="card-text" id= "temp3">Temp F</p>
+          <p class="card-text" id= "temp3C">Temp C</p>
           <p class="card-text" id= "humidity3">Humidity</p>
           <p class="card-text" id= "dailyClouds3">Daily Clouds</p>
           <p class="card-text" id= "description3">Description</p>
-
-
       </div>
     </div>
   
@@ -265,13 +251,11 @@
       <div class= fiveDayForecast></div>
       <img id= "icon4" src= "http://openweathermap.org/img/wn/10n@2x.png" alt= "icon">
       <div class="card-section">
-          <p class="card-text" id= "temp4">Temp</p>
-          <p class="card-text" id= "temp4C">Temp</p>
+          <p class="card-text" id= "temp4">Temp F</p>
+          <p class="card-text" id= "temp4C">Temp C</p>
           <p class="card-text" id= "humidity4">Humidity</p>
           <p class="card-text" id= "dailyClouds4">Daily Clouds</p>
           <p class="card-text" id= "description4">Description</p>
-
-
       </div>
     </div>
   
@@ -282,13 +266,11 @@
       <div class= fiveDayForecast></div>
       <img id= "icon5" src= "http://openweathermap.org/img/wn/13d@2x.png" alt= "icon">
       <div class="card-section">
-          <p class="card-text" id= "temp5">Temp</p>
-          <p class="card-text" id= "temp5C">Temp</p>
+          <p class="card-text" id= "temp5">Temp F</p>
+          <p class="card-text" id= "temp5C">Temp C</p>
           <p class="card-text" id= "humidity5">Humidity</p>
           <p class="card-text" id= "dailyClouds5">Daily Clouds</p>
           <p class="card-text" id= "description5">Description</p>
-
-
       </div>
     </div>
   
@@ -299,8 +281,8 @@
       <div class= fiveDayForecast></div>
       <img id= "icon6" src= "http://openweathermap.org/img/wn/13d@2x.png" alt= "icon">
       <div class="card-section">
-          <p class="card-text" id= "temp6">Temp</p>
-          <p class="card-text" id= "temp6C">Temp</p>
+          <p class="card-text" id= "temp6">Temp F</p>
+          <p class="card-text" id= "temp6C">Temp C</p>
           <p class="card-text" id= "humidity6">Humidity</p>
           <p class="card-text" id= "dailyClouds6">Daily Clouds</p>
           <p class="card-text" id= "description6">Description</p>
@@ -308,16 +290,11 @@
     </div> 
     </div>
     </div>
-    
-  
-
-     
-
-      
-      
-
-
-    
+  </div>
+    <br>
+    <br>
+    <br>
+    <!-- </div> -->
      
       <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->  
     <script link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-float.min.css" integrity="sha256-4ldVyEvC86/kae2IBWw+eJrTiwNEbUUTmN0zkP4luL4=" crossorigin="anonymous"> </script>
@@ -330,14 +307,35 @@
   <!-- // jquery  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  
     <!-- moments library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
-  <!--Greg-->
     
     <!-- <script src= "script.js"></script> -->
     <script src= "Assets/script.js"></script> 
-</body>clear
+
+
+    <script>
+
+//tutor to call the city for iframe from local storage 
+  var lastCity = localStorage.getItem('recallHistory')
+  // console.log (lastCity, "iframe local storage")
+
+  // try bottom way for website string concatenation 
+      var lastCity = "London"
+      var newCity = "https://www.dressbyweather.com/what-to-wear/" + lastCity + "/undefined/women?q=weather+" +lastCity;
+    //  document.getElementById("dressIframe").src = newCity;
+    </script>
+
+
+<script>
+  var nav = responsiveNav(".nav-collapse");
+</script>
+    
+
+
+
+
+
+</body>
 
 </html>
