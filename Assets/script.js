@@ -40,6 +40,7 @@ $(document).ready(function () {
       // CLear the previous content
       document.getElementById('imagePlaceHolder').innerHTML = "";
       document.getElementById('imagePlaceHolder').appendChild(img);
+      document.getElementById('backgroundPlaceholder').style.backgroundImage="url('../Style-With-My-Weather-App/images/winter.jpg')";
 
       var link1 = document.createElement('a');
       link1.target = '_blank';
@@ -67,6 +68,7 @@ $(document).ready(function () {
       // CLear the previous content
       document.getElementById('imagePlaceHolder').innerHTML = "";
       document.getElementById('imagePlaceHolder').appendChild(img2);
+      document.getElementById('backgroundPlaceholder').style.backgroundImage="url('../Style-With-My-Weather-App/images/Sping.jpg')";
 
       var link1 = document.createElement('a');
       link1.target = '_blank';
@@ -95,6 +97,7 @@ $(document).ready(function () {
       // CLear the previous content
       document.getElementById('imagePlaceHolder').innerHTML = "";
       document.getElementById('imagePlaceHolder').appendChild(img2);
+      document.getElementById('backgroundPlaceholder').style.backgroundImage="url('../Style-With-My-Weather-App/images/Autumn.jpg')";
 
       var link1 = document.createElement('a');
       link1.target = '_blank';
@@ -123,6 +126,7 @@ $(document).ready(function () {
       // CLear the previous content
       document.getElementById('imagePlaceHolder').innerHTML = "";
       document.getElementById('imagePlaceHolder').appendChild(img2);
+      document.getElementById('backgroundPlaceholder').style.backgroundImage="url('../Style-With-My-Weather-App/images/Summer.jpg')";
 
       var link1 = document.createElement('a');
       link1.target = '_blank';
