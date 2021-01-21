@@ -56,8 +56,15 @@
      </script> -->
 
      <script>
+
+  // var city= localStorage.getItem("recallHistory");
+  var lat= localStorage.getItem("recallLat", lat);
+  lng=lon;
+  var lng= localStorage.getItem("recallLon", lon);
+  console.log(lat);
+  console.log(lng);
+
         let map;
-    
     function initMap() {
       const localContextMapView = new google.maps.localContext.LocalContextMapView ({
         element: document.getElementById("map"),
