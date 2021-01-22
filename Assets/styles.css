@@ -200,9 +200,6 @@
   border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
-#link1{
-  background-color: red;
-}
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
@@ -256,7 +253,7 @@
 
   @media only screen and (max-width: 768px) {
     body {
-      background-color: lightblue;
+      /* background-color: lightblue; */
     }
 
     .card {
