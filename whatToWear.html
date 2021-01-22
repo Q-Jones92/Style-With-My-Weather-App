@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title class= "title">What to Wear </title>
+
+    <style>
+        
+        .weatherToDress {
+            /* display: center; */
+            text-align: center;
+            font-family: 'Satisfy', cursive;
+        }
+        #inlineFrameExample {
+            display: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="w3-bar w3-light-grey">
+        <a href="index.html" class="w3-bar-item w3-button">Weather</a>
+        <a href="whatToWear.html" class="w3-bar-item w3-button">Weather to Dress</a>
+        <a href="clothing.html" class="w3-bar-item w3-button">Nearby Clothing Store </a>
+        <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
+        <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
+        <a href="attractions.html" class="w3-bar-item w3-button">Attraction </a>
+        <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
+
+       
+    </div>
+
+    <div class="weatherToDress">
+        <h3 class= "weatherToDress">Weather to Dress</h3>
+        <iframe id="inlineFrameExample"
+          title="Inline Frame Example"
+          width="500"
+          height="450"
+          src= "https://www.dressbyweather.com/what-to-wear/${lastCity}">
+        </iframe>
+    </div>
+
+    <script>
+
+        //tutor to call the city for iframe from local storage 
+          var lastCity = localStorage.getItem('recallHistory')
+          // console.log (lastCity, "iframe local storage")
+        
+          // try bottom way for website string concatenation 
+              var lastCity = "London"
+            //   var newCity = "https://www.dressbyweather.com/what-to-wear/" + lastCity + "/undefined/women?q=weather+" +lastCity;
+            //  document.getElementById("dressIframe").src = newCity;
+    </script>
+    <script src= "Assets/hotel_script.js"></script> 
+
+</body>
+</html>
