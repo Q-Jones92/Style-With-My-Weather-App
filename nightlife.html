@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <!-- Compressed JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
@@ -13,9 +12,6 @@
     <script src="js/foundation.min.js"></script>   
     
      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="./Assets/nightlife_styles.css">
 
     <title>Restaurants</title>
 
@@ -75,25 +71,6 @@
         <a href="#" class="w3-bar-item w3-button w3-green">Go</a> -->
  
     </div>
-
-    <h1>Night Life</h1>
-
-    <!-- <h4> Map</h4> -->
-    <form>
-      <input id='searchValue' type="text" name='add-cityName' value= '' placeholder="search for a city"> </input> 
-      <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
-      <div id="buttons-view"></div>
-    </form>
-    <h4> Top Picks</h4>
-
-
-    <div id="map"></div>
-
-    <script>
-
-    var city= localStorage.getItem("recallHistory");
-      console.log(localStorage);
-
   </nav>
     <h1 class= "title">Night Life</h1>
     <h4 id="top"> Top Picks</h4>
@@ -103,7 +80,6 @@
     
 
   <script>
-
 
         let map;
   var latFromLocalStorage= parseFloat(localStorage.getItem("recallLat"));
@@ -120,22 +96,10 @@
       map = localContextMapView.map;
 
       map.setOptions({
-
-        center: { lat: parseFloat( localStorage.getItem("recallLat", lat)), lng: parseFloat(localStorage.getItem("recallLon", lng)) },
-
         center:{lat:latFromLocalStorage, lng:lngFromLocalStorage},
-
         zoom: 14,
       });
     }
-    var lat= localStorage.getItem("recallLat", lat);
-    
-    var lng= localStorage.getItem("recallLon", lng);
-    
-    console.log(lat);
-    console.log(lng);
-
-      
     </script>
 
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&callback=initMap"async defer></script> -->
