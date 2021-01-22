@@ -220,6 +220,9 @@ function weatherSearch(searchValue) {
 
       // Convert the temp to fahrenheit
       var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+
+whatToWear(tempF);
+
       // add temp content to html
       // $(".temp").text("Temperature (K) " + response.main.temp);
       $(".tempF").text(`Temperature: ${Math.round((response.main.temp - 273.15) * 1.8 + 32)}°F`);
