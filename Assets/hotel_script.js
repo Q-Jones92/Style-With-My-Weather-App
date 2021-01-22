@@ -4,8 +4,11 @@
 // with on-click details for each hotel.
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+// <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&libraries=places">
+
 let map;
+
+
 let places;
 let infoWindow;
 let markers = [];
@@ -161,7 +164,10 @@ function setAutocompleteCountry() {
 
   if (country == "all") {
     autocomplete.setComponentRestrictions({ country: [] });
-    map.setCenter({ lat: 15, lng: 0 });
+    // COMMENTED PUT THE BOTTOM ORIGINAL CODE 
+    // map.setCenter({ lat: 15, lng: 0 });
+    map.setCenter( {lat:latFromLocalStorage, lng:lngFromLocalStorage }), 
+
     map.setZoom(2);
   } else {
     autocomplete.setComponentRestrictions({ country: country });

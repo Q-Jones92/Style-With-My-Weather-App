@@ -43,7 +43,9 @@ table {
   margin-top: 40px;
   width: 440px;
   padding-left: 30px;
-  margin-left: 40px;
+  margin-left: 70px;
+  margin-right: 30px;
+  align-content: center;
 }
 
 #listing {
