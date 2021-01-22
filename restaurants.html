@@ -16,7 +16,9 @@
           /* height: 100vh;
           width: 100vm; */
           background: url(./Assets/Screenshot6.png) no-repeat center;
-          margin: 0;    padding: 0;
+          background-repeat: no-repeat;
+          background-attachment: fixed; 
+          background-size: 100% 100%;
 
          
         } 
@@ -55,20 +57,24 @@
         margin-right: 30px;
         margin-bottom: 20px;
         /* text-align: center; */
-        align-items: center;
+        /* align-items: center; */
+        align-items: bottom;
 
         /* display:center; */
         }
 
         .rrlZOM-local-context-place-chooser-grid-view {
           padding-left: 50px;
+          
         }
+        /* @media only screen and (max-width: 412px) {
+        .zzfOEN-local-context-grid-view {
+          align-content: bottom;
+        } */
 
+        /* display container grids */
+        /* .yivBUg-local-context-map-layout-view--chooser-container whEuNf-local-context-map-layout-view--start */
         
-
-        
-
-
       </style>
 </head>
 <body>
@@ -80,25 +86,17 @@
         <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
         <a href="attractions.html" class="w3-bar-item w3-button">Attraction </a>
         <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
-        <!-- <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
-        <a href="#" class="w3-bar-item w3-button w3-green">Go</a> -->
     </div>
     <br>
     <h1 class= "title">Nearby Restaurants   </h1>
     <h4 id="top"> Top Restaurants</h4>
      <!-- google maps script  -->
      <div id="map"></div>
+     <div class= "yivBUg-local-context-map-layout-view--chooser-container"></div>
      <br>
      <br>
-    
-
+  
      <script>
-
-        // var lat= localStorage.getItem("recallLat", lat);
-    // lng=lon;
-    // var lng= localStorage.getItem("recallLon", lon);
-    // console.log(lat);
-    // console.log(lng);
 
         let map;
   var latFromLocalStorage= parseFloat(localStorage.getItem("recallLat"));
@@ -121,18 +119,8 @@
     }
     </script>
 
-
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&callback=initMap"async defer></script> -->
-    <script defer 
+<script defer 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&libraries=localContext&v=beta&callback=initMap"></script>
-
-
-
-    <!-- 
-    localStorage.getItem("recallHistory", searchValue)
-
-
-     -->
     
 </body>
 </html>

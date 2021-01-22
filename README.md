@@ -6,6 +6,7 @@ This website is primarily for tourist however, anyone can use it. It will help t
 
 ## APIs
 [Open Weather Map](https://openweathermap.org/)
+
 [Google Maps](https://cloud.google.com/maps-platform)
 
 
@@ -23,8 +24,11 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 ## Collaborators
 
 Erum: https://github.com/erumd
+
 Dennis: https://github.com/Desparta05 
+
 Gregory: https://github.com/NGUENANG7
+
 Quincy: https://github.com/Q-Jones92
 
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
@@ -41,8 +45,6 @@ Map with nearby night life
 Map with nearby attractions 
 map with nearby hotels 
 
-
-## Contributing
 
 
 ## Tests
