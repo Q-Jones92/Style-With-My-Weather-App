@@ -46,7 +46,131 @@ $(document).ready(function () {
         event.preventDefault();
     });
 
+    // Greg Function to display an image and text depending on the temperature
+    function whatToWear(temperature) {
 
+        console.log("Inside What to wear");
+        console.log("Temperature=" + temperature);
+
+
+        if (temperature >= 0 && temperature <= 50) {
+            var img = document.createElement('img');
+            img.src =
+                '../Style-With-My-Weather-App/images/Winterwm.jpg';
+            img.style.height = '500px';
+            img.style.width = '500px';
+            // CLear the previous content
+            document.getElementById('imagePlaceHolder').innerHTML = "";
+            document.getElementById('imagePlaceHolder').appendChild(img);
+            document.getElementById('backgroundPlaceholder').style.backgroundImage = "url('../Style-With-My-Weather-App/images/winter.jpg')";
+
+            var link1 = document.createElement('a');
+            link1.target = '_blank';
+            link1.href = 'https://www.amazon.com/s?k=winter+clothes+for+men&ref=nb_sb_noss_1';
+            link1.innerText = 'Winter Clothes For Mens';
+
+            var container = document.getElementById('link1');
+            document.getElementById('link1').innerHTML = "";
+            container.appendChild(link1);
+
+            var link2 = document.createElement('a');
+            link2.target = '_blank';
+            link2.href = 'https://www.amazon.com/s?k=winter+clothes+for+women&ref=nb_sb_noss_1';
+            link2.innerText = 'Winter Clothes For Womens';
+
+            var container = document.getElementById('link2');
+            document.getElementById('link2').innerHTML = "";
+            container.appendChild(link2);
+        } else if (temperature >= 66 && temperature <= 75) {
+            var img2 = document.createElement('img');
+            img2.src =
+                '../Style-With-My-Weather-App/images/Springwm.jpg';
+            img2.style.height = '500px';
+            img2.style.width = '500px';
+            // CLear the previous content
+            document.getElementById('imagePlaceHolder').innerHTML = "";
+            document.getElementById('imagePlaceHolder').appendChild(img2);
+            document.getElementById('backgroundPlaceholder').style.backgroundImage = "url('../Style-With-My-Weather-App/images/Sping.jpg')";
+
+            var link1 = document.createElement('a');
+            link1.target = '_blank';
+            link1.href = 'https://www.amazon.com/s?k=spring+clothes+for+men&ref=nb_sb_noss_1';
+            link1.innerText = 'Spring Clothes For Mens';
+
+            var container = document.getElementById('link1');
+            document.getElementById('link1').innerHTML = "";
+            container.appendChild(link1);
+
+            var link2 = document.createElement('a');
+            link2.target = '_blank';
+            link2.href = 'https://www.amazon.com/s?k=spring+clothes+for+women&ref=nb_sb_noss_1';
+            link2.innerText = 'Spring Clothes For Womens';
+
+            var container = document.getElementById('link2');
+            document.getElementById('link2').innerHTML = "";
+            container.appendChild(link2);
+
+        } else if (temperature >= 51 && temperature <= 65) {
+            var img2 = document.createElement('img');
+            img2.src =
+                '../Style-With-My-Weather-App/images/Autumnwm.jpg';
+            img2.style.height = '500px';
+            img2.style.width = '500px';
+            // CLear the previous content
+            document.getElementById('imagePlaceHolder').innerHTML = "";
+            document.getElementById('imagePlaceHolder').appendChild(img2);
+            document.getElementById('backgroundPlaceholder').style.backgroundImage = "url('../Style-With-My-Weather-App/images/Autumn.jpg')";
+
+            var link1 = document.createElement('a');
+            link1.target = '_blank';
+            link1.href = 'https://www.amazon.com/s?k=autumn+clothes+for+men&ref=nb_sb_noss_1';
+            link1.innerText = 'Autumn Clothes For Mens';
+
+            var container = document.getElementById('link1');
+            document.getElementById('link1').innerHTML = "";
+            container.appendChild(link1);
+
+            var link2 = document.createElement('a');
+            link2.target = '_blank';
+            link2.href = 'https://www.amazon.com/s?k=autumn+clothes+for+women&ref=nb_sb_noss_1';
+            link2.innerText = 'Autumn Clothes For Womens';
+
+            var container = document.getElementById('link2');
+            document.getElementById('link2').innerHTML = "";
+            container.appendChild(link2);
+
+        } else if (temperature >= 75) {
+            var img2 = document.createElement('img');
+            img2.src =
+                '../Style-With-My-Weather-App/images/Summerwm.jpg';
+            img2.style.height = '500px';
+            img2.style.width = '500px';
+            // CLear the previous content
+            document.getElementById('imagePlaceHolder').innerHTML = "";
+            document.getElementById('imagePlaceHolder').appendChild(img2);
+            document.getElementById('backgroundPlaceholder').style.backgroundImage = "url('../Style-With-My-Weather-App/images/Summer.jpg')";
+
+            var link1 = document.createElement('a');
+            link1.target = '_blank';
+            link1.href = 'https://www.amazon.com/s?k=summer+clothes+for+men&ref=nb_sb_noss_1';
+            link1.innerText = 'Summer Clothes For Mens';
+
+            var container = document.getElementById('link1');
+            document.getElementById('link1').innerHTML = "";
+            container.appendChild(link1);
+
+            var link2 = document.createElement('a');
+            link2.target = '_blank';
+            link2.href = 'https://www.amazon.com/s?k=summer+clothes+for+women&ref=nb_sb_noss_1';
+            link2.innerText = 'Summer Clothes For Womens';
+
+            var container = document.getElementById('link2');
+            document.getElementById('link2').innerHTML = "";
+            container.appendChild(link2);
+        }
+    }
+
+    whatToWear(tempF);
 
     function weatherSearch(searchValue) {
         //make search value to be last value in local storage 
@@ -100,6 +224,10 @@ $(document).ready(function () {
 
                 // Convert the temp to fahrenheit
                 var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+
+
+
+
                 // add temp content to html
                 // $(".temp").text("Temperature (K) " + response.main.temp);
                 $(".tempF").text(`Temperature: ${Math.round((response.main.temp - 273.15) * 1.8 + 32)}°F`);
