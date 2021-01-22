@@ -75,9 +75,6 @@ SOFTWARE.
 
 ## Links
 https://github.com/Q-Jones92/Style-With-My-Weather-App
-
-## Links
-
 [Launch Style With My Weather App](https://q-jones92.github.io/Style-With-My-Weather-App/)
 
 
