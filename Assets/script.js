@@ -170,7 +170,7 @@ $(document).ready(function () {
         }
     }
 
-    whatToWear(tempF);
+  
 
     function weatherSearch(searchValue) {
         //make search value to be last value in local storage 
@@ -182,7 +182,7 @@ $(document).ready(function () {
         // var oneCallAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=currently,alerts&appid=" + APIKey;
 
         console.log(queryURL, "this is with search results");
-
+      
         // Here we run our AJAX call to the OpenWeatherMap API
         $.ajax({
             url: queryURL,
@@ -225,7 +225,7 @@ $(document).ready(function () {
                 // Convert the temp to fahrenheit
                 var tempF = (response.main.temp - 273.15) * 1.80 + 32;
 
-
+                whatToWear(tempF);
 
 
                 // add temp content to html
