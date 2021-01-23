@@ -1,54 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <title>Restaurants</title>
 
     <style>
-        /* Always set the map height explicitly to define the size of the */
-
-        body {
-          font-family: 'Josefin Sans', sans-serif;
-          /* height: 100vh;
+      body {
+        font-family: "Josefin Sans", sans-serif;
+        /* height: 100vh;
           width: 100vm; */
-          background: url(./Assets/Screenshot6.png) no-repeat center;
-          background-repeat: no-repeat;
-          background-attachment: fixed; 
-          background-size: 100% 100%;
+        background: url(./Assets/Screenshot6.png) no-repeat center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
 
-         
-        } 
+      #map {
+        height: 90%;
+        width: 70%;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 90;
+        margin: 10;
+        padding: 10;
+        padding-bottom: 30px;
+      }
 
-        #map {
-          height: 90%;
-          width: 70%;
-        }
-        html, body {
-          height: 100%;
-          width: 90;
-          margin: 10;
-          padding: 10;
-          padding-bottom: 30px;
-        }
-
-        .title{
+      .title {
         text-align: center;
-        font-family: 'Satisfy', cursive;
-        color:antiquewhite;
-        }
+        font-family: "Satisfy", cursive;
+        color: antiquewhite;
+      }
 
-        #top {
+      #top {
         margin-left: 70px;
-        color:white;
-        }
+        color: white;
+      }
 
-        #map {
-        /* border: 1px solid black; */
-        /* background-color: lightblue; */
+      #map {
         padding-top: 30px;
         padding-right: 30px;
         padding-bottom: 30px;
@@ -56,70 +49,61 @@
         margin-left: 40px;
         margin-right: 30px;
         margin-bottom: 20px;
-        /* text-align: center; */
-        /* align-items: center; */
         align-items: bottom;
+      }
 
-        /* display:center; */
-        }
-
-        .rrlZOM-local-context-place-chooser-grid-view {
-          padding-left: 50px;
-          
-        }
-        /* @media only screen and (max-width: 412px) {
-        .zzfOEN-local-context-grid-view {
-          align-content: bottom;
-        } */
-
-        /* display container grids */
-        /* .yivBUg-local-context-map-layout-view--chooser-container whEuNf-local-context-map-layout-view--start */
-        
-      </style>
-</head>
-<body>
+      .rrlZOM-local-context-place-chooser-grid-view {
+        padding-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
     <div class="w3-bar w3-light-grey">
-        <a href="index.html" class="w3-bar-item w3-button">Home</a>
-        <a href="clothing.html" class="w3-bar-item w3-button">Nearby Clothing Store </a>
-        <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
-        <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
-        <a href="attractions.html" class="w3-bar-item w3-button">Attraction </a>
-        <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
+      <a href="index.html" class="w3-bar-item w3-button">Home</a>
+      <a href="clothing.html" class="w3-bar-item w3-button"
+        >Nearby Clothing Store
+      </a>
+      <a href="restaurants.html" class="w3-bar-item w3-button"
+        >Nearby Restaurants
+      </a>
+      <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
+      <a href="attractions.html" class="w3-bar-item w3-button">Attraction </a>
+      <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
     </div>
-    <br>
-    <h1 class= "title">Nearby Restaurants   </h1>
-    <h4 id="top"> Top Restaurants</h4>
-     <!-- google maps script  -->
-     <div id="map"></div>
-     <div class= "yivBUg-local-context-map-layout-view--chooser-container"></div>
-     <br>
-     <br>
-  
-     <script>
+    <br />
+    <h1 class="title">Nearby Restaurants</h1>
+    <h4 id="top">Top Restaurants</h4>
+    <!-- google maps script  -->
+    <div id="map"></div>
+    <div class="yivBUg-local-context-map-layout-view--chooser-container"></div>
+    <br />
+    <br />
 
-        let map;
-  var latFromLocalStorage= parseFloat(localStorage.getItem("recallLat"));
-  var lngFromLocalStorage = parseFloat(localStorage.getItem("recallLon"));
+    <script>
+      let map;
+      var latFromLocalStorage = parseFloat(localStorage.getItem("recallLat"));
+      var lngFromLocalStorage = parseFloat(localStorage.getItem("recallLon"));
 
+      function initMap() {
+        const localContextMapView = new google.maps.localContext.LocalContextMapView(
+          {
+            element: document.getElementById("map"),
+            placeTypePreferences: ["restaurant"],
+            maxPlaceCount: 10,
+          }
+        );
 
-    
-    function initMap() {
-      const localContextMapView = new google.maps.localContext.LocalContextMapView ({
-        element: document.getElementById("map"),
-        placeTypePreferences: ["restaurant"],
-        maxPlaceCount: 10,
-      });
-
-      map = localContextMapView.map;
-      map.setOptions({
-        center: {lat:latFromLocalStorage, lng:lngFromLocalStorage},
-        zoom: 14,
-      });
-    }
+        map = localContextMapView.map;
+        map.setOptions({
+          center: { lat: latFromLocalStorage, lng: lngFromLocalStorage },
+          zoom: 14,
+        });
+      }
     </script>
 
-<script defer 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&libraries=localContext&v=beta&callback=initMap"></script>
-    
-</body>
+    <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&libraries=localContext&v=beta&callback=initMap"
+    ></script>
+  </body>
 </html>
