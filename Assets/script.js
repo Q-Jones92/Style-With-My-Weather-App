@@ -67,7 +67,7 @@ $(document).ready(function () {
             var link1 = document.createElement('a');
             link1.target = '_blank';
             link1.href = 'https://www.amazon.com/s?k=winter+clothes+for+men&ref=nb_sb_noss_1';
-            link1.innerText = 'Winter Clothes For Mens';
+            link1.innerText = 'Winter Clothes For Men';
 
             var container = document.getElementById('link1');
             document.getElementById('link1').innerHTML = "";
@@ -76,7 +76,7 @@ $(document).ready(function () {
             var link2 = document.createElement('a');
             link2.target = '_blank';
             link2.href = 'https://www.amazon.com/s?k=winter+clothes+for+women&ref=nb_sb_noss_1';
-            link2.innerText = 'Winter Clothes For Womens';
+            link2.innerText = 'Winter Clothes For Women';
 
             var container = document.getElementById('link2');
             document.getElementById('link2').innerHTML = "";
@@ -95,7 +95,7 @@ $(document).ready(function () {
             var link1 = document.createElement('a');
             link1.target = '_blank';
             link1.href = 'https://www.amazon.com/s?k=spring+clothes+for+men&ref=nb_sb_noss_1';
-            link1.innerText = 'Spring Clothes For Mens';
+            link1.innerText = 'Spring Clothes For Men';
 
             var container = document.getElementById('link1');
             document.getElementById('link1').innerHTML = "";
@@ -104,7 +104,7 @@ $(document).ready(function () {
             var link2 = document.createElement('a');
             link2.target = '_blank';
             link2.href = 'https://www.amazon.com/s?k=spring+clothes+for+women&ref=nb_sb_noss_1';
-            link2.innerText = 'Spring Clothes For Womens';
+            link2.innerText = 'Spring Clothes For Women';
 
             var container = document.getElementById('link2');
             document.getElementById('link2').innerHTML = "";
@@ -124,7 +124,7 @@ $(document).ready(function () {
             var link1 = document.createElement('a');
             link1.target = '_blank';
             link1.href = 'https://www.amazon.com/s?k=autumn+clothes+for+men&ref=nb_sb_noss_1';
-            link1.innerText = 'Autumn Clothes For Mens';
+            link1.innerText = 'Autumn Clothes For Men';
 
             var container = document.getElementById('link1');
             document.getElementById('link1').innerHTML = "";
@@ -133,7 +133,7 @@ $(document).ready(function () {
             var link2 = document.createElement('a');
             link2.target = '_blank';
             link2.href = 'https://www.amazon.com/s?k=autumn+clothes+for+women&ref=nb_sb_noss_1';
-            link2.innerText = 'Autumn Clothes For Womens';
+            link2.innerText = 'Autumn Clothes For Women';
 
             var container = document.getElementById('link2');
             document.getElementById('link2').innerHTML = "";
@@ -153,7 +153,7 @@ $(document).ready(function () {
             var link1 = document.createElement('a');
             link1.target = '_blank';
             link1.href = 'https://www.amazon.com/s?k=summer+clothes+for+men&ref=nb_sb_noss_1';
-            link1.innerText = 'Summer Clothes For Mens';
+            link1.innerText = 'Summer Clothes For Men';
 
             var container = document.getElementById('link1');
             document.getElementById('link1').innerHTML = "";
@@ -162,7 +162,7 @@ $(document).ready(function () {
             var link2 = document.createElement('a');
             link2.target = '_blank';
             link2.href = 'https://www.amazon.com/s?k=summer+clothes+for+women&ref=nb_sb_noss_1';
-            link2.innerText = 'Summer Clothes For Womens';
+            link2.innerText = 'Summer Clothes For Women';
 
             var container = document.getElementById('link2');
             document.getElementById('link2').innerHTML = "";
