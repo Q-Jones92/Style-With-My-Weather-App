@@ -23,11 +23,6 @@
     <script src="js/jquery.min.js"></script>
     <!-- this will include every plugin and utility required by Foundation -->
     <script src="js/foundation.min.js"></script>
-        <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
-        <script link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-rtl.min.css"
-            integrity="sha256-F+9Ns8Z/1ZISonBbojH743hsmF3x3AlQdJEeD8DhQsE=" crossorigin="anonymous"> 
-        </script>
 
         <title>Weather and More </title>
 
@@ -59,7 +54,7 @@
             <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
         </nav>
     </div>
-    <br> </br>
+    <br>
     <div id="backgroundPlaceholder" class="w3-container">
         <div class="w3-cell-row">
             <div class="column" id="searches-view">
@@ -98,6 +93,7 @@
             <div class="hourlyRow">
                 <h3 class="hourlyForecast" id="hourlyForecastId">Hourly Forecast</h3>
 
+                <div class= "cards">
                     <div class="cardHourly">
                         <h4>
                             <div class="hourTime" id="hourTime1"> Hour 1</div>
@@ -154,6 +150,7 @@
                         <div class="hourForecast" id="hour7"></div>
                         <div class="hourRain" id="hourRain7"></div>
                     </div>
+                </div>
             </div>
             <br>
 
@@ -267,6 +264,11 @@
             href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-prototype.min.css"
             integrity="sha256-BiKflOunI0SIxlTOOUCQ0HgwXrRrRwBkIYppEllPIok=" crossorigin="anonymous"> </script>
 
+         <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
+         <script link rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-rtl.min.css"
+         integrity="sha256-F+9Ns8Z/1ZISonBbojH743hsmF3x3AlQdJEeD8DhQsE=" crossorigin="anonymous"> 
+     </script>
     
         <!-- // jquery  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -281,6 +283,6 @@
             var lastCity = localStorage.getItem('recallHistory')
             var newCity = "https://www.dressbyweather.com/what-to-wear/" + lastCity + "/undefined/women?q=weather+" + lastCity;
         </script>
-        
+
 </body>
 </html>
