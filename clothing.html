@@ -1,232 +1,185 @@
 <!-- Google maps API key AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    <title>Nearby Clothing Stores </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <title>Nearby Clothing Stores</title>
 
     <style>
-       
-#map {
-  height: 90%;
-  width: 70%
-  
-}
+      #map {
+        height: 90%;
+        width: 70%;
+      }
 
-/* Optional: Makes the sample page fill the window. */
-html,
-body {
-  height: 100%;
-  margin: 10;
-  padding: 10;
-}
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 10;
+        padding: 10;
+      }
 
-#description {
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: 300;
-}
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
 
-#infowindow-content .title {
-  font-weight: bold;
-}
+      #infowindow-content .title {
+        font-weight: bold;
+      }
 
-#infowindow-content {
-  display:none;
-}
+      #infowindow-content {
+        display: none;
+      }
 
-#map #infowindow-content {
-  display: inline;
-}
+      #map #infowindow-content {
+        display: inline;
+      }
 
-.pac-card {
-  margin: 10px 10px 0 0;
-  border-radius: 2px 0 0 2px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  outline: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  background-color: #fff;
-  font-family: Roboto;
-}
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
 
-#pac-container {
-  padding-bottom: 12px;
-  margin-right: 12px;
-  margin-right: 12px;
-  
-}
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+        margin-right: 12px;
+      }
 
-.pac-controls {
-  display: inline-block;
-  padding: 5px 11px;
-}
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
 
-.pac-controls label {
-  font-family: Roboto;
-  font-size: 13px;
-  font-weight: 300;
-}
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
 
-#pac-input {
-  background-color: #fff;
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: 300;
-  margin-left: 12px;
-  padding: 0 11px 0 13px;
-  text-overflow: ellipsis;
-  width: 400px;
-}
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
 
-#pac-input:focus {
-  border-color: #4d90fe;
-}
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
 
-#title {
-  color: #fff;
-  background-color: #4d90fe;
-  font-size: 25px;
-  font-weight: 500;
-  padding: 6px 12px;
-}
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
 
-#target {
-  width: 345px;
-}
+      #target {
+        width: 345px;
+      }
 
-.title{
-  text-align: center;
-  font-family: 'Satisfy', cursive;
-  color:antiquewhite;
-}
+      .title {
+        text-align: center;
+        font-family: "Satisfy", cursive;
+        color: antiquewhite;
+      }
 
-#map {
-  /* border: 1px solid black; */
-  /* background-color: lightblue; */
-  padding-top: 10px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-  padding-left: 30px;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-bottom: 20px;
-  display:center;
-  text-align: center;
-}
-         
-#topStore {
-  margin-left: 80px;
-  color:white
-}
-body{
-background-image: url('https://igrad-smedia-igrad.netdna-ssl.com/IMAGE/Redesign/Articles/lg/clothing-budget-tips-to-save-money(1).jpg');
-background-repeat: no-repeat;
-background-attachment: fixed; 
-background-size: 100% 100%;
-}
-.rrlZOM-local-context-place-chooser-grid-view {
-    padding-left: 50px;
-}
+      #map {
+        padding-top: 10px;
+        padding-right: 30px;
+        padding-bottom: 50px;
+        padding-left: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 20px;
+        display: center;
+        text-align: center;
+      }
 
-      </style>
-</head>
-<body>
-  
-<!-- <container class="container">  -->
+      #topStore {
+        margin-left: 80px;
+        color: white;
+      }
+      body {
+        background-image: url("https://igrad-smedia-igrad.netdna-ssl.com/IMAGE/Redesign/Articles/lg/clothing-budget-tips-to-save-money(1).jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+      .rrlZOM-local-context-place-chooser-grid-view {
+        padding-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
     <div class="w3-bar w3-light-grey">
-        <a href="index.html" class="w3-bar-item w3-button">Weather</a>
-        <a href="clothing.html" class="w3-bar-item w3-button">Nearby Clothing Store </a>
-        <a href="restaurants.html" class="w3-bar-item w3-button">Nearby Restaurants </a>
-        <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
-        <a href="attractions.html" class="w3-bar-item w3-button">Attraction </a>
-        <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
-        <!-- <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
-        <a href="#" class="w3-bar-item w3-button w3-green">Go</a> -->
+      <a href="index.html" class="w3-bar-item w3-button">Weather</a>
+      <a href="clothing.html" class="w3-bar-item w3-button"
+        >Nearby Clothing Store
+      </a>
+      <a href="restaurants.html" class="w3-bar-item w3-button"
+        >Nearby Restaurants
+      </a>
+      <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
+      <a href="attractions.html" class="w3-bar-item w3-button">Attraction </a>
+      <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
     </div>
-    <br>
-    <h1 class= "title">Nearby Clothing Stores  </h1>
-    <!-- <form>
-    <input id='searchValue' type="text" name='searchValue' value= '' placeholder="search for a city"> </input> 
-    <button name="add-city-button" id="search" class="w3-button w3-sand" type= "submit">Submit</button>
-    <div id="buttons-view"></div>
-  </form> -->
-
-  
-    <h3 id="topStore"> Top Stores</h3>
+    <br />
+    <h1 class="title">Nearby Clothing Stores</h1>
+    <h3 id="topStore">Top Stores</h3>
     <div id="map"></div>
-    <br>
-    <br>
+    <br />
+    <br />
 
-  
-  
-<script>
-// tish help with 1st one
-var city= localStorage.getItem("recallHistory");
-// got bottom from class activity
-  // var city= JASON.parse(localStorage.getItem("recallHistory"));
-  // tried to do bottom from an activity
-  //  recallHistory.textContent = city.searchValue
-  
+    <script>
+      var city = localStorage.getItem("recallHistory");
 
+      let map;
 
+      var latFromLocalStorage = parseFloat(localStorage.getItem("recallLat"));
+      var lngFromLocalStorage = parseFloat(localStorage.getItem("recallLon"));
+      console.log(latFromLocalStorage, "this is the city lat");
+      console.log(lngFromLocalStorage, "this is city long");
 
-    let map;
+      function initMap() {
+        const localContextMapView = new google.maps.localContext.LocalContextMapView(
+          {
+            element: document.getElementById("map"),
+            placeTypePreferences: ["clothing_store", "department_store"],
+            maxPlaceCount: 10,
+          }
+        );
+        map = localContextMapView.map;
 
-    //have to store inside pareseInt() so can go from string to integer.
-    //will use pareFloat bc need decimal
-  var latFromLocalStorage= parseFloat(localStorage.getItem("recallLat"));
+        map.setOptions({
+          center: { lat: latFromLocalStorage, lng: lngFromLocalStorage },
+          zoom: 14,
+        });
+      }
+    </script>
 
-  // lng=lon; //not need bc already have 2 variables
-  var lngFromLocalStorage = parseFloat(localStorage.getItem("recallLon"));
-  //added typeof(latFromLocalStorage) to console.log to know if number, or object, etc
-  console.log(latFromLocalStorage, "this is the city lat");
-  console.log(lngFromLocalStorage, "this is city long");
-  
-function initMap() {
-  const localContextMapView = new google.maps.localContext.LocalContextMapView ({
-    element: document.getElementById("map"),
-    placeTypePreferences: ["clothing_store", "department_store", ],
-    maxPlaceCount: 10,
-  });
-  map = localContextMapView.map;
- 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-  map.setOptions({
-  
-    // center: { lat: 51.507307, lng: -0.08114 }, // original default code
-    //lat and lng need to be a number 
-    //need to grab string and make into int so parseInt()
-
-    center: {lat:latFromLocalStorage, lng:lngFromLocalStorage }, 
-
-    zoom: 14,
-  });
-}
-
-
-
-  
-</script>
-
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <!-- <script
-      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initAutocomplete&libraries=places&v=weekly"
-      defer
-    ></script> -->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&callback=initMap"async defer></script> -->
-    <!-- places Maps API  -->
-    <!-- <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&libraries=places&callback=initMap"></script> -->
     <!-- google maps library local context, places types preference -->
-    <script defer 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&libraries=places,localContext&v=beta&callback=initMap"></script>
-
-
-
-
-</body>
+    <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&libraries=places,localContext&v=beta&callback=initMap"
+    ></script>
+  </body>
 </html>
-

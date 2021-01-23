@@ -5,33 +5,11 @@ $(document).ready(function () {
         var searchValue = $("#searchValue").val();
         $("#searchValue").val("");
         // run logic to get data from API
-        // tutor help
-        console.log(searchValue, "button works");
+
         // local storage for city
         localStorage.setItem("recallHistory", searchValue);
-
-        //iframe
-        //   var iframeInput= $(".location-search-input css-3pa8tf").val();
-        //  console.log(iframeInput, "this is the iframe");
-
-        // new way
-
-        // var iframe = document.getElementById('iframeId');
-        // var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
-        // // console.log(iframe, "this is iframe");
-        // // console.log (innerDoc, "this is innerDoc");
-        // console.log ("Testing iframe");
-
         weatherSearch(searchValue);
     });
-
-    //iframe 
-
-
-
-
-
-
 
     $("searchValue").keypress(function (event) {
         // try to use keyCode === 13
@@ -48,11 +26,6 @@ $(document).ready(function () {
 
     // Greg Function to display an image and text depending on the temperature
     function whatToWear(temperature) {
-
-        console.log("Inside What to wear");
-        console.log("Temperature=" + temperature);
-
-
         if (temperature >= 0 && temperature <= 50) {
             var img = document.createElement('img');
             img.src =
@@ -174,12 +147,8 @@ $(document).ready(function () {
         //make search value to be last value in local storage 
         search
         var APIKey = "76867f1d9d820e6fd45b355d5a55ddc8";
-        console.log(APIKey);
 
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + APIKey;
-        // var oneCallAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=currently,alerts&appid=" + APIKey;
-
-        console.log(queryURL, "this is with search results");
 
         // Here we run our AJAX call to the OpenWeatherMap API
         $.ajax({
@@ -188,59 +157,22 @@ $(document).ready(function () {
         })
             // We store all of the retrieved data inside of an object called "response"
             .then(function (response) {
-                // try to recall history by lat and long
-                // localStorage.setItem("recallHistory", searchValue);
-
-                // / ADD LOCAL STORAGE****************************
-                // Update city list history in local storage    localStorage.setItem("cities", JSON.stringify(cityList));}
-
-                // Log the queryURL
-                console.log(queryURL);
-
-                // Log the resulting object
-                console.log(response);
-
                 // Transfer content to HTML
-                // $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-                $(".city").html; //(`<h2>${response.name} ( ${moment().format("MMMM DD, YYYY, h:mm a")} ) </h2>`);
+                $(".city").html; 
                 $(".currentTime").html(`<h2>${response.name} ( ${moment().format("MMM DD, YYYY/ h:mm a")} ) </h2>`);
-
-                // $(".luxon").html(`luxon <h2>${response.name} ( ${DateTime.local().toFormat('MMMM dd, yyyy')} ) </h2>`);
-
-
                 $("#icon0").attr("src", "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
                 $(".wind").text(`Wind Speed: ${Math.round(response.wind.speed)}MPH`);
-                // $(".humidity").text("Humidity: " + response.main.humidity);
                 $(".humidity").text(`Humidity: ${response.main.humidity}%`);
-                // $("#dailyClouds").text(`Daily Clouds: ${response.current[0].clouds}%`);  
-                // does not work even after removing from 6 day forecast BC did not have id tag attached. used the descriptions from current API 
                 $("#dailyClouds").text(`Precipitation: ${response.clouds.all}%`);
                 $("#description").text(`Description: ${response.weather[0].description}`);
-
-
-                //maybe use current day API key
-
                 // Convert the temp to fahrenheit
                 var tempF = (response.main.temp - 273.15) * 1.80 + 32;
-
                 whatToWear(tempF);
-
-
-                // add temp content to html
-                // $(".temp").text("Temperature (K) " + response.main.temp);
                 $(".tempF").text(`Temperature: ${Math.round((response.main.temp - 273.15) * 1.8 + 32)}°F`);
                 $(".tempC").text(`Temperature: ${Math.round((response.main.temp - 273.15))}°C`);
 
-
-
-                // Log the data in the console as well
-                console.log("Wind Speed: " + response.wind.speed);
-                console.log("Humidity: " + response.main.humidity);
-                console.log("Temperature (F): " + tempF);
-
                 lat = response.coord.lat;
                 lon = response.coord.lon;
-                console.log("This is lat and lon from weather function", lat, lon);
                 localStorage.setItem("recallLat", lat);
                 localStorage.setItem("recallLon", lon);
                 forecast(lat, lon);
@@ -253,21 +185,14 @@ $(document).ready(function () {
                 $(".daysForecast5").html(`${moment().add(5, "d").format("MMMM DD, YYYY")}`);
                 $(".daysForecast6").html(`${moment().add(6, "d").format("MMMM DD, YYYY")}`);
             });
-
-
     }
 
     function forecast(lat, lon) {
         //replaced (lat,lon) with (searchValue) and humidity showed up
         var APIKey = "76867f1d9d820e6fd45b355d5a55ddc8";
 
-        // var part = hourly;
-        console.log("Forecast", APIKey);
-
-        // excluded minuetly, hourly
+        // excluded minutely, hourly
         var oneCallAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=currently,alerts&appid=" + APIKey;
-        // var fiveDayForecast= "http://api.openweathermap.org/data/2.5/uvi?lat=" +lat+ "&lon=" +lon+ "&appid=" +APIKey;
-        console.log("This is the var fivDayForecast: ", oneCallAPI);
 
         $.ajax({
             // url: fiveDayForecast,
@@ -324,12 +249,7 @@ $(document).ready(function () {
             $("#temp1C").text(`Temp (C): ${Math.round((response.daily[0].temp.day - 273.15))}`);
             // hourly cloud percentage. NEED THE [] number or is undefined
             $("#dailyClouds1").text(`Rain: ${response.daily[0].clouds}%`);
-            // $("#dailyClouds1").text(`Daily Clouds: ${response.hourly[0].clouds}%`);
-            // .weather has to [0] to get the description
             $("#description1").text(`Description: ${response.daily[0].weather[0].description}`);
-
-
-            console.log(response.daily[0].temp);
 
             $("#icon2").attr("src", "https://openweathermap.org/img/wn/" + response.daily[1].weather[0].icon + "@2x.png");
             $("#humidity2").text(`Humidity: ${response.daily[1].humidity}%`);
