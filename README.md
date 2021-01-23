@@ -42,6 +42,10 @@ Map with nearby night life
 Map with nearby attractions 
 map with nearby hotels 
 
+## Future Development:
+Add flight booking site
+Current News about the city 
+
 
 ## MIT License
 
