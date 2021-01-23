@@ -43,16 +43,11 @@
           font-family: 'Prata', serif;
           font-size: 20px;
           
-          /* background-color:blue */
         }
 
 
         .card {
-        /* background-color: rgb(157, 217, 247);
-        background-color: #E0E5FA;
-         */
-        /* background: linear-gradient(to left rgb(8, 40, 223), rgb(99, 222, 238)); */
-        border-radius: 2rem;
+      
         padding: 2rem;
         margin-left: 2rem;
         box-shadow: 10px 410x 15px 2px
