@@ -13,7 +13,6 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  
 }  
 
 body {
@@ -32,7 +31,7 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  left: 20px;
+  left: 70px;
   position: absolute;
   top: 40px;
   width: 440px;
@@ -51,11 +50,11 @@ table {
 #listing {
   position: absolute;
   /* position: right; */
-  width: 200px;
+  width: 280px;
   height: 470px;
   overflow: auto;
-  left: 442px;
-  top: 60px;
+  left: 450px;
+  top: 100px;
   cursor: pointer;
   overflow-x: hidden;
   /* overflow-x: show; */
@@ -122,4 +121,11 @@ table {
 
 .iw_table_icon {
   text-align: right;
+}
+
+body {
+          background-image: url('https://assets.new.siemens.com/siemens/assets/api/uuid:3aa3a08e2e341bac2492095f103cb7e8800796c6/width:3840/crop:0,2:0:0,8:1,00146/quality:high/024-fire-safety-focus-market-hotel-keyvisual.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed; 
+          background-size: 100% 100%;
 }

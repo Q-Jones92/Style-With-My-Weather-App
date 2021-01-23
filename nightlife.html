@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <!-- Compressed JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <!-- jQuery must be imported before Foundation -->
@@ -13,10 +12,15 @@
     
      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <title>Restaurants</title>
+    <title>Night Life</title>
 
     <style>
-        /* Always set the map height explicitly to define the size of the */
+        body {
+          background-image: url('https://www.treehugger.com/thmb/6Go1AA8N7ku-zPFJQyoqSyZy4wM=/1000x667/filters:fill(auto,1)/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2019__12__HongKongSkylineAtNight-bf564316870e4cdba4c77a7a9964f3dd.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed; 
+          background-size: 100% 100%;
+        }
 
         #map {
           height: 90%;
@@ -32,10 +36,12 @@
         .title{
         text-align: center;
         font-family: 'Satisfy', cursive;
+        color:antiquewhite
         }
 
         #top {
-        margin-left: 40px;
+        margin-left: 70px;
+        color:white;
        }
 
        #map {
@@ -55,6 +61,12 @@
         background-color: #607d8b;
       }
 
+      .rrlZOM-local-context-place-chooser-grid-view {
+        padding-left: 50px;
+        padding-right: 23px;
+      }
+
+
       </style>
 </head>
 <body>
@@ -67,11 +79,9 @@
         <a href="nightlife.html" class="w3-bar-item w3-button">Night Life </a>
         <a href="attractions.html" class="w3-bar-item w3-button">Attraction </a>
         <a href="hotels.html" class="w3-bar-item w3-button">Hotels </a>
-        <!-- <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
-        <a href="#" class="w3-bar-item w3-button w3-green">Go</a> -->
- 
     </div>
   </nav>
+  <br>
     <h1 class= "title">Night Life</h1>
     <h4 id="top"> Top Picks</h4>
     <div id="map"></div>
@@ -102,7 +112,6 @@
     }
     </script>
 
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&callback=initMap"async defer></script> -->
     <script defer 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkYa2LYYipy1FYUSjvllMKsYkRGBmI6wY&libraries=localContext&v=beta&callback=initMap"></script>
 

@@ -1,19 +1,4 @@
-/* Always set the map height explicitly to define the size of the div
-
-      #map {
-        /* height: 100%; */
-
-        /* .w3-container-hourly {  */
-          /* width: 780px; 
-          background: #FFF url('picture') no-repeat center top; 
-          margin: 0 auto; 
-          height:'your-img-size'; } */
-
-
-/* bottom changed for daily forecast  */
-
-        
-          .w3-container-hourly {
+        .w3-container-hourly {
             
           background-image: url('https://cdn.vox-cdn.com/thumbor/tZLxhLAWoEFRpf0pe-CirjvF0XY=/1400x788/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/15788040/20150428-cloud-computing.0.1489222360.jpg');
           background-repeat: no-repeat;
@@ -22,8 +7,6 @@
           /* padding-left: 2em; */
           padding-left: 1em;
           padding-right: 1em;
-        
-
         }
 
         .column {
@@ -31,7 +14,6 @@
           width: 50%;
           padding: 10px;
           text-align: center;
-
         }
 
         .w3-cell-row:after {
@@ -49,7 +31,6 @@
         .hour-time {
           text-align: center;
         }
-
         .card-divider {
           font-family: 10 px, 'Volkhov', serif;
         }
@@ -73,11 +54,8 @@
         /* background: linear-gradient(to left rgb(8, 40, 223), rgb(99, 222, 238)); */
         border-radius: 2rem;
         padding: 2rem;
-        /* margin-left: -4rem; */
         margin-left: 2rem;
         box-shadow: 10px 410x 15px 2px
-        /* rgba(black, 0.75); */
-        /* transition: 0.2s; */
       }
 
 
@@ -90,8 +68,6 @@
        /* each hourly card */
         .cardHourly{
         background-color: rgb(163, 215, 241);
-        /* background: linear-gradient(to left rgb(8, 40, 223), rgb(99, 222, 238)); */
-        border-radius: 1rem;
         padding: 2rem;
         margin-right: 6px;
         margin-left: 6px;
@@ -186,7 +162,7 @@
       color: rgb(4, 18, 44)
     }
 
-        /* Tooltip container */
+      /* Tooltip container */
 .tooltip {
   position: relative;
   display: inline-block;
@@ -248,9 +224,6 @@
 }
 
   @media only screen and (max-width: 768px) {
-    body {
-      /* background-color: lightblue; */
-    }
 
     .card {
       width: 100%;
@@ -258,30 +231,7 @@
 
   }
   
-  
-/* trying to get navigation responsive */
 
-/* @media screen and (max-width: 600px) {
-  .w3-bar a:not(:first-child) {display: none;}
-  .w3-bar a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .w3-bar.responsive {position: relative;}
-  .w3-bar.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .w3-bar.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-} */
 
 
 
