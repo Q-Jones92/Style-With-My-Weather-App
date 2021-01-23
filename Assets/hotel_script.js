@@ -8,7 +8,6 @@
 
 let map;
 
-
 let places;
 let infoWindow;
 let markers = [];
@@ -164,11 +163,10 @@ function setAutocompleteCountry() {
 
   if (country == "all") {
     autocomplete.setComponentRestrictions({ country: [] });
-    // COMMENTED PUT THE BOTTOM ORIGINAL CODE 
+    // COMMENTED PUT THE BOTTOM ORIGINAL CODE
     // map.setCenter({ lat: 15, lng: 0 });
-    map.setCenter( {lat:latFromLocalStorage, lng:lngFromLocalStorage }), 
-
-    map.setZoom(2);
+    map.setCenter({ lat: latFromLocalStorage, lng: lngFromLocalStorage }),
+      map.setZoom(2);
   } else {
     autocomplete.setComponentRestrictions({ country: country });
     map.setCenter(countries[country].center);

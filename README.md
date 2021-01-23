@@ -23,19 +23,7 @@ These are the screenshots of what our website looks like:
 ![Hotels Tab](images/hotels.jpg)
 
 
-## Collaborators
-
-Erum: https://github.com/erumd
-
-Dennis: https://github.com/Desparta05 
-
-Gregory: https://github.com/NGUENANG7
-
-Quincy: https://github.com/Q-Jones92
-
-
-
-#### Credits:
+#### GitHub Profile of Collaborators:
 [Erum](https://github.com/erumd)
 ||
 [Gregory](https://github.com/NGUENANG7)
