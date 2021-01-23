@@ -170,8 +170,6 @@ $(document).ready(function () {
         }
     }
 
-  
-
     function weatherSearch(searchValue) {
         //make search value to be last value in local storage 
         search
@@ -182,7 +180,7 @@ $(document).ready(function () {
         // var oneCallAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=currently,alerts&appid=" + APIKey;
 
         console.log(queryURL, "this is with search results");
-      
+
         // Here we run our AJAX call to the OpenWeatherMap API
         $.ajax({
             url: queryURL,
