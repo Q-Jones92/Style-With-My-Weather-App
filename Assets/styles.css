@@ -1,4 +1,4 @@
- /* Always set the map height explicitly to define the size of the div
+/* Always set the map height explicitly to define the size of the div
 
       #map {
         /* height: 100%; */
@@ -12,7 +12,6 @@
 
 /* bottom changed for daily forecast  */
 
-         
         
           .w3-container-hourly {
             
@@ -64,10 +63,10 @@
           font-size: 20px;
           
           /* background-color:blue */
-       }
+        }
 
 
-       .card {
+        .card {
         /* background-color: rgb(157, 217, 247);
         background-color: #E0E5FA;
          */
@@ -82,14 +81,14 @@
       }
 
 
-       .cardsHourly {
+        .cardsHourly {
         display: flex;
           --distance: -4rem;  
           text-align: center;
-       }
+        }
 
        /* each hourly card */
-       .cardHourly{
+        .cardHourly{
         background-color: rgb(163, 215, 241);
         /* background: linear-gradient(to left rgb(8, 40, 223), rgb(99, 222, 238)); */
         border-radius: 1rem;
@@ -105,8 +104,7 @@
         font-family: 'Volkhov', serif;
         font-size: 20px;
   
-       }
-     
+        }
   
       .cardHourly-selection {
         padding:1rem;
@@ -195,6 +193,9 @@
   border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
+/* #link1{
+  background-color: rgb(255, 0, 0);
+} */
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
