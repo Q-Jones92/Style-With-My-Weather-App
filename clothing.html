@@ -153,8 +153,6 @@
 
       var latFromLocalStorage = parseFloat(localStorage.getItem("recallLat"));
       var lngFromLocalStorage = parseFloat(localStorage.getItem("recallLon"));
-      console.log(latFromLocalStorage, "this is the city lat");
-      console.log(lngFromLocalStorage, "this is city long");
 
       function initMap() {
         const localContextMapView = new google.maps.localContext.LocalContextMapView(
